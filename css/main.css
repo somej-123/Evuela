@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html::-webkit-scrollbar{
+    display: none;
+}
+#Background_Effect{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    opacity: 1;
+    /* animation-name: video_Effect;
+    animation-duration: 10s; */
+    /* animation-delay: 1s; */
+    
+}
+
+/* @keyframes video_Effect {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+} */
+#videoBackground{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#videoBackground video{
+    width: 100%;
+    height: auto;
+}
+#headerContainer{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+#headerText{
+    display: none;
+    color: #fff;
+    font-family: 'Oswald', sans-serif !important;
+}
+#headerText h1{
+    font-size: 5em !important;
+}
