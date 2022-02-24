@@ -55,6 +55,9 @@ html::-webkit-scrollbar{
     opacity: 0.7;
     cursor: pointer;
 }
+#lineEffectText:hover{
+    opacity: 1;
+}
 #arrowText{
     position: relative;
     bottom: 2px;
@@ -68,10 +71,68 @@ html::-webkit-scrollbar{
     height: 100vh;
 }
 #lightDiv{
+    position: relative;
     width: 100%;
     height: 100vh;
     background-color: #000;
     opacity: 0;
 }
+#lightDivContainer{
+    position: absolute;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* 반짝이는 이펙트 시작 */
+
+#lightDivContainer h2{
+    font-family: "Arial";
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 0.75;
+}
+
+#lightDivContainer span{
+    display: block;
+}
+
+#lightDivContainer span:not(.light) {
+    opacity: 0;
+    animation: flashText 0.5s ease-out alternate infinite;
+}
+
+#lightDivContainer span.light {
+    position: relative;
+    display: inline-block;
+}
+#lightDivContainer span.light:before {
+    position: absolute;
+    left: 0;
+    top: -10%;
+    width: 100%;
+    height: 120%;
+    background: #fff;
+    filter: blur(10px);
+    content: "";
+    opacity: 0;
+    animation: flash 0.5s ease-out alternate infinite;
+}
+
+@keyframes flash {
+to {
+    opacity: 1;
+    }
+}
+@keyframes flashText {
+to {
+    opacity: 0.15;
+    }
+}
+
+/* 반짝이는 이펙트 끝 */
 
 /* 첫밴째 section 끝  */

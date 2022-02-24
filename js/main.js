@@ -69,7 +69,7 @@ function btnEvent(){
 
     $("#lineEffectText").on("click",function(){
         var offset = $("#lightSection").offset();
-        $("html").animate({scrollTop : offset.top}, 1000);
+        $("html").animate({scrollTop : offset.top}, 300);
     })
 }
 
