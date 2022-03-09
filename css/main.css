@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+
+/* PC헤더 영역 */
+#PCHeader{
+    
+}
 /* 헤더 영역 */
 html::-webkit-scrollbar{
     display: none;
@@ -62,77 +67,75 @@ html::-webkit-scrollbar{
     position: relative;
     bottom: 2px;
 }
+
+/* 네비게이션 영역 */
+
+#navMenu{
+    position: absolute;
+    /* width: 100%; */
+    /* border: 1px solid black; */
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: right;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+}
+
+#navMenuUl{
+    list-style: none;
+    width: 100%;
+    /* display: inline-block; */
+}
+#navMenuUl li{
+    display: inline-block;
+    /* border: 1px solid #fff; */
+    color: #fff;
+    margin: 1vw 2vw;
+    font-family: 'Oswald', sans-serif !important;
+}
+#navMenuUl li h4{
+    display: none;
+    cursor: pointer;
+    /* opacity: 0.7; */
+}
+.navMenuText{
+    opacity: 0.7;
+}
+.navMenuText:hover{
+    opacity: 1;
+}
+/* .navMenuText::after{
+    position: absolute;
+    bottom: .3em;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0;
+    transition: .3s;
+} */
+/* .navMenuText:hover::after{
+    bottom: 0;
+    opacity: 1;
+} */
+
+
+/* #navMenuUl li:nth-child(1){
+    display: none;
+}
+#navMenuUl li:nth-child(2){
+    display: none;
+}
+#navMenuUl li:nth-child(3){
+    display: none;
+}
+#navMenuUl li:nth-child(4){
+    display: none;
+} */
+
+/* 네비게이션 영역 끝 */
 /* 헤더 영역 끝 */
 
-/* 첫번째 section */
-
-#lightSection{
-    width: 100%;
-    height: 100vh;
-}
-#lightDiv{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
-    opacity: 0;
-}
-#lightDivContainer{
-    position: absolute;
-    height: 500px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-
-/* 반짝이는 이펙트 시작 */
-
-#lightDivContainer h2{
-    font-family: "Arial";
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 3rem;
-    line-height: 0.75;
-}
-
-#lightDivContainer span{
-    display: block;
-}
-
-#lightDivContainer span:not(.light) {
-    opacity: 0;
-    animation: flashText 0.5s ease-out alternate infinite;
-}
-
-#lightDivContainer span.light {
-    position: relative;
-    display: inline-block;
-}
-#lightDivContainer span.light:before {
-    position: absolute;
-    left: 0;
-    top: -10%;
-    width: 100%;
-    height: 120%;
-    background: #fff;
-    filter: blur(10px);
-    content: "";
-    opacity: 0;
-    animation: flash 0.5s ease-out alternate infinite;
-}
-
-@keyframes flash {
-to {
-    opacity: 1;
-    }
-}
-@keyframes flashText {
-to {
-    opacity: 0.15;
-    }
-}
-
-/* 반짝이는 이펙트 끝 */
-
-/* 첫밴째 section 끝  */

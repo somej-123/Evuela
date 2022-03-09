@@ -1,7 +1,11 @@
+"use strict";
+
+var scrollEventFlag = 0;
+
 $(document).ready(function(){
     
+    
     headerTextFadein();
-    scrollEvent();
 
     btnEvent();
 
@@ -12,7 +16,7 @@ $(document).ready(function(){
 })
 
 function headerTextFadein(){
-    scroll_on();
+    // scroll_on();
     $("#Background_Effect").animate({
         "opacity":"0"
     },5000);
@@ -28,49 +32,39 @@ function headerTextFadein(){
     setTimeout(function(){
         // $("#lineTest").css("display","none")
         $("#lineEffectText").fadeIn(3000);
-        scroll_off();
+        // scroll_off();
     },6000);
+    setTimeout(function(){
+        // $("#lineTest").css("display","none")
+        $("#navMenuInfo").fadeIn(1000);
+        $("#navMenuBlog").fadeIn(2000);
+        $("#navMenuPicture").fadeIn(3000);
+        $("#navMenuLogin").fadeIn(4000);
+        // scroll_off();
+    },8000);
     
 }
 
-function scrollEvent(){
-    var scroll_pos = 0;
-    var scrollPec = 0;
-    var lightSectionY = $("#lightSection").offset().top;
-    $(document).scroll(function(el){
-        if($(this).scrollTop() <= 961){
-            scroll_pos = $(this).scrollTop();
-
-            scrollPec = Math.ceil(scroll_pos / lightSectionY * 100);
-            if(scrollPec < 9){
-                $("#lightDiv").css({
-                    "opacity":"0.0"+scrollPec
-                });
-            }
-            else if(scrollPec < 100 &&scrollPec > 9){
-                $("#lightDiv").css({
-                    "opacity":"0."+scrollPec
-                });
-            }else{
-                $("#lightDiv").css({
-                    "opacity":"1"
-                });
-            }
-            // console.log(scroll_pos);
-            // console.log(scrollPec);
-        }
-    });
-}
 
 
 
 
 function btnEvent(){
 
-    $("#lineEffectText").on("click",function(){
-        var offset = $("#lightSection").offset();
-        $("html").animate({scrollTop : offset.top}, 300);
-    })
+    // $("#lineEffectText").on("click",function(){
+    //     var offset = $("#lightSection").offset();
+    //     $("html").animate({scrollTop : offset.top}, 300);
+    // })
+
+    // $("#lightDivRainText").on("mouseenter",function(){
+    //     $("#lightText").css("display","none");
+    //     $("#lightText2").stop().fadeIn(2000);
+    // });
+    // $("#lightDivRainText").on("mouseleave",function(){
+    //     $("#lightText2").css("display","none");
+    //     $("#lightText").stop().fadeIn(2000);
+    // })
+    
 }
 
  // 스크롤 제한 ON
