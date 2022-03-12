@@ -3,9 +3,8 @@
     padding: 0;
 }
 
-/* PC헤더 영역 */
-#PCHeader{
-    
+#TabHeader{
+    display: none;
 }
 /* 헤더 영역 */
 html::-webkit-scrollbar{
@@ -15,18 +14,20 @@ html::-webkit-scrollbar{
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: #000;
-    opacity: 1;   
+    /* background-color: #000;
+    opacity: 1;    */
 }
-#videoBackground{
-    width: 100%;
+#BackgroundImg{
+    width: 100vw;
     height: 100vh;
+    background-image: url(../img/background_1920px.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* opacity: 0.7; */
     overflow: hidden;
 }
-#videoBackground video{
-    width: 100%;
-    height: auto;
-}
+
 #headerContainer{
     position: absolute;
     left: 50%;
@@ -36,7 +37,7 @@ html::-webkit-scrollbar{
     height: 200px;
 }
 #headerText{
-    display: none;
+    /* display: none; */
     color: #fff;
     font-family: 'Oswald', sans-serif !important;
 }
@@ -45,13 +46,13 @@ html::-webkit-scrollbar{
 }
 #lineEffectLine{
     margin-top: 15px;
-    width: 0%;
+    width: 20em;
     height: 5px;
     background-color: #fff;
-    display: none;
+    /* display: none; */
 }
 #lineEffectText{
-    display: none;
+    /* display: none; */
     /* height: 20px; */
     /* opacity: 1; */
     margin-top: 15px;
@@ -59,6 +60,7 @@ html::-webkit-scrollbar{
     /* align-items: center; */
     opacity: 0.7;
     cursor: pointer;
+    font-family: 'Oswald', sans-serif !important;
 }
 #lineEffectText:hover{
     opacity: 1;
@@ -96,7 +98,7 @@ html::-webkit-scrollbar{
     font-family: 'Oswald', sans-serif !important;
 }
 #navMenuUl li h4{
-    display: none;
+    /* display: none; */
     cursor: pointer;
     /* opacity: 0.7; */
 }
@@ -106,36 +108,67 @@ html::-webkit-scrollbar{
 .navMenuText:hover{
     opacity: 1;
 }
-/* .navMenuText::after{
-    position: absolute;
-    bottom: .3em;
-    left: 0;
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: #fff;
-    opacity: 0;
-    transition: .3s;
-} */
-/* .navMenuText:hover::after{
-    bottom: 0;
-    opacity: 1;
-} */
-
-
-/* #navMenuUl li:nth-child(1){
-    display: none;
-}
-#navMenuUl li:nth-child(2){
-    display: none;
-}
-#navMenuUl li:nth-child(3){
-    display: none;
-}
-#navMenuUl li:nth-child(4){
-    display: none;
-} */
 
 /* 네비게이션 영역 끝 */
 /* 헤더 영역 끝 */
+/* PC헤더 영역 */
 
+
+
+@media screen and (min-width:768px) and (max-width:1200px) { 
+
+
+
+ }
+@media screen and (max-width:767px) { 
+
+    #headerContainer{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        height: 200px;
+        transition: all 2s;
+    }
+
+    #lineEffectLine{
+        
+        /* margin-top: 15px; */
+        margin: 15px auto;
+        height: 5px;
+        text-align: center;
+        background-color: #fff;
+        transition: all 2s;
+        /* display: none; */
+    }
+
+    #navMenuUl{
+        list-style: none;
+        width: 100%;
+        padding: 0;
+        /* display: inline-block; */
+    }
+
+    #navMenu{
+        position: absolute;
+        /* width: 100%; */
+        /* border: 1px solid black; */
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        /* top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%); */
+    }
+
+    #navMenuUl li{
+        display: inline-block;
+        /* border: 1px solid #fff; */
+        color: #fff;
+        margin: 2vw 3vw;
+        font-family: 'Oswald', sans-serif !important;
+    }
+
+ }
