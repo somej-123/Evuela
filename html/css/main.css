@@ -1,9 +1,11 @@
 *{
     margin: 0;
     padding: 0;
-    
 }
 
+#TabHeader{
+    display: none;
+}
 /* 헤더 영역 */
 html::-webkit-scrollbar{
     display: none;

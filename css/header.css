@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: fixed;
+    top: 0;
+    width: 100vw;
+    height: 80px;
+    background-color: #FFEDDB;
+    /* border: 1px solid #000; */
+    font-family: 'Oswald', sans-serif !important;
+}
+nav{
+    width: 100vw;
+    height: 100%;
+}
+#navTitle{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#navTitle a{
+    text-decoration: none;
+    color: #000;
+}
+#navMenu{
+    text-align: right;
+}
+#navMenuUl{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#navMenuUl li{
+    display: inline-block;
+    margin: 0vw 2vw;
+}
+#navMenuUl a{
+    text-decoration: none;
+    color: #000;
+}
+#Info_Section1{
+    position: relative;
+    width: 100vw;
+    /* background-color: #000; */
+}
+#Info_FirstSection{
+    position: absolute;
+    width: 100vw;
+    height: 500px;
+    background-image: url(../img/info_background_1920px.png);
+    background-size: cover;
+    background-position: center;
+}
+#Info_FirstSection::after{
+    position: relative;
+    display: block;
+    content: "";
+}
+#Info_SecondSection{
+    position: relative;
+    top: 300px;
+    /* height: 300px; */
+    /* border: 1px solid black; */
+    /* background-color: #fff; */
+    border-radius: 5px;
+}
+
+
+@media screen and (min-width:768px) and (max-width:1200px) { 
+
+}
+@media screen and (max-width:767px) { 
+
+}
