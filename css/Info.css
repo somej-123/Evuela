@@ -24,12 +24,12 @@
 #HeadlineText p{
     font-family: 'NanumGothic' !important;
     font-weight: bold;
-    text-shadow: 14px 8px 2px rgba(128, 128, 128, 0.2);
+    /* text-shadow: 14px 8px 2px rgba(128, 128, 128, 0.2); */
 }
 #HeadlinePhoto{
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     cursor: pointer;
     box-shadow: 4px 4px 5px rgb(0 0 0 / 50%);
 }
