@@ -1,15 +1,21 @@
 *{
     margin: 0;
     padding: 0;
+    /* font-family: 'NanumGothicLight';
+    font-family: 'NanumGothic';
+    font-family: 'NanumGothicBold';
+    font-family: 'NanumGothicExtraBold'; */
 }
 header{
-    display: fixed;
+    position: fixed !important;
     top: 0;
     width: 100vw;
     height: 80px;
-    background-color: #FFEDDB;
+    background-color: #eeeddec4;
+    /* opacity: 0.5; */
     /* border: 1px solid #000; */
     font-family: 'Oswald', sans-serif !important;
+    z-index: 1;
 }
 nav{
     width: 100vw;
@@ -43,38 +49,4 @@ nav{
 #navMenuUl a{
     text-decoration: none;
     color: #000;
-}
-#Info_Section1{
-    position: relative;
-    width: 100vw;
-    /* background-color: #000; */
-}
-#Info_FirstSection{
-    position: absolute;
-    width: 100vw;
-    height: 500px;
-    background-image: url(../img/info_background_1920px.png);
-    background-size: cover;
-    background-position: center;
-}
-#Info_FirstSection::after{
-    position: relative;
-    display: block;
-    content: "";
-}
-#Info_SecondSection{
-    position: relative;
-    top: 300px;
-    /* height: 300px; */
-    /* border: 1px solid black; */
-    /* background-color: #fff; */
-    border-radius: 5px;
-}
-
-
-@media screen and (min-width:768px) and (max-width:1200px) { 
-
-}
-@media screen and (max-width:767px) { 
-
 }
