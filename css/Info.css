@@ -31,7 +31,7 @@
     height: 100%;
     /* border-radius: 10px; */
     cursor: pointer;
-    box-shadow: 4px 4px 5px rgb(0 0 0 / 50%);
+    /* box-shadow: 4px 4px 5px rgb(0 0 0 / 50%); */
 }
 #Info_ModalHeadlinePhoto{
     width: 100%;
