@@ -1,0 +1,206 @@
+#Info_Section1{
+    position: relative;
+    /* width: 100vw; */
+    /* background-color: #000; */
+}
+#Info_Section1_Container{
+    margin-top: 150px;
+    margin-bottom: 70px;
+}
+#HeadlineText{
+    text-align: center;
+    display: flex;
+    /* justify-items: center; */
+    align-content: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+#HeadlineText h1{
+    font-family: 'Oswald', sans-serif !important;
+    text-shadow: 14px 10px 2px rgba(128, 128, 128, 0.2);
+}
+#HeadlineText p{
+    font-family: 'NanumGothic' !important;
+    font-weight: bold;
+    /* text-shadow: 14px 8px 2px rgba(128, 128, 128, 0.2); */
+}
+#HeadlinePhoto{
+    width: 100%;
+    height: 100%;
+    /* border-radius: 10px; */
+    cursor: pointer;
+    /* box-shadow: 4px 4px 5px rgb(0 0 0 / 50%); */
+}
+#Info_ModalHeadlinePhoto{
+    width: 100%;
+    height: 100%;
+}
+
+#Info_Section1::after{
+    display: block;
+    content: "";
+    position: relative;
+}
+
+/* 두번째 영역 */
+#Info_Section2{
+    background-color: #E5E3C9;
+    /* height: 500px; */
+}
+#Info_Section2_title{
+    text-align: center;
+}
+#Info_Section2_nav{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    font-family: 'Oswald', sans-serif !important;
+}
+#Info_Section2_nav li{
+    display: inline-block;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.Info_Section2_nav_cursor{
+    cursor: pointer;
+}
+#Info_Section2_Contents{
+    width: 100%;
+    overflow-x: hidden;
+}
+#Info_Section2_Slide_Div{
+    width: 300%;
+    /* height: 600px; */
+    position: relative;
+    /* transition: left 0.5s ease-out; */
+    font-family: 'NanumGothic';
+    font-weight: bold !important;
+}
+#Info_Section2_Slide_Div::after{
+    display: block;
+    content: "";
+    position: relative;
+}
+#Info_Section2_Slide_Div h5{
+    font-weight: bold !important;
+}
+.Info_Slide{
+    width: 33.33%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.Info_Slide::after{
+    display: block;
+    content: "";
+    position: relative;
+}
+.Info_Slide img{
+    width: 50%;
+    height: auto;
+}
+.Info_slide1_float{
+    width: 50%;
+}
+.Info_slide2_float{
+    width: 50%;
+}
+.Info_slide3_float{
+    width: 50%;
+}
+#Info_Slide1{
+    margin-left: 0.01%;
+}
+#Info_slide1_text{
+    display: flex;
+    line-height: 40px;
+    flex-direction: column;
+}
+#Info_slide2_text{
+    display: flex;
+    line-height: 40px;
+    flex-direction: column;
+}
+#Info_slide3_text{
+    display: flex;
+    line-height: 40px;
+    flex-direction: column;
+}
+#info_slide1_ul{
+    max-height: 250px;
+    overflow-y: scroll;
+}
+#info_slide2_ul{
+    max-height: 250px;
+    overflow-y: scroll;
+}
+#info_slide3_ul{
+    max-height: 250px;
+    overflow-y: scroll;
+}
+.BigText{
+    font-size: 40px !important;
+    font-family: 'Oswald', sans-serif !important;
+}
+
+/* #Info_Section2_Contents_ul{
+    width: 100%;
+    display: flex;
+    padding: 0 5%;
+    margin: 0;
+    justify-content: center;
+}
+#Info_Section2_Contents_ul li{
+    width: 30%;
+    margin: 0 1%;
+    display: inline-block;
+}
+#Info_Section2_Contents_ul li img{
+    width: 100%;
+    height: 100%;
+}*/
+
+@media screen and (min-width:768px) and (max-width:1200px) { 
+    /* .Info_Slide{
+        width: 33.33%;
+        height: 100%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+    .Info_Slide img{
+        width: 100%;
+    }
+    .Info_slide1_float{
+        width: 100%;
+    } */
+}
+@media screen and (max-width:767px) { 
+    #Info_HeadlineDiv{
+        display: flex !important;
+        flex-wrap: wrap !important;
+        flex-direction: column !important;
+        align-content: center !important;
+    }
+    .Info_Slide{
+        width: 33.33%;
+        height: 100%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+    .Info_Slide img{
+        width: 100%;
+    }
+    .Info_slide1_float{
+        width: 100%;
+    }
+}

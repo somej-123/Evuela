@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet"/>
-    <link href="./css/Info.css" rel="stylesheet"/>
+    <link href="./css/Info/Info.css" rel="stylesheet"/>
+    <script src="./js/Info/info.js"></script>
     <title>EVUELA::INFO</title>
 </head>
 <body>
@@ -96,17 +97,63 @@
     <section id="Info_Section2" class="pt-5 pb-5">
         <div class="container">
             <div id="Info_Section2_title" >
-                <h1>PRACTICE</h1>
+                <!-- <h1>PRACTICE</h1> -->
+                <ul id="Info_Section2_nav" class="mb-5">
+                    <li id="Info_Section2_nav_BLOG">
+                        <h2 class="Info_Section2_nav_cursor" id="Info_slide_BLOG">BLOG</h2>
+                    </li>
+                    <li id="Info_Section2_nav_PICTURE" style="color: rgb(129, 129, 129);">
+                        <h2 class="Info_Section2_nav_cursor" id="Info_slide_PICTURE">PICTURE</h2>
+                    </li>
+                    <li id="Info_Section2_nav_ETC" style="color: rgb(129, 129, 129);">
+                        <h2 class="Info_Section2_nav_cursor" id="Info_slide_ETC">ETC</h2>
+                    </li>
+                </ul>
             </div>
             <div id="Info_Section2_Contents">
-                <div id="Se2_Div1" class="Se2Div">
-                    <img src="./img/blog.jpg" alt="blog사진">
-                </div>
-                <div id="Se2_Div2" class="Se2Div">
-                    <img src="./img/picture.jpg" alt="picture사진">
-                </div>
-                <div id="Se2_Div3" class="Se2Div">
-                    <img src="./img/etc.jpg" alt="기타사진">
+                <div id="Info_Section2_Slide_Div">
+                    <!-- 첫번째 슬라이드 시작 -->
+                    <div id="Info_Slide1" class="Info_Slide">
+                        <img src="./img/blog.jpg" alt="blog사진" class="Info_slide1_float">
+                        <div id="Info_slide1_text" class="Info_slide1_float p-5">
+                            <p><span class="BigText">BLOG</span> 메뉴는 summernote를 이용한 게시글 작성 및 공유할 수 있는 공간입니다.<br/>
+                                로그인 후 누구나 자유롭게 게시글을 작성할 수 있으며 게시글을 만드는데 필요한 기술들을 테스트하고 있습니다.</p>
+                            <hr>
+                            <h5>업데이트 내용</h5>
+                            <ul id="info_slide1_ul">
+                                <li>2022-03-26 Info에 메뉴 소개 </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 첫번째 슬라이드 끝 -->
+                    <!-- 두번째 슬라이드 시작 -->
+                    <div id="Info_Slide2" class="Info_Slide">
+                        <img src="./img/picture.jpg" alt="picture사진" class="Info_slide2_float">
+                        <div id="Info_slide2_text" class="Info_slide2_float p-5">
+                            <p><span class="BigText">PICTURE</span> 메뉴는 저작권 침해가 없는 사진 또는 그림들을 공유하고 다운받을 수 있는 공간입니다.<br/>
+                                로그인 후 누구나 자유롭게 사진을 업로드나 다운로드 할 수 있으며 사진 메뉴의 필요한 기술들을 테스트 하고 있습니다.</p>
+                            <hr>
+                            <h5>업데이트 내용</h5>
+                            <ul id="info_slide2_ul">
+                                <li>2022-03-26 Info에 메뉴 소개 </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 두번째 슬라이드 끝 -->
+                    <!-- 세번째 슬라이드 시작 -->
+                    <div id="Info_Slide3" class="Info_Slide">
+                        <img src="./img/etc.jpg" alt="etc사진" class="Info_slide3_float">
+                        <div id="Info_slide3_text" class="Info_slide3_float p-5">
+                            <p><span class="BigText">ETC</span> 메뉴는 주제를 정하지 않고 여러 기술들을 테스트 하는 공간입니다.<br/>
+                                주제를 정하지 않고 만들다 보니 언제든지 삭제될 수 있음을 알려드립니다.</p>
+                            <hr>
+                            <h5>업데이트 내용</h5>
+                            <ul id="info_slide3_ul">
+                                <li>2022-03-26 Info에 메뉴 소개 </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 세번째 슬라이드 끝 -->
                 </div>
             </div>
         </div>
