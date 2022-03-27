@@ -137,7 +137,7 @@ html::-webkit-scrollbar{
         height: 5px;
         text-align: center;
         background-color: #fff;
-        transition: all 2s;
+        /* transition: all 2s; */
         /* display: none; */
     }
 
