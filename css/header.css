@@ -54,3 +54,26 @@ nav{
     text-decoration: none;
     color: #000;
 }
+@media screen and (min-width:768px) and (max-width:1200px) { 
+
+
+
+}
+@media screen and (max-width:767px) { 
+    header{
+        position: fixed !important;
+        top: 0;
+        width: 100vw;
+        height: 60px;
+        background-color: #AD8B73;
+        /* background-color: rgba(0, 0, 0, 0.7); */
+        /* background-color: #fff; */
+        /* border-bottom: 1px solid gray; */
+        /* color: #fff !important; */
+        /* opacity: 0.5; */
+        /* border: 1px solid #000; */
+        font-family: 'Oswald', sans-serif !important;
+        z-index: 1;
+    }
+
+}
