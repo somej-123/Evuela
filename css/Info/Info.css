@@ -1,11 +1,11 @@
 #Info_Section1{
     position: relative;
     /* width: 100vw; */
-    /* background-color: #000; */
+    background-color: #fff;
 }
 #Info_Section1_Container{
-    margin-top: 150px;
-    margin-bottom: 70px;
+    padding-top: 150px;
+    padding-bottom: 70px;
 }
 #HeadlineText{
     text-align: center;
@@ -46,8 +46,14 @@
 
 /* 두번째 영역 */
 #Info_Section2{
-    background-color: #E5E3C9;
+    /* background-color: #E5E3C9; */
+    background-color: #E7DFD5;
     /* height: 500px; */
+}
+#Info_Section2::after{
+    display: block;
+    content: "";
+    position: relative;
 }
 #Info_Section2_title{
     text-align: center;
@@ -147,39 +153,9 @@
     font-family: 'Oswald', sans-serif !important;
 }
 
-/* #Info_Section2_Contents_ul{
-    width: 100%;
-    display: flex;
-    padding: 0 5%;
-    margin: 0;
-    justify-content: center;
-}
-#Info_Section2_Contents_ul li{
-    width: 30%;
-    margin: 0 1%;
-    display: inline-block;
-}
-#Info_Section2_Contents_ul li img{
-    width: 100%;
-    height: 100%;
-}*/
 
 @media screen and (min-width:768px) and (max-width:1200px) { 
-    /* .Info_Slide{
-        width: 33.33%;
-        height: 100%;
-        float: left;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        flex-direction: column;
-    }
-    .Info_Slide img{
-        width: 100%;
-    }
-    .Info_slide1_float{
-        width: 100%;
-    } */
+
 }
 @media screen and (max-width:767px) { 
     #Info_HeadlineDiv{
@@ -201,6 +177,12 @@
         width: 100%;
     }
     .Info_slide1_float{
+        width: 100%;
+    }
+    .Info_slide2_float{
+        width: 100%;
+    }
+    .Info_slide3_float{
         width: 100%;
     }
 }
