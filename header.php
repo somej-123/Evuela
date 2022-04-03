@@ -8,7 +8,7 @@
         <nav class="container">
             <div class="row" style="height: 100%;">
                 <div class="col-3" id="navTitle">
-                    <h1><a href="./index">EVUELA</a></h1>
+                    <h1><a href="./">EVUELA</a></h1>
                 </div>
                 <div class="col-9" id="navMenu">
                     <ul id="navMenuUl">
