@@ -118,7 +118,7 @@ html::-webkit-scrollbar{
 
 
  }
-@media screen and (max-width:767px) { 
+@media screen and (min-width:421px) and (max-width:767px) { 
 
     #headerContainer{
         position: absolute;
@@ -170,3 +170,62 @@ html::-webkit-scrollbar{
     }
 
  }
+
+ @media screen and (max-width:420px) { 
+
+    #headerContainer{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        height: 200px;
+        transition: all 2s;
+    }
+
+    #lineEffectLine{
+        
+        /* margin-top: 15px; */
+        margin: 15px auto;
+        height: 5px;
+        width: 90%;
+        text-align: center;
+        background-color: #fff;
+        /* transition: all 2s; */
+        /* display: none; */
+    }
+
+    #navMenuUl{
+        list-style: none;
+        width: 100%;
+        padding: 0;
+        /* display: inline-block; */
+    }
+
+    #navMenu{
+        position: absolute;
+        /* width: 100%; */
+        /* border: 1px solid black; */
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        /* top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%); */
+    }
+    #navMenuUl li{
+        display: inline-block;
+        /* border: 1px solid #fff; */
+        font-size: 10px;
+        color: #fff;
+        margin: 2vw 1.5vw;
+        font-family: 'Oswald', sans-serif !important;
+    }
+    #navMenuUl li h4{
+        /* display: none; */
+        cursor: pointer;
+        font-size: 18px;
+        /* opacity: 0.7; */
+    }
+}
