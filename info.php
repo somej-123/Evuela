@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 공통부분 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -12,69 +14,22 @@
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link href="./css/header.css" rel="stylesheet"/>
-    <link href="./css/footer.css" rel="stylesheet"/>
+    <!-- 공통부분 끝 -->
+    
+    <!-- info css,js 경로 -->
     <link href="./css/Info/Info.css" rel="stylesheet"/>
     <script src="./js/Info/info.js"></script>
-    <script src="./js/header.js"></script>
+    <!-- info css,js 경로 끝-->
+
     <title>EVUELA::INFO</title>
 </head>
 <body>
-    <!-- common Header -->
-    <header>
-        <nav class="container">
-            <div class="row" style="height: 100%;">
-                <div class="col-3" id="navTitle">
-                    <h1><a href="./index.html">EVUELA</a></h1>
-                </div>
-                <div class="col-9" id="navMenu">
-                    <ul id="navMenuUl">
-                        <li>
-                            <h5><a href="./info.html">INFO</a></h5>
-                        </li>
-                        <li>
-                            <h5><a href="#">BLOG</a></h5>
-                        </li>
-                        <li>
-                            <h5><a href="#">PICTURE</a></h5>
-                        </li>
-                        <li>
-                            <h5><a href="#">ETC</a></h5>
-                        </li>
-                        <li>
-                            <h5><a href="#">LOGIN</a></h5>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-9" id="mobile_navMenuDiv">
-                    <div id="mobile_navMenuToggleBtn" class="pe-3">
-                        <i class="fas fa-2x fa-bars"></i>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <div id="mobile_navMenu">
-            <ul>
-                <li>
-                    <h5><a href="./info.html">INFO</a></h5>
-                </li>
-                <li>
-                    <h5><a href="#">BLOG</a></h5>
-                </li>
-                <li>
-                    <h5><a href="#">PICTURE</a></h5>
-                </li>
-                <li>
-                    <h5><a href="#">ETC</a></h5>
-                </li>
-                <li>
-                    <h5><a href="#">LOGIN</a></h5>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <!-- common Header end -->
 
+    <!-- 헤더 시작 -->
+    <?php 
+        include_once("./header.php");
+    ?>
+    <!-- 헤더 끝 -->
 
 
     <!-- 첫번째 구역 -->
@@ -191,29 +146,11 @@
     </section>
     <!-- 두번째 구역 끝-->
 
-    <footer>
-        <!-- <img src="./img/footerBackground.png" id="footerBackgroundImg">
-        <img src="./img/.png" id="footerBackgroundImg_Mobile"> -->
-        <div id="footerContents">
-            <div class="container">
-                <div class="col-12 row pt-3 pb-3" id="footer_SNSConnect_Div">
-                    <div class="col-4 footer_SNSConnect">
-                        <a href="https://www.instagram.com/_woohyen/"><i class="fab fa-3x fa-instagram-square"></i></a>
-                    </div>
-                    <div class="col-4 footer_SNSConnect">
-                        <a href="https://www.youtube.com/channel/UCHIbVfYuGkWPzdYiCRlArpg"><i class="fab fa-3x fa-youtube"></i></a>
-                    </div>
-                    <div class="col-4 footer_SNSConnect">
-                        <a href="mailto:wkdalxpfl12@gmail.com"><i class="fas fa-3x fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="col-12 row pt-5 pb-5" id="footer_Copyright_Div">
-                    <p class="col-4">Copyright 2022. EVUELA. All right reserved.</p>
-                    <p class="col-4">CONTACT 010-62**-64**</p>
-                    <p class="col-4" style="font-weight:bold">※해당 웹 사이트는 언제든지 없어질 수 있습니다.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- footer 시작 -->
+    <?php 
+        include_once("./footer.php");
+    ?>
+    <!-- footer 끝 -->
+
 </body>
 </html>
