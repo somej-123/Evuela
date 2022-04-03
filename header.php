@@ -8,12 +8,12 @@
         <nav class="container">
             <div class="row" style="height: 100%;">
                 <div class="col-3" id="navTitle">
-                    <h1><a href="./index.php">EVUELA</a></h1>
+                    <h1><a href="./index">EVUELA</a></h1>
                 </div>
                 <div class="col-9" id="navMenu">
                     <ul id="navMenuUl">
                         <li>
-                            <h5><a href="./info.php">INFO</a></h5>
+                            <h5><a href="./info">INFO</a></h5>
                         </li>
                         <li>
                             <h5><a href="#">BLOG</a></h5>
@@ -39,7 +39,7 @@
         <div id="mobile_navMenu">
             <ul>
                 <li>
-                    <h5><a href="./info.php">INFO</a></h5>
+                    <h5><a href="./info">INFO</a></h5>
                 </li>
                 <li>
                     <h5><a href="#">BLOG</a></h5>
