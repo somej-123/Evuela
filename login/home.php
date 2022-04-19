@@ -11,9 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link href="./index/css/main.css" rel="stylesheet"/>
-    <script src="./index/js/main.js"></script>
-    <title>EVUELA</title>
+    <link href="./css/main.css" rel="stylesheet"/>
+    <script src="./js/main.js"></script>
+    <title>EVUELA::LOGIN</title>
 </head>
 <body>
 
@@ -37,18 +37,24 @@
         </div>
 
         <div class="container" id="headerContainer">
-            <div id="headerText">
-                <h1 id="headerTitle">EVUELA</h1>
-                <h5 id="headerContents">I find peace in the rain</h5>
+            <!-- login box -->
+            <div id="LoginDiv">
+
+                <h1><a href="../">EVUELA</a></h1>
+                <form action="" method="post">
+                    <ul id="LoginDivUl">
+                        <li>
+                            <input type="text" name="user_id" id="user_id" required autocomplete="off" placeholder="ID"/>
+                        </li>
+                        <li>
+                            <input type="password" name="user_password" id="user_password" required autocomplete="off" placeholder="Password"/>
+                        </li>
+                        <li>
+                            <button type="submit" id="login_btn" class="btn btn-outline-secondary btn-lg">LOGIN</button>
+                        </li>
+                    </ul>
+                </form>
             </div>
-            <div id="lineEffect">
-                <div id="lineEffectLine"></div>
-                <div id="lineEffectText">
-                    <!-- <span id="arrowText"> Welcome to EVUELA　</span><i class="fas fa-cloud-rain fa-lg"></i> -->
-                    <h5>View more info</h5>
-                </div>
-            </div>
-            
         </div>
 
         <nav class="container" id="navMenu">

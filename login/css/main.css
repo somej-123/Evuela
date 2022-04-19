@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* 헤더 영역 */
+html::-webkit-scrollbar{
+    display: none;
+}
+#Background_Effect{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    /* background-color: #000;
+    opacity: 1;    */
+}
+#BackgroundImg{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/background_1920px.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* opacity: 0.7; */
+    overflow: hidden;
+}
+
+#headerContainer{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    height: 200px;
+}
+
+/* 로그인 박스 영역 */
+#LoginDiv{
+    /* border: 1px solid #fff; */
+    text-align: center;
+    font-family: 'Oswald', sans-serif !important;
+}
+#LoginDiv h1{
+    margin-bottom: 1.5rem !important;
+}
+#LoginDiv a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 5rem !important;
+}
+#LoginDivUl{
+    width: 50%;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    list-style: none;
+}
+#LoginDivUl li{
+    margin: 25px auto !important;
+    width: 50%;
+}
+#LoginDivUl li input{
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    outline: none;
+}
+#login_btn{
+    border-color: #fff;
+    color: #fff;
+    width: 100% !important;
+}
+#login_btn:hover{
+    border-color: #6c757d;
+}
+
+
+#LoginDivUl li input::placeholder{
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 네비게이션 영역 */
+
+#navMenu{
+    position: absolute;
+    /* width: 100%; */
+    /* border: 1px solid black; */
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: right;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+}
+
+#navMenuUl{
+    list-style: none;
+    width: 100%;
+    /* display: inline-block; */
+}
+#navMenuUl li{
+    display: inline-block;
+    /* border: 1px solid #fff; */
+    color: #fff;
+    margin: 1vw 2vw;
+    font-family: 'Oswald', sans-serif !important;
+}
+#navMenuUl li h4{
+    /* display: none; */
+    cursor: pointer;
+    /* opacity: 0.7; */
+}
+.navMenuText{
+    opacity: 0.7;
+}
+.navMenuText:hover{
+    opacity: 1;
+}
+
+/* 네비게이션 영역 끝 */
+/* 헤더 영역 끝 */
+/* PC헤더 영역 */
+
+
+
+@media screen and (min-width:768px) and (max-width:1200px) { 
+
+    #LoginDivUl{
+        width: 70%;
+    }
+    #LoginDivUl li{
+        width: 70%;
+    }
+
+ }
+@media screen and (min-width:421px) and (max-width:767px) { 
+
+    #headerContainer{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        height: 200px;
+        transition: all 2s;
+    }
+
+    #navMenuUl{
+        list-style: none;
+        width: 100%;
+        padding: 0;
+        /* display: inline-block; */
+    }
+
+    #LoginDivUl{
+        width: 70%;
+    }
+    #LoginDivUl li{
+        width: 70%;
+    }
+
+    #navMenu{
+        position: absolute;
+        /* width: 100%; */
+        /* border: 1px solid black; */
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        /* top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%); */
+    }
+
+    #navMenuUl li{
+        display: inline-block;
+        /* border: 1px solid #fff; */
+        color: #fff;
+        margin: 2vw 3vw;
+        font-family: 'Oswald', sans-serif !important;
+    }
+    
+
+ }
+
+ @media screen and (max-width:420px) { 
+     
+
+    #headerContainer{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        height: 200px;
+        transition: all 2s;
+    }
+
+    #LoginDivUl{
+        width: 90%;
+    }
+    #LoginDivUl li{
+        width: 90%;
+    }
+    #LoginDivUl li input{
+        width: 100%;
+    }
+
+    #navMenuUl{
+        list-style: none;
+        width: 100%;
+        padding: 0;
+        /* display: inline-block; */
+    }
+
+    #navMenu{
+        position: absolute;
+        /* width: 100%; */
+        /* border: 1px solid black; */
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        /* top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%); */
+    }
+    #navMenuUl li{
+        display: inline-block;
+        /* border: 1px solid #fff; */
+        font-size: 10px;
+        color: #fff;
+        margin: 2vw 1.5vw;
+        font-family: 'Oswald', sans-serif !important;
+    }
+    #navMenuUl li h4{
+        /* display: none; */
+        cursor: pointer;
+        font-size: 18px;
+        /* opacity: 0.7; */
+    }
+}

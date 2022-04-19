@@ -17,8 +17,8 @@
     <!-- 공통부분 끝 -->
     
     <!-- info css,js 경로 -->
-    <link href="./css/Info/Info.css" rel="stylesheet"/>
-    <script src="./js/Info/info.js"></script>
+    <link href="./css/main.css" rel="stylesheet"/>
+    <script src="./js/main.js"></script>
     <!-- info css,js 경로 끝-->
 
     <title>EVUELA::INFO</title>
