@@ -5,10 +5,7 @@ session_start();
 class dbConf{
 
     public function dbConnect(){
-        $host = "localhost";
-        $user = "somej";
-        $pw = "woojungho950217!";
-        $dbName = "somej";
+
         
         $connect = mysqli_connect($host, $user, $pw, $dbName);
 
