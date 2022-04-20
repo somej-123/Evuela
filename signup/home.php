@@ -13,7 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet"/>
     <script src="./js/main.js"></script>
-    <title>EVUELA::LOGIN</title>
+    <title>EVUELA::SIGN UP</title>
 </head>
 <body>
 
@@ -38,22 +38,33 @@
 
         <div class="container" id="headerContainer">
             <!-- login box -->
-            <div id="LoginDiv">
+            <div id="signupDiv">
 
-                <h1><a href="../">EVUELA</a></h1>
+                <h3>WELCOME TO EVUELA</h3>
                 <form action="" method="post">
-                    <ul id="LoginDivUl">
+                    <ul id="sighupDivUl">
                         <li>
-                            <input type="text" name="user_id" id="user_id" required autocomplete="off" placeholder="ID"/>
+                            <label for="user_id">ID</label>
+                            <input type="text" name="user_id" id="user_id" required autocomplete="off" placeholder="영문자 또는 숫자 6~20자"/>
                         </li>
                         <li>
-                            <input type="password" name="user_password" id="user_password" required autocomplete="off" placeholder="Password"/>
+                            <label for="user_password">PASSWORD　<span><i class="fas fa-eye"></i></span></label>
+                            <input type="password" name="user_password" id="user_password" required autocomplete="off" placeholder="6 ~ 12자 영문, 숫자, 특수문자를 최소 한가지씩 조합"/>
                         </li>
                         <li>
-                            <button type="submit" id="login_btn" class="btn btn-outline-secondary btn-lg">LOGIN</button>
+                            <label for="user_passwordCheck">CONFIRM PASSWORD　<span><i class="fas fa-eye"></i></span></label>
+                            <input type="password" name="user_password" id="user_password" required autocomplete="off" placeholder="동일한 Password를 입력해주세요"/>
                         </li>
                         <li>
-                            <h5><a href="../signup/home">Create an account</a></h5>
+                            <label for="user_name">NAME</label>
+                            <input type="text" name="user_name" id="user_name" required autocomplete="off" placeholder=""/>
+                        </li>
+                        <li>
+                            <label for="user_email">EMAIL</label>
+                            <input type="email" name="user_email" id="user_email" required autocomplete="off" placeholder="유효한 email을 적어주세요"/>
+                        </li>
+                        <li>
+                            <button type="submit" id="signup_btn" class="btn btn-outline-secondary btn-lg">SIGN UP</button>
                         </li>
                     </ul>
                 </form>

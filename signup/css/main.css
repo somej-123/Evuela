@@ -29,42 +29,37 @@ html::-webkit-scrollbar{
 #headerContainer{
     position: absolute;
     left: 50%;
-    top: 45%;
+    top: 38%;
     transform: translate(-50%, -50%);
     text-align: left;
     height: 200px;
 }
 
 /* 로그인 박스 영역 */
-#LoginDiv{
+#signupDiv{
     /* border: 1px solid #fff; */
     text-align: center;
     font-family: 'Oswald', sans-serif !important;
 }
-#LoginDiv h1{
+#signupDiv h3{
     margin-bottom: 1.5rem !important;
-}
-#LoginDiv h1 a{
     color: #fff;
-    text-decoration: none;
-    font-size: 5rem !important;
 }
-#LoginDiv h5 a{
-    color: #fff;
-    text-decoration: none;
-    /* font-size: 5rem !important; */
-}
-#LoginDivUl{
+#sighupDivUl{
     width: 50%;
     margin: 0 auto !important;
     padding: 0 !important;
     list-style: none;
 }
-#LoginDivUl li{
+#sighupDivUl li{
+    text-align: left;
     margin: 25px auto !important;
     width: 50%;
 }
-#LoginDivUl li input{
+#sighupDivUl label{
+    color: #fff;
+}
+#sighupDivUl li input{
     width: 100%;
     background: none;
     border: none;
@@ -73,7 +68,7 @@ html::-webkit-scrollbar{
     outline: none;
 }
 /* 자동 완성 기능에 색상 변경 */
-#LoginDivUl li input:-webkit-autofill,
+#sighupDivUl li input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
     input:-webkit-autofill:active {
@@ -83,18 +78,19 @@ html::-webkit-scrollbar{
      -webkit-text-fill-color: #fff !important;
      font-family: 'Oswald', sans-serif !important;
    }
-#login_btn{
+#signup_btn{
     border-color: #fff;
     color: #fff;
     width: 100% !important;
 }
-#login_btn:hover{
+#signup_btn:hover{
     border-color: #6c757d;
 }
 
 
-#LoginDivUl li input::placeholder{
-    color: rgba(255, 255, 255, 0.8);
+#sighupDivUl li input::placeholder{
+    color: rgba(255, 255, 255);
+    font-size: 14px !important;
 }
 
 /* 네비게이션 영역 */
@@ -144,10 +140,10 @@ html::-webkit-scrollbar{
 
 @media screen and (min-width:768px) and (max-width:1200px) { 
 
-    #LoginDivUl{
+    #sighupDivUl{
         width: 70%;
     }
-    #LoginDivUl li{
+    #sighupDivUl li{
         width: 70%;
     }
 
@@ -157,7 +153,7 @@ html::-webkit-scrollbar{
     #headerContainer{
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 38%;
         transform: translate(-50%, -50%);
         text-align: center;
         height: 200px;
@@ -171,10 +167,10 @@ html::-webkit-scrollbar{
         /* display: inline-block; */
     }
 
-    #LoginDivUl{
+    #sighupDivUl{
         width: 70%;
     }
-    #LoginDivUl li{
+    #sighupDivUl li{
         width: 70%;
     }
 
@@ -208,20 +204,20 @@ html::-webkit-scrollbar{
     #headerContainer{
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 38%;
         transform: translate(-50%, -50%);
         text-align: center;
         height: 200px;
         transition: all 2s;
     }
 
-    #LoginDivUl{
+    #sighupDivUl{
         width: 90%;
     }
-    #LoginDivUl li{
+    #sighupDivUl li{
         width: 90%;
     }
-    #LoginDivUl li input{
+    #sighupDivUl li input{
         width: 100%;
     }
 
