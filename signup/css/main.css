@@ -29,15 +29,17 @@ html::-webkit-scrollbar{
 #headerContainer{
     position: absolute;
     left: 50%;
-    top: 38%;
+    top: 50%;
     transform: translate(-50%, -50%);
     text-align: left;
-    height: 200px;
+    /* height: 200px; */
 }
 
 /* 로그인 박스 영역 */
 #signupDiv{
     /* border: 1px solid #fff; */
+
+    padding: 20px 0px;
     text-align: center;
     font-family: 'Oswald', sans-serif !important;
 }
@@ -153,10 +155,10 @@ html::-webkit-scrollbar{
     #headerContainer{
         position: absolute;
         left: 50%;
-        top: 38%;
+        top: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        height: 200px;
+        /* height: 200px; */
         transition: all 2s;
     }
 
@@ -204,10 +206,10 @@ html::-webkit-scrollbar{
     #headerContainer{
         position: absolute;
         left: 50%;
-        top: 38%;
+        top: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        height: 200px;
+        /* height: 200px; */
         transition: all 2s;
     }
 

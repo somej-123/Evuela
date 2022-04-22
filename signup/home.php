@@ -13,7 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet"/>
     <script src="./js/main.js"></script>
-    <title>EVUELA::SIGN UP</title>
+    <title>EVUELA::SIGNUP</title>
 </head>
 <body>
 
@@ -57,7 +57,7 @@
                         </li>
                         <li>
                             <label for="user_name">NAME</label>
-                            <input type="text" name="user_name" id="user_name" required autocomplete="off" placeholder=""/>
+                            <input type="text" name="user_name" id="user_name" required autocomplete="off" placeholder="한글 이름을 기재해주세요"/>
                         </li>
                         <li>
                             <label for="user_email">EMAIL</label>
