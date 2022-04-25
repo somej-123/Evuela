@@ -2,6 +2,13 @@
 
 session_start();
 
+if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
+    exit("<script>
+        alert('잘못된 접근 경로 입니다.')
+        location.href='../'
+        </script>");
+}else{
+
 class dbConf{
 
     public function dbConnect(){
@@ -25,7 +32,8 @@ function DBQuery($query,$queryType){
         $result = mysqli_query($conn, $query);
 
         while($row = mysqli_fetch_array($result)){
-            return var_dump($row);
+            // return var_dump($row);
+            return $row;
         }
 
     }
@@ -34,9 +42,11 @@ function DBQuery($query,$queryType){
         $result = mysqli_query($conn, $query);
 
         if($result){
-            return var_dump("성공적으로 등록이 완료됐습니다");
+            // return var_dump("성공적으로 등록이 완료됐습니다");
+            return $result;
         }else{
-            return var_dump("등록이 실패됐습니다");
+            // return var_dump("등록이 실패됐습니다");
+            return $result;
         }
 
     }
@@ -44,11 +54,26 @@ function DBQuery($query,$queryType){
     else if($queryType == "update"){
         $result = mysqli_query($conn, $query);
 
+        if($result){
+            // return var_dump("성공적으로 등록이 완료됐습니다");
+            return $result;
+        }else{
+            // return var_dump("등록이 실패됐습니다");
+            return $result;
+        }
+
     }
     // delete문
     else if($queryType == "delete"){
         $result = mysqli_query($conn, $query);
 
+        if($result){
+            // return var_dump("성공적으로 등록이 완료됐습니다");
+            return $result;
+        }else{
+            // return var_dump("등록이 실패됐습니다");
+            return $result;
+        }
     }
 }
 
@@ -58,6 +83,6 @@ function DBQuery($query,$queryType){
 // VALUES('somej','abcd','test123','test@gamil.com',2,NOW(),NOW());";
 // DBQuery($sqlQeury,"insert")
 
-
+}
 
 ?>

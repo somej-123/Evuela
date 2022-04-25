@@ -1,3 +1,7 @@
+<?php
+    require_once "../dbconnect.php";
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="./css/main.css" rel="stylesheet"/>
     <script src="./js/main.js"></script>
     <title>EVUELA::SIGNUP</title>
@@ -45,26 +50,33 @@
                     <ul id="sighupDivUl">
                         <li>
                             <label for="user_id">ID</label>
-                            <input type="text" name="user_id" id="user_id" required autocomplete="off" placeholder="영문자 또는 숫자 6~20자"/>
+                            <input type="text" name="user_id" id="user_id" required autocomplete="off" onKeyup="signCheck_ID(this.value)" maxlength="12" placeholder="5~12자의 영문, 숫자" />
+                            <span class="IDInfo IDCss" id="availableID">사용 가능한 ID입니다</span>
+                            <span class="IDInfo2 IDCss" id="alreadyUsedID">이미 존재하는 ID입니다</span>
+                            <span class="IDInfo2 IDCss" id="moreCharactersID">5자 이상 입력해주세요</span>
+                            <!-- oninvalid="this.setCustomValidity('ID를 입력해주세요')" -->
                         </li>
                         <li>
-                            <label for="user_password">PASSWORD　<span><i class="fas fa-eye"></i></span></label>
-                            <input type="password" name="user_password" id="user_password" required autocomplete="off" placeholder="6 ~ 12자 영문, 숫자, 특수문자를 최소 한가지씩 조합"/>
+                            <label for="user_password">PASSWORD　<span id="user_password_show_btn" class="user_password_show" onclick="chagePasswordType($(this))"><i id="user_password_show_icon" class="fas fa-eye"></i></span></label>
+                            <input type="password" name="user_password" id="user_password" required autocomplete="off" onKeyup="signCheck_Password(this.value)" maxlength="18" placeholder="6 ~ 18자 영문, 숫자, 특수문자를 최소 한가지씩 조합"/>
+                            <span class="passwordInfo passwordCss" id="availablePassword">사용 가능한 비밀번호 입니다</span>
+                            <span class="passwordInfo2 passwordCss" id="notAvaliablePassword">사용 불가능한 비밀번호 입니다</span>
+                            <span class="passwordInfo2 passwordCss" id="moreCharactersPassword">8글자 이상 작성해주세요</span>
                         </li>
                         <li>
                             <label for="user_passwordCheck">CONFIRM PASSWORD　<span><i class="fas fa-eye"></i></span></label>
-                            <input type="password" name="user_password" id="user_password" required autocomplete="off" placeholder="동일한 Password를 입력해주세요"/>
+                            <input type="password" name="Se_user_password" id="Se_user_password" required autocomplete="off" onKeydown="signCheck_Password(this.value)" placeholder="동일한 Password를 입력해주세요"/>
                         </li>
                         <li>
                             <label for="user_name">NAME</label>
-                            <input type="text" name="user_name" id="user_name" required autocomplete="off" placeholder="한글 이름을 기재해주세요"/>
+                            <input type="text" name="user_name" id="user_name" autocomplete="off" placeholder="한글 이름을 기재해주세요"/>
                         </li>
                         <li>
                             <label for="user_email">EMAIL</label>
                             <input type="email" name="user_email" id="user_email" required autocomplete="off" placeholder="유효한 email을 적어주세요"/>
                         </li>
                         <li>
-                            <button type="submit" id="signup_btn" class="btn btn-outline-secondary btn-lg">SIGN UP</button>
+                            <button type="button" id="signup_btn" class="btn btn-outline-secondary btn-lg">SIGN UP</button>
                         </li>
                     </ul>
                 </form>
