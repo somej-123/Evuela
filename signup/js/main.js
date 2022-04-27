@@ -114,6 +114,7 @@ function signCheck_ID(value){
 }
 
 function signCheck_Password(value){
+    passwordCheck = false;
     const regPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,18}$/
     const regKor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
     const regSpace = /\s/g;
