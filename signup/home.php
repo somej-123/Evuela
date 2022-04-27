@@ -47,7 +47,7 @@
 
                 <h3>WELCOME TO EVUELA</h3>
                 <form action="" method="post">
-                    <ul id="sighupDivUl">
+                    <ul id="signupDivUl">
                         <li>
                             <label for="user_id">ID</label>
                             <input type="text" name="user_id" id="user_id" required autocomplete="off" onKeyup="signCheck_ID(this.value)" maxlength="12" placeholder="5~12자의 영문, 숫자" />
@@ -57,26 +57,25 @@
                             <!-- oninvalid="this.setCustomValidity('ID를 입력해주세요')" -->
                         </li>
                         <li>
-                            <label for="user_password">PASSWORD　<span id="user_password_show_btn" class="user_password_show" onclick="chagePasswordType($(this))"><i id="user_password_show_icon" class="fas fa-eye"></i></span></label>
+                            <label for="user_password">PASSWORD　<span id="user_password_show_btn" class="user_password_show" onclick="changePasswordType($(this))"><i id="user_password_show_icon" class="fas fa-eye"></i></span></label>
                             <input type="password" name="user_password" id="user_password" required autocomplete="off" onKeyup="signCheck_Password(this.value)" maxlength="18" placeholder="6 ~ 18자 영문, 숫자, 특수문자를 최소 한가지씩 조합"/>
                             <span class="passwordInfo passwordCss" id="availablePassword">사용 가능한 비밀번호 입니다</span>
                             <span class="passwordInfo2 passwordCss" id="notAvaliablePassword">사용 불가능한 비밀번호 입니다</span>
-                            <span class="passwordInfo2 passwordCss" id="moreCharactersPassword">8글자 이상 작성해주세요</span>
+                            <span class="passwordInfo2 passwordCss" id="moreCharactersPassword">6글자 이상 작성해주세요</span>
                         </li>
                         <li>
-                            <label for="user_passwordCheck">CONFIRM PASSWORD　<span><i class="fas fa-eye"></i></span></label>
-                            <input type="password" name="Se_user_password" id="Se_user_password" required autocomplete="off" onKeydown="signCheck_Password(this.value)" placeholder="동일한 Password를 입력해주세요"/>
-                        </li>
-                        <li>
-                            <label for="user_name">NAME</label>
-                            <input type="text" name="user_name" id="user_name" autocomplete="off" placeholder="한글 이름을 기재해주세요"/>
+                            <label for="user_passwordCheck">CONFIRM PASSWORD　<span id="user_passwordCheck_show_btn" class="user_passwordCheck_show" onclick="changePasswordCheckType($(this))"><i id="user_passwordCheck_show_icon" class="fas fa-eye"></i></span></label>
+                            <input type="password" name="user_passwordCheck" id="user_passwordCheck" required autocomplete="off" onKeyup="signCheck_PasswordCheck(this.value)" placeholder="동일한 Password를 입력해주세요"/>
+                            <span class="passwordCheckInfo passwordCheckCss" id="samePassword">비밀번호가 동일합니다</span>
+                            <span class="passwordCheckInfo2 passwordCheckCss" id="unequalPassword">동일한 비밀번호를 입력해주세요</span>
                         </li>
                         <li>
                             <label for="user_email">EMAIL</label>
-                            <input type="email" name="user_email" id="user_email" required autocomplete="off" placeholder="유효한 email을 적어주세요"/>
+                            <input type="email" name="user_email" id="user_email" required autocomplete="off" onKeyup="signCheck_emailCheck(this.value)" placeholder="비밀번호 찾기에 사용됩니다."/>
+                            <span class="emailCheckInfo emailCheckCss" id="notAvailableEmail">이메일 형식이 아닙니다</span>
                         </li>
                         <li>
-                            <button type="button" id="signup_btn" class="btn btn-outline-secondary btn-lg">SIGN UP</button>
+                            <button type="button" id="signup_btn" onclick="CheckFormAfterSignUp();" class="btn btn-outline-secondary btn-lg">SIGN UP</button>
                         </li>
                     </ul>
                 </form>

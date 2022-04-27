@@ -159,7 +159,68 @@ function signCheck_Password(value){
     }
 }
 
-function chagePasswordType(value){
+function signCheck_PasswordCheck(value){
+
+    passwordCheck2 = false;
+
+    let password = $("#user_password").val();
+
+    const regPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,18}$/
+    const regKor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+    const regSpace = /\s/g;
+
+    if(regKor.test(value)){
+
+        showAlert("한글은 사용 할 수 없습니다.","error");
+        $("#user_passwordCheck").val("");
+        $("#user_password").css("border-color","#fff");
+        return;
+
+    }else if(regSpace.test(value)){
+
+        showAlert("띄어쓰기는 사용할 수 없습니다.","error");
+        $("#user_passwordCheck").val("");
+        $("#user_passwordCheck").css("border-color","#fff");
+        return;
+
+    }else if(value.length == 0){
+
+        $(".passwordCheckCss").css("display","none");
+        $("#user_passwordCheck").css("border-color","#fff");
+        return;
+
+    }else if(password != value){
+        $(".passwordCheckCss").css("display","none");
+        $("#unequalPassword").css("display","block");
+        $("#user_passwordCheck").css("border-color","rgb(253, 15, 15)");
+        return;
+
+    }else if(password == value){
+        $(".passwordCheckCss").css("display","none");
+        $("#samePassword").css("display","block");
+        $("#user_passwordCheck").css("border-color","rgb(0, 255, 0)");
+        passwordCheck2 = true;
+        return;
+    }
+}
+
+function signCheck_emailCheck(value){
+    emailCheck = false;
+    var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+    if(!regExp.test(value)){
+        $(".emailCheckCss").css("display","none");
+        $("#notAvailableEmail").css("display","block");
+        $("#user_email").css("border-color","rgb(253, 15, 15)");
+    }else{
+        $(".emailCheckCss").css("display","none");
+        $("#user_email").css("border-color","rgb(0, 255, 0)");
+        emailCheck = true;
+    }
+}
+
+
+function changePasswordType(value){
 
     var className = $(value).attr("class");
     
@@ -175,6 +236,54 @@ function chagePasswordType(value){
 
 }
 
+function changePasswordCheckType(value){
+
+    var className = $(value).attr("class");
+    
+    if(className == "user_passwordCheck_show"){
+        $("#user_passwordCheck").attr("type","text");
+        $("#user_passwordCheck_icon").attr("class","fas fa-eye-slash");
+        $("#user_passwordCheck_show_btn").attr("class","user_passwordCheck_noshow");
+    }else{
+        $("#user_passwordCheck").attr("type","password");
+        $("#user_passwordCheck_icon").attr("class","fas fa-eye");
+        $("#user_passwordCheck_show_btn").attr("class","user_passwordCheck_show");
+    }
+
+}
+
+function CheckFormAfterSignUp(){
+    var _userID = $("#user_id").val();
+    var _userPassword = $("#user_password").val();
+    var _userEmail = $("#user_email").val();
+
+    if(_userID == ""){
+        showAlert("ID를 입력해주세요","error");
+        return;
+    }else if(_userPassword == ""){
+        showAlert("password를 입력해주세요","error");
+        return;
+    }else if(_userEmail == ""){
+        showAlert("email를 입력해주세요","error");
+        return;
+    }else if(IDCheck == false){
+        showAlert("ID를 확인해주세요","error");
+        return;
+    }else if(passwordCheck == false){
+        showAlert("password를 확인해주세요","error");
+        return;
+    }else if(passwordCheck2 == false){
+        showAlert("동일한 password를 입력했는지 확인해주세요","error");
+        return;
+    }else if(emailCheck == false){
+        showAlert("email를 확인해주세요","error");
+        return;
+    }else if(_userID != "" && _userPassword != "" && _userEmail != "" && IDCheck == true && passwordCheck == true && passwordCheck2 == true && emailCheck == true){
+        showAlert("회원가입이 완료되었습니다.","success");
+        return;
+    }
+}
+
 function showAlert(alertText,alertType,alertTitle,alertFooter){
 
     if(alertType == "default"){
@@ -184,6 +293,15 @@ function showAlert(alertText,alertType,alertTitle,alertFooter){
     else if(alertType == "error"){
         Swal.fire({
             icon: 'error',
+            title: alertTitle,
+            text: alertText,
+            footer: alertFooter
+          })
+          return;
+    }
+    else if(alertType == "success"){
+        Swal.fire({
+            icon: 'success',
             title: alertTitle,
             text: alertText,
             footer: alertFooter
