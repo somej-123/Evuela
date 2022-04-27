@@ -243,11 +243,11 @@ function changePasswordCheckType(value){
     
     if(className == "user_passwordCheck_show"){
         $("#user_passwordCheck").attr("type","text");
-        $("#user_passwordCheck_icon").attr("class","fas fa-eye-slash");
+        $("#user_passwordCheck_show_icon").attr("class","fas fa-eye-slash");
         $("#user_passwordCheck_show_btn").attr("class","user_passwordCheck_noshow");
     }else{
         $("#user_passwordCheck").attr("type","password");
-        $("#user_passwordCheck_icon").attr("class","fas fa-eye");
+        $("#user_passwordCheck_show_icon").attr("class","fas fa-eye");
         $("#user_passwordCheck_show_btn").attr("class","user_passwordCheck_show");
     }
 
