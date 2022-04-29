@@ -280,7 +280,36 @@ function CheckFormAfterSignUp(){
         showAlert("email를 확인해주세요","error");
         return;
     }else if(_userID != "" && _userPassword != "" && _userEmail != "" && IDCheck == true && passwordCheck == true && passwordCheck2 == true && emailCheck == true){
-        showAlert("회원가입이 완료되었습니다.","success");
+        
+        $.ajax({
+            url:"./userSignup.php",
+            data:{
+                user_ID : _userID,
+                user_password : _userPassword,
+                user_email : _userEmail
+            },
+            method:"POST",
+            dataType:"json",
+        })
+        .done((data)=>{
+
+            if(data){
+                // console.log(data);
+                alert("회원가입이 완료되었습니다.\n로그인 페이지로 이동합니다.");
+                location.href="../login/home";
+                return;
+            }else{
+                // console.log(data);
+                showAlert("가입 양식에 오류가 있습니다.\n다시 확인해주세요.","error");
+                return;
+                // location.href="../login/home";
+            }
+        })
+        .fail((data)=>{
+            // alert("서버에 문제가 발생했습니다.\n다시 시도해주세요.");
+            showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.","error");
+        })
+        // showAlert("회원가입이 완료되었습니다.","success");
         return;
     }
 }
