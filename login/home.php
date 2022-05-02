@@ -2,6 +2,10 @@
 
 session_start();
 
+if(isset($_SESSION["signin"])){
+    echo "<script>alert('로그인중에는 로그인 페이지를 이용할 수 없습니다')</script>";
+    echo "<script>location.href='../'</script>";
+}
 ?>
 
 <!DOCTYPE html>

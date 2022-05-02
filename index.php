@@ -79,7 +79,7 @@ session_start();
                     <h4 id="navMenuLogin" class="navMenuText">LOGIN</h4>
                     <?php }
                     else{ ?>
-                    <h4 id="navMenuOptions" class="navMenuText"><?=$_SESSION['user_id']?>　<i id="navMenuOptionsIcon" class="fas fa-caret-down"></i></h4>
+                    <h4 id="navMenuOptions" class="navMenuText">MENU <i class="fas fa-caret-down"></i></h4>
                     <?php } ?>
                 </li>
             </ul>
