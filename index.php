@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -69,7 +75,12 @@
                     <h4 id="navMenuETC" class="navMenuText">ETC</h4>
                 </li>
                 <li>
+                    <?php if(!isset($_SESSION["signin"])){?>
                     <h4 id="navMenuLogin" class="navMenuText">LOGIN</h4>
+                    <?php }
+                    else{ ?>
+                    <h4 id="navMenuOptions" class="navMenuText"><?=$_SESSION['user_id']?>　<i id="navMenuOptionsIcon" class="fas fa-caret-down"></i></h4>
+                    <?php } ?>
                 </li>
             </ul>
         </nav>

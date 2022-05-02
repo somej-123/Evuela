@@ -8,31 +8,38 @@
 html::-webkit-scrollbar{
     display: none;
 }
-#Background_Effect{
-    position: absolute;
-    width: 100%;
+#PCHeader{
+    display: flex;
+    width: 100vw;
     height: 100vh;
-    /* background-color: #000;
-    opacity: 1;    */
+    min-height: 350px;
+    background-image: url(../img/background_1920px.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
-#BackgroundImg{
+/* #BackgroundImg{
     width: 100vw;
     height: 100vh;
     background-image: url(../img/background_1920px.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* opacity: 0.7; */
     overflow: hidden;
-}
+} */
 
 #headerContainer{
-    position: absolute;
-    left: 50%;
+    position: relative;
+    /* left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    text-align: left;
-    height: 200px;
+    text-align: left; */
+    /* height: 200px; */
 }
 #headerText{
     /* display: none; */
@@ -121,12 +128,12 @@ html::-webkit-scrollbar{
 @media screen and (min-width:421px) and (max-width:767px) { 
 
     #headerContainer{
-        position: absolute;
-        left: 50%;
+        position: relative;
+        /* left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); */
         text-align: center;
-        height: 200px;
+        /* height: 200px; */
         transition: all 2s;
     }
 
@@ -174,12 +181,12 @@ html::-webkit-scrollbar{
  @media screen and (max-width:420px) { 
 
     #headerContainer{
-        position: absolute;
-        left: 50%;
+        position: relative;
+        /* left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); */
         text-align: center;
-        height: 200px;
+        /* height: 200px; */
         transition: all 2s;
     }
 

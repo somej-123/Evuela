@@ -1,5 +1,7 @@
 <?php
-    require_once "../dbconnect.php";
+
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -36,10 +38,6 @@
         </div> -->
         <!-- video end -->
 
-
-        <div id="BackgroundImg">
-            <!-- <img src="./img/background_1920px.jpg"/> -->
-        </div>
 
         <div class="container" id="headerContainer">
             <!-- login box -->

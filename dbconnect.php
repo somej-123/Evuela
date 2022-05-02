@@ -77,11 +77,6 @@ function DBQuery($query,$queryType){
     }
 }
 
-// DBQuery("SELECT * FROM evuela_user","select");
-
-// $sqlQeury = "INSERT INTO evuela_user (user_id, user_password, user_name, user_email, user_level, user_regdate, user_update)
-// VALUES('somej','abcd','test123','test@gamil.com',2,NOW(),NOW());";
-// DBQuery($sqlQeury,"insert")
 
 }
 

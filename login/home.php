@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="./css/main.css" rel="stylesheet"/>
     <script src="./js/main.js"></script>
     <title>EVUELA::LOGIN</title>
@@ -31,11 +38,6 @@
         </div> -->
         <!-- video end -->
 
-
-        <div id="BackgroundImg">
-            <!-- <img src="./img/background_1920px.jpg"/> -->
-        </div>
-
         <div class="container" id="headerContainer">
             <!-- login box -->
             <div id="LoginDiv">
@@ -50,7 +52,7 @@
                             <input type="password" name="user_password" id="user_password" required autocomplete="off" placeholder="Password"/>
                         </li>
                         <li>
-                            <button type="submit" id="login_btn" class="btn btn-outline-secondary btn-lg">LOGIN</button>
+                            <button type="button" id="login_btn" onclick="signIn()" class="btn btn-outline-secondary btn-lg">LOGIN</button>
                         </li>
                         <li>
                             <h5><a href="../signup/home">Create an account</a></h5>
