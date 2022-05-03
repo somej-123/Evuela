@@ -1,6 +1,7 @@
 "use strict";
 
 var scrollEventFlag = 0;
+var menuSlide = true;
 
 $(document).ready(function(){
 
@@ -13,4 +14,24 @@ $(document).ready(function(){
     $("#lineEffectText").on("click",function(){
         $(location).attr("href", "../info/home")
     })
+
+    $("#navMenuOptions").on("click",()=>{
+        if(menuSlide){
+            $("#navMenuOptionsIcon").attr("class","fas fa-caret-up");
+            menuSlide = false;
+            $("#navMenuOptionsDiv").stop().slideDown();
+        }else{
+            $("#navMenuOptionsIcon").attr("class","fas fa-caret-down");
+            menuSlide = true;
+            $("#navMenuOptionsDiv").stop().slideUp();
+        }
+        
+    });
+
+    $("#logoutBtn").on("click",()=>{
+        $(location).attr("href", "../login/userSignout")
+    });
+    // $("#profileBtn").on("click",()=>{
+    //     $(location).attr("href","../profile/home")
+    // });
 })

@@ -24,9 +24,18 @@
                         <li>
                             <h5><a href="#">ETC</a></h5>
                         </li>
+                        <?php if(!isset($_SESSION['signin'])){?>
                         <li>
                             <h5><a href="../login/home">LOGIN</a></h5>
                         </li>
+                        <?php }else{?>
+                        <li>
+                            <h5><a href="../profile/home">PROFILE</a></h5>
+                        </li>
+                        <li>
+                            <h5><a href="../login/userSignout">LOGOUT</a></h5>
+                        </li>
+                        <?php }?>
                     </ul>
                 </div>
                 <div class="col-9" id="mobile_navMenuDiv">
@@ -50,9 +59,18 @@
                 <li>
                     <h5><a href="#">ETC</a></h5>
                 </li>
-                <li>
-                    <h5><a href="../login/home">LOGIN</a></h5>
-                </li>
+                <?php if(!isset($_SESSION['signin'])){?>
+                    <li>
+                        <h5><a href="../login/home">LOGIN</a></h5>
+                    </li>
+                    <?php }else{?>
+                    <li>
+                        <h5><a href="../profile/home">PROFILE</a></h5>
+                    </li>
+                    <li>
+                        <h5><a href="../login/userSignout">LOGOUT</a></h5>
+                    </li>
+                <?php }?>
             </ul>
         </div>
     </header>

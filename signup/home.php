@@ -78,7 +78,7 @@ if(isset($_SESSION["signin"])){
                             <span class="emailCheckInfo emailCheckCss" id="notAvailableEmail">이메일 형식이 아닙니다</span>
                         </li>
                         <li>
-                            <button type="button" id="signup_btn" onclick="CheckFormAfterSignUp();" class="btn btn-outline-secondary btn-lg">SIGN UP</button>
+                            <button type="button" id="signup_btn" onclick="CheckFormAfterSignUp();" class="btn btn-outline-secondary btn-lg">LOGIN</button>
                         </li>
                     </ul>
                 </form>
