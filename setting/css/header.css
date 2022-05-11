@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: 'NanumGothicLight';
+    font-family: 'NanumGothic';
+    font-family: 'NanumGothicBold';
+    font-family: 'NanumGothicExtraBold'; */
+}
+header{
+    position: fixed !important;
+    top: 0;
+    width: 100vw;
+    height: 80px;
+    background-color: #AD8B73;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    /* background-color: #fff; */
+    /* border-bottom: 1px solid gray; */
+    /* color: #fff !important; */
+    /* opacity: 0.5; */
+    /* border: 1px solid #000; */
+    font-family: 'Oswald', sans-serif !important;
+    z-index: 1;
+}
+nav{
+    width: 100vw;
+    height: 100%;
+}
+#navTitle{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#navTitle a{
+    text-decoration: none;
+    color: #000;
+}
+#navMenu{
+    text-align: right;
+}
+#navMenuUl{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#navMenuUl li{
+    display: inline-block;
+    margin: 0vw 2vw;
+}
+#navMenuUl a{
+    text-decoration: none;
+    color: #000;
+}
+#mobile_navMenuDiv{
+    display: none;
+}
+#mobile_navMenu{
+    display: none;
+}
+
+@media screen and (min-width:768px) and (max-width:1200px) { 
+
+
+
+}
+@media screen and (max-width:767px) { 
+    header{
+        position: fixed !important;
+        top: 0;
+        width: 100vw;
+        height: 60px;
+        background-color: #AD8B73;
+        /* background-color: rgba(0, 0, 0, 0.7); */
+        /* background-color: #fff; */
+        /* border-bottom: 1px solid gray; */
+        /* color: #fff !important; */
+        /* opacity: 0.5; */
+        /* border: 1px solid #000; */
+        font-family: 'Oswald', sans-serif !important;
+        z-index: 1;
+    }
+
+    #navMenu{
+        display: none;
+    }
+
+    #mobile_navMenuDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    #mobile_navMenuToggleBtn{
+        /* padding-right: 10px; */
+        cursor: pointer;
+    }
+    #mobile_navMenu{
+        display: none;
+        width: 100vw !important;
+        padding: 0;
+        border-top: 1px solid rgb(0, 0, 0);
+        border-bottom: 1px solid rgb(0, 0, 0);
+    }
+    #mobile_navMenu ul{
+        padding: 0px !important;
+        margin: 0px !important;
+        list-style: none;
+        text-align: center;
+        background-color: #AD8B73;
+    }
+    #mobile_navMenu li{
+        padding: 0.8rem 0;
+    }
+
+    #mobile_navMenu a{
+        text-decoration: none;
+        color: #000;
+    }
+
+}

@@ -6,13 +6,16 @@ var menuSlide = true;
 $(document).ready(function(){
 
     $("#navMenuInfo").on("click",function(){
-        $(location).attr("href", "../info/home")
+        $(location).attr("href", "../info/home");
     })
     $("#navMenuLogin").on("click",function(){
-        $(location).attr("href", "../login/home")
+        $(location).attr("href", "../login/home");
+    })
+    $("#profileBtn").on("click", function(){
+        $(location).attr("href", "../setting/home");
     })
     $("#lineEffectText").on("click",function(){
-        $(location).attr("href", "../info/home")
+        $(location).attr("href", "../info/home");
     })
 
     $("#navMenuOptions").on("click",()=>{

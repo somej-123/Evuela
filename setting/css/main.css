@@ -1,0 +1,111 @@
+#mainContainer{
+    margin-top: 80px;
+    font-family: 'NanumGothic';
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    /* height:500px; */
+    /* border:1px solid black; */
+}
+
+/* aside 메뉴 시작 */
+#settingMenu{
+    /* height:500px; */
+    /* border:1px solid black; */
+    padding: 15px;
+    /* background-color: #fff; */
+    /* text-align: center; */
+}
+
+#settingMenuTitle{
+    background-color: #E3CAA5;
+    padding: 5px;
+    border: 1px solid #AD8B73;
+    font-weight: bolder;
+    font-size: 16px !important;
+}
+#settingMenuTitleIcon{
+    float: right;
+}
+
+#userInfo_management{
+    background-color: #E3CAA5;
+    /* padding: 5px 0px 5px 5px; */
+    border: 1px solid #AD8B73;
+}
+
+#userInfo_management h5{
+    padding: 5px 5px 0px 5px;
+    font-weight: bolder;
+    font-size: 16px !important;
+    cursor: pointer;
+}
+
+#userInfo_management_menubarIcon{
+    float: right;
+}
+#userInfo_managementUl{
+    padding: 0;
+    list-style: none;
+    background-color: #FFFBE9;
+    margin: 0;
+}
+#userInfo_managementUl li{
+    padding: 10px;
+    font-size: 13px !important;
+    font-weight: bold;
+    color: gray;
+    cursor: pointer;
+}
+.userInfo_select{
+    color: #000 !important;
+}
+
+/* aside 메뉴 끝 */
+
+/* contents 시작 */
+#settingContents{
+    /* height:500px; */
+    padding: 15px;
+    /* border:1px solid black; */
+    /* background-color: #fff; */
+}
+#settingContents_title{
+    font-weight: bold;
+    font-size: 20px !important;
+    /* padding-bottom: 5px !important; */
+    /* border-bottom: 1px solid #AD8B73; */
+}
+#settingContents hr{
+    margin-top: 5px !important;
+}
+#settingContents_mainContentsDiv{
+    min-height: 600px;
+}
+.label_text{
+    font-weight: bold;
+}
+#setting_userEditBtn{
+    float: right;
+}
+/* contents 끝 */
+@media screen and (min-width:768px) and (max-width:1200px) { 
+
+}
+@media screen and (max-width:767px) {
+    /* 메인 컨테이너 margin 조정 */
+    #mainContainer{
+        margin-top: 60px !important;
+    }
+    /* 메인 컨테이너 margin 조정 끝*/
+    /* sideMenu 크기 조절 */
+    #settingMenu{
+        width: 100% !important;
+    }
+    /* sideMenu 크기 조절 끝 */
+
+    /* contents 크기 조절 */
+    #settingContents{
+        width: 100% !important;
+    }
+    /* contents 크기 조절 끝*/
+
+}
