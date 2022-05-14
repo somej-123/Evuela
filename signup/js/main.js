@@ -174,7 +174,7 @@ function signCheck_PasswordCheck(value){
 
         showAlert("한글은 사용 할 수 없습니다.","error");
         $("#user_passwordCheck").val("");
-        $("#user_password").css("border-color","#fff");
+        $("#user_passwordCheck").css("border-color","#fff");
         return;
 
     }else if(regSpace.test(value)){
@@ -258,6 +258,15 @@ function CheckFormAfterSignUp(){
     var _userPassword = $("#user_password").val();
     var _userEmail = $("#user_email").val();
 
+    const regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+    const regPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,18}$/
+
+    if(!regEmail.test(_userEmail)){
+        emailCheck = false;
+    }else if(!regPassword.test(_userPassword)){
+        passwordCheck = false;
+    }
+
     if(_userID == ""){
         showAlert("ID를 입력해주세요","error");
         return;
@@ -266,6 +275,9 @@ function CheckFormAfterSignUp(){
         return;
     }else if(_userEmail == ""){
         showAlert("email를 입력해주세요","error");
+        return;
+    }else if(_userEmail == "somej@naver.com"){
+        showAlert("이 이메일은 사용할 수 없습니다.","error");
         return;
     }else if(IDCheck == false){
         showAlert("ID를 확인해주세요","error");

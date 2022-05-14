@@ -23,6 +23,7 @@ if(!isset($_SESSION["signin"])){
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- 공통부분 끝 -->
     
     <!-- info css,js 경로 -->
@@ -53,8 +54,8 @@ if(!isset($_SESSION["signin"])){
             <div id="userInfo_management">
                 <h5 id="userInfo_managementTitle">회원정보 관리 <i id="userInfo_management_menubarIcon" class="fas fa-bars"></i></h5>
                 <ul id="userInfo_managementUl">
-                    <li id="userInfo_edit_btn" class="userInfo_select">- 기본 정보 및 수정</li>
-                    <li id="userInfo_password_btn">- 비밀번호 수정</li>
+                    <li id="userInfo_edit_btn" onclick="location.href='./home'" class="userInfo_select">- 기본 정보 및 수정</li>
+                    <li id="userInfo_password_btn" onclick="location.href='./changepassword'">- 비밀번호 수정</li>
                     <li id="userInfo_leave_btn">- 회원 탈퇴</li>
                 </ul>
             </div>
@@ -77,16 +78,20 @@ if(!isset($_SESSION["signin"])){
                     </div>
                     <div class="mb-3">
                         <label for="setting_userName" class="form-label label_text">이름</label>
-                        <input type="text" class="form-control" id="setting_userName" value="<?=$_SESSION["user_name"]?>" >
+                        <input type="text" class="form-control" id="setting_userName" onKeyup="userEdit_nameCheck(this.value)"  value="<?=$_SESSION["user_name"]?>" maxlength="20">
                     </div>
                     <div class="mb-3">
                         <label for="setting_userEmail" class="form-label label_text">이메일</label>
-                        <input type="text" class="form-control" id="setting_userEmail" value="<?=$_SESSION["user_email"]?>" >
+                        <input type="text" class="form-control" id="setting_userEmail" onKeyup="userEdit_emailCheck(this.value)" value="<?=$_SESSION["user_email"]?>" >
+                        <span id="emailCheckInfo">이메일 형식이 아닙니다</span>
                     </div>
                     <?php
                     switch($_SESSION["user_level"]){
                         case 0:
                             $userLevel = "관리자";
+                        break;
+                        case 1:
+                            $userLevel = "운영자";
                         break;
                         case 2:
                             $userLevel = "회원";
@@ -106,7 +111,7 @@ if(!isset($_SESSION["signin"])){
                         <input type="text" class="form-control" id="setting_userUpdate" value="<?=$_SESSION["user_update"]?>" disabled>
                     </div>
 
-                    <button type="button" id="setting_userEditBtn" class="btn btn-success">수정</button>
+                    <button type="button" id="setting_userEditBtn" onclick="userEditBtn()" class="btn btn-success">수정</button>
                 </div>
 
             </section>

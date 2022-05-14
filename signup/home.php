@@ -64,7 +64,7 @@ if(isset($_SESSION["signin"])){
                             <input type="password" name="user_password" id="user_password" required autocomplete="off" onKeyup="signCheck_Password(this.value)" maxlength="18" placeholder="6 ~ 18자 영문, 숫자, 특수문자를 최소 한가지씩 조합"/>
                             <span class="passwordInfo passwordCss" id="availablePassword">사용 가능한 비밀번호 입니다</span>
                             <span class="passwordInfo2 passwordCss" id="notAvaliablePassword">사용 불가능한 비밀번호 입니다</span>
-                            <span class="passwordInfo2 passwordCss" id="moreCharactersPassword">6글자 이상 작성해주세요</span>
+                            <span class="passwordInfo2 passwordCss" id="moreCharactersPassword">8글자 이상 작성해주세요</span>
                         </li>
                         <li>
                             <label for="user_passwordCheck">CONFIRM PASSWORD　<span id="user_passwordCheck_show_btn" class="user_passwordCheck_show" onclick="changePasswordCheckType($(this))"><i id="user_passwordCheck_show_icon" class="fas fa-eye"></i></span></label>
