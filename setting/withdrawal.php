@@ -27,8 +27,8 @@ if(!isset($_SESSION["signin"])){
     <!-- 공통부분 끝 -->
     
     <!-- info css,js 경로 -->
-    <link href="./css/changepassword.css" rel="stylesheet"/>
-    <script src="./js/changepassword.js"></script>
+    <link href="./css/withdrawal.css" rel="stylesheet"/>
+    <script src="./js/withdrawal.js"></script>
     <!-- info css,js 경로 끝-->
 
     <title>EVUELA::PROFILE</title>
@@ -55,8 +55,8 @@ if(!isset($_SESSION["signin"])){
                 <h5 id="userInfo_managementTitle">회원정보 관리 <i id="userInfo_management_menubarIcon" class="fas fa-bars"></i></h5>
                 <ul id="userInfo_managementUl">
                     <li id="userInfo_edit_btn" onclick="location.href='./home'">- 기본 정보 및 수정</li>
-                    <li id="userInfo_password_btn"  class="userInfo_select" onclick="location.href='./changepassword'">- 비밀번호 수정</li>
-                    <li id="userInfo_leave_btn" onclick="location.href='./withdrawal'">- 회원 탈퇴</li>
+                    <li id="userInfo_password_btn" onclick="location.href='./changepassword'">- 비밀번호 수정</li>
+                    <li id="userInfo_leave_btn" class="userInfo_select" onclick="location.href='./withdrawal'">- 회원 탈퇴</li>
                 </ul>
             </div>
 
@@ -65,30 +65,14 @@ if(!isset($_SESSION["signin"])){
 
             <!-- main contents -->
 
-            <section id="settingPasswordContents" class="col-sm-9">
+            <section id="settingWithdrawalContents" class="col-sm-9">
 
-                <h4 id="settingPasswordContents_title"><i class="fas fa-lock"></i> 비밀번호 수정</h4>
+                <h4 id="settingWithdrawalContents_title"><i class="fas fa-lock"></i> 회원 탈퇴</h4>
                 <hr>
-                <div id="settingPasswordContents_mainContentsDiv">
-
-                    <div class="mb-3">
-                        <label for="setting_nowPassword" class="form-label label_text">현재 비밀번호 <i class="fas fa-eye" id="nowPasswordIcon" onclick="nowChangePasswordType(this)"></i></label>
-                        <input type="password" class="form-control" id="setting_nowPassword" onKeyup="UpdateCheck_nowPassword(this.value)">
+                <div id="settingWithdrawalContents_mainContentsDiv">
+                    <div id="settingWithdrawalBtn_Div">
+                        <button type="button" id="userWithdrawal" class="btn btn-danger">탈퇴하기</button>
                     </div>
-                    <div class="mb-3">
-                        <label for="setting_newPassword" class="form-label label_text">새로운 비밀번호 <i class="fas fa-eye" id="newPasswordIcon" onclick="newChangePasswordType(this)"></i></label>
-                        <input type="password" class="form-control" id="setting_newPassword" onKeyup="UpdateCheck_newPassword(this.value)">
-                        <span class="passwordInfo passwordCss" id="availablePassword">사용 가능한 비밀번호 입니다</span>
-                        <span class="passwordInfo2 passwordCss" id="notAvaliablePassword">사용 불가능한 비밀번호 입니다</span>
-                        <span class="passwordInfo2 passwordCss" id="moreCharactersPassword">8글자 이상 작성해주세요</span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="setting_newPasswordConfirm" class="form-label label_text">새로운 비밀번호 확인 <i class="fas fa-eye" id="newPasswordConfirmIcon" onclick="newChangePasswordConfrimType(this)"></i></label>
-                        <input type="password" class="form-control" id="setting_newPasswordConfirm" onKeyup="UpdateCheck_newPasswordConfirm(this.value)">
-                        <span class="passwordCheckInfo passwordCheckCss" id="samePassword">비밀번호가 동일합니다</span>
-                        <span class="passwordCheckInfo2 passwordCheckCss" id="unequalPassword">동일한 비밀번호를 입력해주세요</span>
-                    </div>
-                    <button type="button" id="setting_changePasswordBtn" onclick="userPasswordChange()" class="btn btn-success">수정</button>
                 </div>
 
             </section>

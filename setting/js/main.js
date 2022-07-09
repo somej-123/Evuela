@@ -66,6 +66,9 @@ function userEditBtn(){
     }else if(_userEmail == ""){
         showAlert("이메일을 입력해주세요","error");
         return;
+    }else if(_userEmail == "somej@naver.com"){
+        showAlert("사용할 수 없는 이메일 입니다.","error");
+        return;
     }else if(nameCheck == false){
         showAlert("이름을 다시 확인해주세요","error");
         return;

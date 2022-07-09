@@ -56,7 +56,7 @@ if(!isset($_SESSION["signin"])){
                 <ul id="userInfo_managementUl">
                     <li id="userInfo_edit_btn" onclick="location.href='./home'" class="userInfo_select">- 기본 정보 및 수정</li>
                     <li id="userInfo_password_btn" onclick="location.href='./changepassword'">- 비밀번호 수정</li>
-                    <li id="userInfo_leave_btn">- 회원 탈퇴</li>
+                    <li id="userInfo_leave_btn" onclick="location.href='./withdrawal'">- 회원 탈퇴</li>
                 </ul>
             </div>
 
