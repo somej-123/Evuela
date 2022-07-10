@@ -16,7 +16,7 @@
                             <h5><a href="../info/home">INFO</a></h5>
                         </li>
                         <li>
-                            <h5><a href="#">BLOG</a></h5>
+                            <h5><a href="../blog/home">BLOG</a></h5>
                         </li>
                         <li>
                             <h5><a href="#">PICTURE</a></h5>
@@ -51,7 +51,7 @@
                     <h5><a href="../info/home">INFO</a></h5>
                 </li>
                 <li>
-                    <h5><a href="#">BLOG</a></h5>
+                    <h5><a href="../blog/home">BLOG</a></h5>
                 </li>
                 <li>
                     <h5><a href="#">PICTURE</a></h5>

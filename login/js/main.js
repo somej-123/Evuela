@@ -10,6 +10,9 @@ $(document).ready(function(){
     $("#navMenuLogin").on("click",function(){
         $(location).attr("href", "../login/home")
     });
+    $("#navMenuBlog").on("click",function(){
+        $(location).attr("href", "../blog/home");
+    })
 
 
 });

@@ -1,0 +1,324 @@
+*{
+    border: 0;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'NanumGothic';
+}
+body{
+    background-color: #EDFAFD;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/ocean_header.jpg");
+    background-attachment: fixed;
+    background-position-y: 60%;
+}
+#headerTop{
+    margin: 0;
+    width: 100%;
+    height: 80px;
+    /* border: 1px solid black; */
+}
+
+#backgroundColor1::after{
+    content: "";
+    display: block;
+    position: relative;
+}
+#header{
+    position: relative;
+}
+
+/* 상단 왼쪽 헤더 메뉴 */
+#headerTopLeftContents{
+    height: 100%;
+}
+#headerTopLeftContentsSe{
+    height: 100%;
+    align-items: center;
+}
+#headerTopTitleDiv{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#headerTopTitle a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bolder;
+}
+#headerTopLeftMenu{
+    /* align-items: center; */
+    list-style: none;
+    margin: 0;
+}
+#headerTopLeftMenu li{
+    display: inline-block;
+    margin: 0 1rem;
+}
+#headerTopLeftMenu a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bolder;
+}
+/* 상단 왼쪽 헤더 메뉴 끝 */
+
+/* 상단 오른쪽 헤더 메뉴 */
+#headerTopRightContents{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#headerTopRightMenu{
+    list-style: none;
+    margin: auto 0;
+    /* margin-right: 0.5rem; */
+}
+#headerTopRightMenu li{
+    display: inline-block;
+    margin: 0 1rem;
+}
+#headerTopRightMenu a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bolder;
+}
+/* 상단 오른쪽 헤더 메뉴 끝 */
+
+/* 헤더 사진 영역 */
+
+#headerBackgroundImgDiv{
+    width: 100%;
+    height: 500px;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/ocean_header.jpg");
+    background-position-y: 60%; */
+    position: relative;
+    background-attachment: fixed;
+    /* background-size: 100% 100%; */
+}
+#headerBackgroundImgTitle{
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    font-weight: bolder;
+}
+#headerBackgroundImgTitle h1{
+    font-size: 42px;
+}
+
+/* 헤더 사진 영역 끝 */
+
+
+/* 메인 컨텐츠 시작*/
+
+#mainContents{
+    /* border: 1px solid black; */
+    width: 100%;
+    /* height: 600px; */
+    position: relative;
+}
+#mainContentsDiv{
+    /* border: 1px solid black; */
+    /* height: 500px; */
+    padding: 0;
+    /* background-color: #fff; */
+    position: relative;
+    top: -150px;
+    border-radius: 5px;
+}
+#mainContentsHeader{
+    /* width: 100%; */
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border-radius: 5px;
+    /* border-bottom: 1px solid #AED9DA; */
+    /* border-top: 1px solid #AED9DA; */
+}
+#mainContentsHeaderLeft{
+    /* border-right: 1px solid #000; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+#mainContentsHeaderRight{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+/* 메인컨텐츠 home 내용 */
+
+#mainContentsHeaderLeftUl{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+#mainContentsHeaderLeftUl li{
+    display: inline;
+    position: relative;
+}
+#mainContentsHeaderLeftUl h5{
+    font-size: 13px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: #2A93D5;
+}
+.TitleSelect{
+    color: #135589 !important;
+    text-decoration:underline double;
+    text-underline-position: under;
+}
+#searchBox{
+    border-color: #0d6efd !important;
+}
+
+/* mainContentsBodyHeader 시작 */
+
+#mainContentsBodyAsideContents{
+    height:300px;
+    padding: 0.5rem 1rem 0px;
+    background-color:#fff;
+    margin-top: 20px;
+    border-radius:5px
+}
+#mainContentsBodyAsideContentsHeader_userImgDiv{
+    border: 1px solid black;
+    height: 110px;
+}
+#mainContentsBodyAsideContentsHeader_userImg{
+    width: auto;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+#mainContentsBodyAsideContentsHeader_userInfoDiv{
+    border: 1px solid black;
+    height: 80px;
+}
+
+/* mainContentsBodyHeader 끝 */
+
+#mainContentsBodyDiv{
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    /* height: 500px; */
+    padding: 20px 20px;
+}
+
+.ContentsDiv{
+    /* border: 1px solid black; */
+    /* border-top: 1px solid black; */
+    border-bottom: 1px solid black;
+    padding: 20px;
+    min-height: 300px;
+    max-height: 600px;
+    margin: 0 auto;
+    width: 100%;
+    cursor: pointer;
+}
+.ContentsDivImg{
+    width: 100%;
+    height: 300px;
+    background-image: url("../img/test.jpg");
+    background-size: cover;
+}
+.ContentsDivTitle{
+    width: 100%;
+    margin: 1rem 0px;
+    /* height: 50px; */
+    /* margin-top: 0.5rem; */
+}
+.ContentsDivTitle h3{
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.contentsDivContents{
+    width: 100%;
+    height: 100px;
+    margin: 5px 0;
+    overflow: hidden;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    color: #757575;
+    /* display: table-cell; */
+    /* vertical-align: middle; */
+}
+.contentsDivTag{
+    font-size: 0.8rem;
+    color: #2A93D5;
+    max-height: 100px;
+}
+.TagName{
+    /* width: 12px; */
+    margin-right: 0.5rem;
+    color: white;
+    background-color: #2A93D5;
+    border: 1px solid #2A93D5;
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 0.5rem;
+}
+.contentsDivEtc{
+    max-height: 100px;
+    font-size: 0.8rem;
+    color: #757575;
+}
+.contentsDivEtc p{
+    margin: 0;
+}
+.contentsDivComment p{
+    text-align: right !important;
+}
+.commentCount{
+    padding-right: 1rem;
+}
+
+/* 메인컨텐츠 home 내용 끝 */
+
+/* 메인 컨텐츠 끝 */
+
+
+
+
+@media screen and (min-width:768px) and (max-width:1200px) { 
+    .ContentsDiv{
+        width: 100%;
+    }
+    #mainContentsBodyDiv{
+        width: 100%;
+    }
+    #mainContentsBodyAside{
+        width: 100%;
+        display: block;
+    }
+}
+@media screen and (max-width:767px) { 
+    .ContentsDiv{
+        width: 100%;
+    }
+    #mainContentsBodyDiv{
+        width: 100%;
+    }
+    #mainContentsBodyAside{
+        width: 100%;
+        display: block;
+    }
+}

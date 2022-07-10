@@ -24,6 +24,9 @@ function btnEvent(){
     $("#navMenuLogin").on("click",function(){
         $(location).attr("href", "../login/home")
     });
+    $("#navMenuBlog").on("click",function(){
+        $(location).attr("href", "../blog/home");
+    })
 
     // 메뉴 클릭 시 페이지 이동 끝
 

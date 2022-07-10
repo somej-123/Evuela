@@ -17,6 +17,9 @@ $(document).ready(function(){
     $("#lineEffectText").on("click",function(){
         $(location).attr("href", "../info/home");
     })
+    $("#navMenuBlog").on("click",function(){
+        $(location).attr("href", "../blog/home");
+    })
 
     $("#navMenuOptions").on("click",()=>{
         if(menuSlide){
