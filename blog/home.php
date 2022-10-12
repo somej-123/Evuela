@@ -113,10 +113,13 @@
             <div id="mainContentsBody" class="row">
                 <div id="mainContentsBodyAside" class="col-3">
                     <div id="mainContentsBodyAsideContents">
-                        <div id="mainContentsBodyAsideContentsHeader">
-                            <div id="mainContentsBodyAsideContentsHeader_userImgDiv">
-                                <div id="mainContentsBodyAsideContentsHeader_userImg">
-                                    
+                        <!-- <div id="mainContentsBodyAsideContentsHeader">
+                            <div id="mainContentsBodyAsideContentsHeader_userImgDiv" class="row">
+                                <div id="mainContentsBodyAsideContentsHeader_userImg" class="col-6">
+                                    <img id="mainContentsBodyAsideContentsHeader_userImgContents" src="./img/userImg.jpg">
+                                </div>
+                                <div id="mainContentsBodyAsideContentsHeader_userInfo" class="col-6">
+
                                 </div>
                             </div>
                             <div id="mainContentsBodyAsideContentsHeader_userInfoDiv">
@@ -125,7 +128,7 @@
                         </div>
                         <div>
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div id="mainContentsBodyDiv" class="col-9">

@@ -187,6 +187,10 @@ body{
 
 /* mainContentsBodyHeader 시작 */
 
+#mainContentsBody{
+    margin-right: 0 !important;
+}
+
 #mainContentsBodyAsideContents{
     height:300px;
     padding: 0.5rem 1rem 0px;
@@ -195,15 +199,29 @@ body{
     border-radius:5px
 }
 #mainContentsBodyAsideContentsHeader_userImgDiv{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 110px;
 }
 #mainContentsBodyAsideContentsHeader_userImg{
-    width: auto;
-    height: 100%;
+    /* width: auto; */
+    /* height: 100%; */
     border-radius: 50%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
+
+#mainContentsBodyAsideContentsHeader_userImgContents{
+    width: 100%;
+    height: auto;
+    padding: 0px 10px;
+    border-radius: 50%;
+    /* width: 100%;
+    height: 100%; */
+}
+
+#mainContentsBodyAsideContentsHeader_userInfo{
+    padding: 0;
+}
+
 #mainContentsBodyAsideContentsHeader_userInfoDiv{
     border: 1px solid black;
     height: 80px;

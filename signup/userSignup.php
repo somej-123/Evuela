@@ -16,8 +16,11 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
     $user_password = password_hash($_POST["user_password"], PASSWORD_DEFAULT);
     $user_email = $_POST["user_email"];
 
-    $query = "INSERT INTO evuela_user (user_id, user_password, user_email, user_regdate, user_update)
-    VALUES('$user_id','$user_password','$user_email',NOW(),NOW());";
+    $query = "INSERT INTO evuela_user (user_id, user_password, user_email)
+    VALUES('$user_id','$user_password','$user_email');";
+
+    //, user_regdate, user_update ,NOW(),NOW()
+
 
     $signupResult = DBQuery($query,"insert");
 
