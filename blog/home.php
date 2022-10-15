@@ -27,242 +27,31 @@
     <script src="./js/home.js"></script> -->
     <!-- blog css,js 경로 끝-->
 
-
     <title>EVUELA::BLOG</title>
 </head>
 <body>
-    <!-- BLOG헤더 시작 -->
+    <!-- Blog Header 시작 -->
     <header>
-        <div id="headerTop" class="row">
-            <div id="headerTopLeftContents" class="col-7">
-                <div id="headerTopLeftContentsSe" class="row">
-                    <div id="headerTopTitleDiv" class="col-2">
-                        <h3 id="headerTopTitle"><a href="../">EVUELA</a></h3>
-                    </div>
-                    <div class="col-10">
-                        <ul id="headerTopLeftMenu">
-                            <li><a href="../info/home">INFO</a></li>
-                            <li><a href="../blog/home">BLOG</a></li>
-                            <li><a href="#">PICTURE</a></li>
-                            <li><a href="#">ETC</a></li>
-                        </ul>
-                    </div>
-                </div>
+        <nav>
+            <!-- Blog Header 로고 컨텐츠 -->
+            <div id="headerLeftContents">
+                
             </div>
-            <div id="headerTopRightContents" class="col-5">
-                <ul id="headerTopRightMenu">
-                    <li><a href="../login/home">LOGIN</a></li>
-                    <li><a href="../signup/home">SIGNUP</a></li>
-                </ul>
+            <!-- Blog Header 로고 컨텐츠 끝-->
+
+            <!-- Blog Header 메뉴 시작 -->
+            <div id="headerRightContents">
+                
             </div>
-        </div>
-        <div id="headerBackgroundImgDiv">
-            <div id="headerBackgroundImgTitle" class="container">
-                <h1>EVUELA BLOG</h1>
-                <br>
-                <p>나만의 이야기를 작성하고 공유하는 공간입니다.</p>
-                <!-- <p>테스트 단계이므로 언제든지 내용이 변경 및 삭제될 수 있습니다.</p> -->
-            </div>
-        </div>
+            <!-- Blog Header 메뉴 끝-->
+        </nav>
     </header>
-    <!-- BLOG헤더 끝 -->
-    <!-- BLOG 메인 컨텐츠 시작 -->
-    <section id="mainContents">
-        <div id="mainContentsDiv" class="container">
-            <!-- 메인 컨텐츠 헤더 시작 -->
-            <div id="mainContentsHeader" class="row">
-                <div id="mainContentsHeaderLeft" class="col-8">
-                    <ul id="mainContentsHeaderLeftUl">
-                        <li>
-                            <h5 class="mainContentsHeaderLeftTitle TitleSelect">전체 게시판</h5>
-                        </li>
-                        <li>
-                            <h5 class="mainContentsHeaderLeftTitle">자유 게시판</h5>
-                        </li>
-                        <li>
-                            <h5 class="mainContentsHeaderLeftTitle">개발자 노트</h5>
-                        </li>
-                        <li>
-                            <h5 class="mainContentsHeaderLeftTitle">문의사항</h5>
-                        </li>
-                    </ul>
-                </div>
-                <div id="mainContentsHeaderRight" class="col-4">
-                    <div id="mainContentsHeaderRightSearchDiv">
-                        <div class="input-group">
-                            <input id="searchBox" type="search" class="form-control" aria-label="Text input with segmented dropdown button">
-                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-search"></i></button>
-                            <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="visually-hidden">Toggle Dropdown</span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="#">제목 검색</a></li>
-                                <li><a class="dropdown-item" href="#">내용 검색</a></li>
-                                <li><a class="dropdown-item" href="#">태그 검색</a></li>
-                                <li><a class="dropdown-item" href="#">사용자 검색</a></li>
-                                <!-- <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li> -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 메인 컨텐츠 헤더 끝 -->
-            <!-- 메인 컨텐츠 내용 시작 -->
+    <!-- Blog Header 끝 -->
 
-            <div id="mainContentsBody" class="row">
-                <div id="mainContentsBodyAside" class="col-3">
-                    <div id="mainContentsBodyAsideContents">
-                        <!-- <div id="mainContentsBodyAsideContentsHeader">
-                            <div id="mainContentsBodyAsideContentsHeader_userImgDiv" class="row">
-                                <div id="mainContentsBodyAsideContentsHeader_userImg" class="col-6">
-                                    <img id="mainContentsBodyAsideContentsHeader_userImgContents" src="./img/userImg.jpg">
-                                </div>
-                                <div id="mainContentsBodyAsideContentsHeader_userInfo" class="col-6">
+    <!-- Blog body 섹션 -->
+    <section>
 
-                                </div>
-                            </div>
-                            <div id="mainContentsBodyAsideContentsHeader_userInfoDiv">
-
-                            </div>
-                        </div>
-                        <div>
-
-                        </div> -->
-                    </div>
-                </div>
-                <div id="mainContentsBodyDiv" class="col-9">
-
-                    <div class="ContentsDiv">
-                        <div class="ContentsDivImg">
-                            <!-- <img src="./img/test.jpg" width="100%" height="auto"> -->
-                        </div>
-                        <div class="ContentsDivTitle">
-                            <h3>1. 지금은 테스트 중입니다.</h3>
-                        </div>
-                        <div class="contentsDivContents">
-                            <p>지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.</p>
-                        </div>
-                        <div class="contentsDivTag">
-                            <p>태그 : <span class="TagName">test</span><span class="TagName">test</span></p>
-                        </div>
-                        <div class="contentsDivEtc row">
-                            <div class="contentsDivDate col-6">
-                                <p>2022년 07월 10일</p>
-                            </div>
-                            <div class="contentsDivComment col-6">
-                                <p><span class="commentCount">댓글 5</span><span class="recommandCount"><i class="fas fa-heart" style="color:red"></i> 5</span></p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-
-                    <!-- 추가 게시글 시작 -->
-                    <div class="ContentsDiv">
-                        <div class="ContentsDivImg">
-                            <!-- <img src="./img/test.jpg" width="100%" height="auto"> -->
-                        </div>
-                        <div class="ContentsDivTitle">
-                            <h3>1. 지금은 테스트 중입니다.</h3>
-                        </div>
-                        <div class="contentsDivContents">
-                            <p>지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.</p>
-                        </div>
-                        <div class="contentsDivTag">
-                            <p>태그 : <span class="TagName">test</span><span class="TagName">test</span></p>
-                        </div>
-                        <div class="contentsDivEtc row">
-                            <div class="contentsDivDate col-6">
-                                <p>2022년 07월 10일</p>
-                            </div>
-                            <div class="contentsDivComment col-6">
-                                <p><span class="commentCount">댓글 5</span><span class="recommandCount"><i class="fas fa-heart" style="color:red"></i> 5</span></p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="ContentsDiv">
-                        <div class="ContentsDivImg">
-                            <!-- <img src="./img/test.jpg" width="100%" height="auto"> -->
-                        </div>
-                        <div class="ContentsDivTitle">
-                            <h3>1. 지금은 테스트 중입니다.</h3>
-                        </div>
-                        <div class="contentsDivContents">
-                            <p>지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.</p>
-                        </div>
-                        <div class="contentsDivTag">
-                            <p>태그 : <span class="TagName">test</span><span class="TagName">test</span></p>
-                        </div>
-                        <div class="contentsDivEtc row">
-                            <div class="contentsDivDate col-6">
-                                <p>2022년 07월 10일</p>
-                            </div>
-                            <div class="contentsDivComment col-6">
-                                <p><span class="commentCount">댓글 5</span><span class="recommandCount"><i class="fas fa-heart" style="color:red"></i> 5</span></p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="ContentsDiv">
-                        <div class="ContentsDivImg">
-                            <!-- <img src="./img/test.jpg" width="100%" height="auto"> -->
-                        </div>
-                        <div class="ContentsDivTitle">
-                            <h3>1. 지금은 테스트 중입니다.</h3>
-                        </div>
-                        <div class="contentsDivContents">
-                            <p>지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.</p>
-                        </div>
-                        <div class="contentsDivTag">
-                            <p>태그 : <span class="TagName">test</span><span class="TagName">test</span></p>
-                        </div>
-                        <div class="contentsDivEtc row">
-                            <div class="contentsDivDate col-6">
-                                <p>2022년 07월 10일</p>
-                            </div>
-                            <div class="contentsDivComment col-6">
-                                <p><span class="commentCount">댓글 5</span><span class="recommandCount"><i class="fas fa-heart" style="color:red"></i> 5</span></p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="ContentsDiv">
-                        <div class="ContentsDivImg">
-                            <!-- <img src="./img/test.jpg" width="100%" height="auto"> -->
-                        </div>
-                        <div class="ContentsDivTitle">
-                            <h3>1. 지금은 테스트 중입니다.</h3>
-                        </div>
-                        <div class="contentsDivContents">
-                            <p>지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.지금은 여러가지 테스트를 진행중입니다.</p>
-                        </div>
-                        <div class="contentsDivTag">
-                            <p>태그 : <span class="TagName">test</span><span class="TagName">test</span></p>
-                        </div>
-                        <div class="contentsDivEtc row">
-                            <div class="contentsDivDate col-6">
-                                <p>2022년 07월 10일</p>
-                            </div>
-                            <div class="contentsDivComment col-6">
-                                <p><span class="commentCount">댓글 5</span><span class="recommandCount"><i class="fas fa-heart" style="color:red"></i> 5</span></p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <!-- 추가 게시글 끝 -->
-                    
-                    <!--  -->
-                </div>
-            </div>
-
-            <!-- 메인 컨텐츠 내용 끝 -->
-        </div>
     </section>
-    <!-- BLOG 메인 컨텐츠 시작 끝 -->
+    <!-- Blog Body 섹션 끝 -->
 </body>
 </html>
