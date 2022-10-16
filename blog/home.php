@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -35,13 +36,52 @@
         <nav>
             <!-- Blog Header 로고 컨텐츠 -->
             <div id="headerLeftContents">
-                
+                <div id="headerLeftLogoDiv">
+                    <h3 id="headerLeftLogoTitle" onclick="location.href='../'">EVUELA</h3>
+                </div>
             </div>
             <!-- Blog Header 로고 컨텐츠 끝-->
 
             <!-- Blog Header 메뉴 시작 -->
             <div id="headerRightContents">
-                
+                <div class="row" style="margin: 0; padding:0; height:100%">
+                    <div class="col-8" style="margin: 0; padding:0;">
+                       <div id="headerMenuFlexBox">
+                            <div id="headerMenuInfoDiv">
+                                <p id="headerMenuInfoP" onclick="location.href='../info/home'">INFO</p>
+                            </div>
+                            <div id="headerMenuBlogDiv">
+                                <p id="headerMenuBlogP" onclick="location.href='../blog/home'">BLOG</p>
+                            </div>
+                            <div id="headerMenuPictureDiv">
+                                <p id="headerMenuPictureP">PICTURE</p>
+                            </div>
+                            <div id="headerMenuEtcDiv">
+                                <p id="headerMenuEtcP">ETC</p>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="col-4" style="margin: 0; padding:0;">
+                        <div id="headerUserMenuBox">
+                            <?php if(!isset($_SESSION["signin"])){?>
+                                <p>LOGIN</p>
+                            <?php }
+                            else{ ?>
+                            <p id="headerUserMenuP">MENU <i class="fas fa-caret-down"></i></p>
+                            <div id="headerUserMenuDiv" style="display: none;">
+                                <ul>
+                                    <li>
+                                        <a href="#">프로필</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">로그아웃</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- Blog Header 메뉴 끝-->
         </nav>

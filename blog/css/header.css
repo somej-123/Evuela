@@ -15,13 +15,106 @@ header{
 nav{
     display: flex;
     height: 60px;
+    width: 100%;
 }
 
 /* Header 로고 타이틀 영역 시작*/
 #headerLeftContents{
-    width: 30%;
+    width: 20%;
+}
+
+#headerLeftLogoDiv{
+    height: 100%;
+}
+
+#headerLeftLogoTitle{
+    margin: 0 !important;
+    height: 100%;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
 }
 /* Header 로고 타이틀 영역 끝*/
+
+/* Header 메뉴 타이틀 영역 시작 */
+
+#headerRightContents{
+    width: 80%;
+}
+
+/* Header 주 메뉴 영역 시작 */
+
+#headerMenuFlexBox{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#headerMenuFlexBox p{
+    margin: 0 !important;
+    opacity: 0.7;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#headerMenuFlexBox p:hover{
+    margin: 0 !important;
+    opacity: 1;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Header 주 메뉴 영역 끝 */
+
+/* Header 서브 메뉴 영역 */
+
+#headerUserMenuBox{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#headerUserMenuBox p{
+    margin: 0 !important;
+    opacity: 0.7;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#headerUserMenuBox p:hover{
+    margin: 0 !important;
+    opacity: 1;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#headerUserMenuP{
+
+}
+
+#headerUserMenuDiv{
+    position: absolute;
+    top: 60px;
+}
+
+/* Header 서브 메뉴 끝 */
+
+
+/* Header 메뉴 타이틀 영역 끝 */
 
 
 /* Header css 끝 */
