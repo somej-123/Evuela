@@ -106,9 +106,12 @@ nav{
 
 #headerUserMenuBox p{
     margin: 0 !important;
+    padding-left: 20px;
+    padding-right: 20px;
     opacity: 0.7;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.5s all ease-in-out;
 }
 
 #headerUserMenuBox p:hover{
@@ -116,6 +119,8 @@ nav{
     opacity: 1;
     font-weight: 600;
     cursor: pointer;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 #headerUserMenuDiv{
@@ -129,6 +134,7 @@ nav{
     align-items: center;
     justify-content: space-around;
     border: 1px solid #9c9c9c;
+    background-color: #1f2231;
     border-top: none;
     padding: 10px;
 }
@@ -137,16 +143,18 @@ nav{
     border-top: none;
 }
 .headerUserMenuBorder{
-    border-top: 1px solid black;
+    border-top: 1px solid #fff;
 }
 
 
 #headerMenuProfileP{
+    color: #fff;
     margin: 0;
     padding: 0px 0px 5px 0px;
 }
 
 #headerMenuLogoutP{
+    color: #fff;
     margin: 0;
     padding: 5px 0px 0px 0px;
 }
@@ -177,6 +185,15 @@ nav{
 
 @media screen and (min-width:768px) and (max-width:1200px) { 
 
+    #headerUserMenuBox p{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #headerUserMenuBox p:hover{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 @media screen and (max-width:767px) { 
 
@@ -187,6 +204,9 @@ nav{
     }
 
     /* Header 주 메뉴 영역 끝 */
+
+
+    /* Header SideMenu 시작 */
     #headerRightContents{
         display: none;
     }
@@ -230,6 +250,7 @@ nav{
         margin: 0;
         padding: 0;
         background-color: #1f2231!important;
+        cursor: pointer;
     }
 
     .sideMenuHeaderContents_M p{
@@ -238,4 +259,7 @@ nav{
         font-weight: 600;
         color: #fff;
     }
+
+
+    /* Header SideMenu 끝 */
 }

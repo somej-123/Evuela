@@ -65,7 +65,8 @@
                     <div class="col-3" style="margin: 0; padding:0;">
                         <div id="headerUserMenuBox">
                             <?php if(!isset($_SESSION["signin"])){?>
-                                <p onclick="location.href='../login/home'">LOGIN</p>
+                                <p class="btn btn-outline-primary" onclick="location.href='../login/home'">LOGIN</p>
+                                <p class="btn btn-outline-success" onclick="location.href='../signup/home'">SIGNUP</p>
                             <?php }
                             else{ ?>
                             <p id="headerUserMenuP">MENU <i class="fas fa-caret-down"></i></p>
@@ -96,12 +97,21 @@
                 </div>
                 <div id="sideMenu_M">
                     <div id="sideMenuHeader_M" class="row">
+                    <?php if(!isset($_SESSION['signin'])){?>
                         <div class="col-6 sideMenuHeaderContents_M">
-                            <p>PROFILE</p>
+                            <p onclick="location.href='../login/home'">LOGIN</p>
                         </div>
                         <div class="col-6 sideMenuHeaderContents_M">
-                            <p>LOGOUT</p>
+                            <p onclick="location.href='../signup/home'">SIGNUP</p>
                         </div>
+                    <?php }else{?>
+                        <div class="col-6 sideMenuHeaderContents_M">
+                            <p onclick="location.href='../setting/home'">PROFILE</p>
+                        </div>
+                        <div class="col-6 sideMenuHeaderContents_M">
+                            <p onclick="location.href='../login/userSignout'">LOGOUT</p>
+                        </div>
+                    <?php }?>
                     </div>
                 </div>
             </div>
