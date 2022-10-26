@@ -2,7 +2,8 @@
 
 #mainSection{
     width: 100%;
-    height: 1500px;
+    /* height: 1500px; */
+    background-color: #DCDCDC;
     position: relative;
     top: 60px;
 }
@@ -10,21 +11,78 @@
 #mainSection_Header{
     width: 100%;
     height: 500px;
-    background: url(../img/rain_load.jpg);
-    background-position: 70%;
-    background-size: cover;
+    position: relative;
 }
+
+#mainSection_Header_background_div{
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#mainSection_Header_background{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/rain_load.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(60%);
+}
+
+#mainSection_Header_Top{
+    position: relative;
+    padding-top: 8rem;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+}
+
+#mainSection_Header_Top_title{
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+#mainSection_Header_Top_text{
+    margin-bottom: 2rem;
+}
+
+#mainSection_Header_Center{
+    width: 70%;
+    margin: 0 auto;
+}
+
+#mainSection_Header_Center_searchSelect{
+    flex: 0.1 0 0;
+}
+
+#mainSection_Header_Center_searchBtn:hover{
+    padding: 0px 1rem;
+    transition: 0.5s ease-in-out all;
+    font-size: 1.1rem;
+}
+
+
 
 
 @media screen and (min-width:768px) and (max-width:1200px) { 
     #mainSection{
         top: 0px;
     }
+    #mainSection_Header_Center{
+        width: 90%;
+    }
 
 }
 @media screen and (max-width:767px) { 
     #mainSection{
         top: 0px;
+    }
+    #mainSection_Header_Center{
+        width: 100%;
     }
 
 }

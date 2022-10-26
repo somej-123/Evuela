@@ -37,7 +37,26 @@
     <!-- Blog body 섹션 -->
     <section id="mainSection">
         <div id="mainSection_Header">
-            
+        <div id="mainSection_Header_background_div">
+                <div id="mainSection_Header_background"></div>
+            </div>
+            <div class="container" id="mainSection_Header_Top">
+                <h2 id="mainSection_Header_Top_title">자유로운 공간</h2>
+                <p id="mainSection_Header_Top_text">정보 공유, 일상, 실험 글들을 작성하고 나의 생각을 공유해요</p>
+                <div id="mainSection_Header_Center">
+                    <div class="input-group mb-3">
+                        <select class="form-select" id="mainSection_Header_Center_searchSelect" aria-label="Default select example">
+                            <option value="all" selected>전체</option>
+                            <option value="title">제목</option>
+                            <option value="contents">내용</option>
+                            <option value="user">작성자</option>
+                        </select>
+                        <input type="text" class="form-control" id="mainSection_Header_Center_searchText" aria-label="Text input with dropdown button">
+                        <button class="btn btn-secondary" id="mainSection_Header_Center_searchBtn" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                
+            </div>
         </div>
     </section>
     <!-- Blog Body 섹션 끝 -->
