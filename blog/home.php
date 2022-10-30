@@ -75,7 +75,7 @@
                     <div class="mainSection_Body_firstDiv_list">
                         <div class="mainSection_Body_firstDiv_list_top">
                             <a href="#">
-                                <img src="./img/userimg.jpg"/>
+                                <img src="./img/ocean_header.jpg"/>
                             </a>
                         </div>
                         <div class="mainSection_Body_firstDiv_list_bottom">
