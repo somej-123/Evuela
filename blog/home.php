@@ -68,7 +68,7 @@
             <div id="mainSection_Body_firstDiv">
 
                 <!-- 최신글 타이틀  -->
-                <h5 id="mainSection_Body_firstDiv_title"><i class="far fa-clock"></i> 최신글</h5>
+                <h5 id="mainSection_Body_firstDiv_title"><i class="far fa-clock"></i>최신글</h5>
                 <div id="mainSection_Body_firstDiv_contents">
 
                     <!-- 최신글 컨텐츠 내용 시작 -->

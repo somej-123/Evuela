@@ -89,6 +89,11 @@
     border-bottom: 1px solid #cccccc;
     padding-bottom: 10px;
     font-weight: 600;
+    align-items: center;
+    display: flex;
+}
+#mainSection_Body_firstDiv_title i{
+    margin-right: 7px;
 }
 
 
