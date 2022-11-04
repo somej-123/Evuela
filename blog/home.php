@@ -63,8 +63,27 @@
         <!-- mainSection Header 구역 끝-->
         <!-- mainSection Body 구역 -->
 
-        <!-- 최신글 -->
         <div id="mainSection_Body" class="container">
+            
+            <!-- 카테고리 -->
+            <div id="mainSection_categoryDiv">
+                <h5 id="mainSection_categoryTitle">전체<i id="categoryTitleIcon" class="fas fa-chevron-down"></i></h5>
+                <div id="mainSection_categorySubDiv" class="row">
+                    <div id="mainSection_categorySubDiv-main" class="col-6">
+                        <p><a href="#">전체</a></p>
+                        <p><a href="#">프로그래밍</a></p>
+                    </div>
+                    <div id="mainSection_categorySubDiv-sub" class="col-6">
+                        <p><a href="#">html</a></p>
+                        <p><a href="#">css</a></p>
+                        <p><a href="#">js</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- 카테고리 끝-->
+
+
+            <!-- 최신글 -->
             <div id="mainSection_Body_firstDiv">
 
                 <!-- 최신글 타이틀  -->
@@ -190,14 +209,255 @@
 
                 </div>
             </div>
+            <!-- 최신글 끝 -->
+
+            <!-- 추천 수 별 글 -->
             <div id="mainSection_Body_secondDiv">
 
-            </div>
-            <div id="mainSection_Body_thirdDiv">
+                <!-- 추천 수 별 글 타이틀  -->
+                <h5 id="mainSection_Body_secondDiv_title"><i class="far fa-clock"></i>추천 수 별 글</h5>
+                <div id="mainSection_Body_secondDiv_contents">
+
+                    <!-- 추천 수 별 글 컨텐츠 내용 시작 -->
+                    <div class="mainSection_Body_secondDiv_list">
+                        <div class="mainSection_Body_secondDiv_list_top">
+                            <a href="#">
+                                <img src="./img/ocean_header.jpg"/>
+                            </a>
+                        </div>
+                        <div class="mainSection_Body_secondDiv_list_bottom">
+                            <div class="mainSection_Body_secondDiv_list_bottom_title">
+                                <h5 class="mainSection_Body_secondDiv_list_bottom_title_h5">
+                                    <a href="#">[카테고리] 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요</a>
+                                </h5>    
+                            </div>
+                            <div class="mainSection_Body_secondDiv_list_bottom_contents">
+                                <p class="mainSection_Body_secondDiv_list_bottom_contents_p">아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요. 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.</p>
+                            </div>
+                            <div class="mainSection_Body_secondDiv_list_bottom_user">
+                                <p class="mainSection_Body_secondDiv_list_bottom_user_name">작성자</p>
+                            </div>
+                            <div class="row mainSection_Body_secondDiv_list_bottom_etc">
+                                <div class="col-8 mainSection_Body_secondDiv_list_bottom_etc_days">
+                                    <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
+                                </div>
+                                <div class="col-4 mainSection_Body_secondDiv_list_bottom_etc_info">
+                                    <div class="mainSection_Body_secondDiv_list_bottom_etc_info_recommand">
+                                        <i class="far fa-thumbs-up"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_info_recommand_count">5</span>
+                                    </div>
+                                    <div class="mainSection_Body_secondDiv_list_bottom_etc_info_comment">
+                                        <i class="far fa-comments"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_info_comment_count">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 추천수 별 글 컨텐츠 내용 끝 -->
+
+
+
+                    <div class="mainSection_Body_secondDiv_list">
+                        <div class="mainSection_Body_secondDiv_list_top">
+                            <a href="#">
+                                <img src="./img/rain_load.jpg"/>
+                            </a>
+                        </div>
+                        <div class="mainSection_Body_secondDiv_list_bottom">
+                            <div class="mainSection_Body_secondDiv_list_bottom_title">
+                                <h5 class="mainSection_Body_secondDiv_list_bottom_title_h5">
+                                    <a href="#">[카테고리] 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요</a>
+                                </h5>    
+                            </div>
+                            <div class="mainSection_Body_secondDiv_list_bottom_contents">
+                                <p class="mainSection_Body_secondDiv_list_bottom_contents_p">아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요. 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.</p>
+                            </div>
+                            <div class="mainSection_Body_secondDiv_list_bottom_user">
+                                <p class="mainSection_Body_secondDiv_list_bottom_user_name">작성자</p>
+                            </div>
+                            <div class="row mainSection_Body_secondDiv_list_bottom_etc">
+                                <div class="col-8 mainSection_Body_secondDiv_list_bottom_etc_days">
+                                    <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
+                                </div>
+                                <div class="col-4 mainSection_Body_secondDiv_list_bottom_etc_info">
+                                    <div class="mainSection_Body_secondDiv_list_bottom_etc_info_recommand">
+                                        <i class="far fa-thumbs-up"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_info_recommand_count">5</span>
+                                    </div>
+                                    <div class="mainSection_Body_secondDiv_list_bottom_etc_info_comment">
+                                        <i class="far fa-comments"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_info_comment_count">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="mainSection_Body_secondDiv_list">
+                        <div class="mainSection_Body_secondDiv_list_top">
+                            <a href="#">
+                                <img src="./img/code_test.jpg"/>
+                            </a>
+                        </div>
+                        <div class="mainSection_Body_secondDiv_list_bottom">
+                            <div class="mainSection_Body_secondDiv_list_bottom_title">
+                                <h5 class="mainSection_Body_secondDiv_list_bottom_title_h5">
+                                    <a href="#">[카테고리] 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요</a>
+                                </h5>    
+                            </div>
+                            <div class="mainSection_Body_secondDiv_list_bottom_contents">
+                                <p class="mainSection_Body_secondDiv_list_bottom_contents_p">아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요. 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.</p>
+                            </div>
+                            <div class="mainSection_Body_secondDiv_list_bottom_user">
+                                <p class="mainSection_Body_secondDiv_list_bottom_user_name">작성자</p>
+                            </div>
+                            <div class="row mainSection_Body_secondDiv_list_bottom_etc">
+                                <div class="col-8 mainSection_Body_secondDiv_list_bottom_etc_days">
+                                    <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
+                                </div>
+                                <div class="col-4 mainSection_Body_secondDiv_list_bottom_etc_info">
+                                    <div class="mainSection_Body_secondDiv_list_bottom_etc_info_recommand">
+                                        <i class="far fa-thumbs-up"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_info_recommand_count">5</span>
+                                    </div>
+                                    <div class="mainSection_Body_secondDiv_list_bottom_etc_info_comment">
+                                        <i class="far fa-comments"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_info_comment_count">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
 
             </div>
+
+            <!-- 댓글 수 -->
+            <div id="mainSection_Body_thirdDiv">
+                <!-- 댓글 수 별 글 타이틀  -->
+                <h5 id="mainSection_Body_thirdDiv_title"><i class="far fa-clock"></i>댓글 수 별 글</h5>
+                <div id="mainSection_Body_thirdDiv_contents">
+
+                    <!-- 댓글 수 별 글 컨텐츠 내용 시작 -->
+                    <div class="mainSection_Body_thirdDiv_list">
+                        <div class="mainSection_Body_thirdDiv_list_top">
+                            <a href="#">
+                                <img src="./img/test.jpg"/>
+                            </a>
+                        </div>
+                        <div class="mainSection_Body_thirdDiv_list_bottom">
+                            <div class="mainSection_Body_thirdDiv_list_bottom_title">
+                                <h5 class="mainSection_Body_thirdDiv_list_bottom_title_h5">
+                                    <a href="#">[카테고리] 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요</a>
+                                </h5>    
+                            </div>
+                            <div class="mainSection_Body_thirdDiv_list_bottom_contents">
+                                <p class="mainSection_Body_thirdDiv_list_bottom_contents_p">아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요. 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.</p>
+                            </div>
+                            <div class="mainSection_Body_thirdDiv_list_bottom_user">
+                                <p class="mainSection_Body_thirdDiv_list_bottom_user_name">작성자</p>
+                            </div>
+                            <div class="row mainSection_Body_thirdDiv_list_bottom_etc">
+                                <div class="col-8 mainSection_Body_thirdDiv_list_bottom_etc_days">
+                                    <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
+                                </div>
+                                <div class="col-4 mainSection_Body_thirdDiv_list_bottom_etc_info">
+                                    <div class="mainSection_Body_thirdDiv_list_bottom_etc_info_recommand">
+                                        <i class="far fa-thumbs-up"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_info_recommand_count">5</span>
+                                    </div>
+                                    <div class="mainSection_Body_thirdDiv_list_bottom_etc_info_comment">
+                                        <i class="far fa-comments"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_info_comment_count">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 댓글 수 글 컨텐츠 내용 끝 -->
+
+
+
+
+                    <div class="mainSection_Body_thirdDiv_list">
+                        <div class="mainSection_Body_thirdDiv_list_top">
+                            <a href="#">
+                                <img src="./img/ocean_header.jpg"/>
+                            </a>
+                        </div>
+                        <div class="mainSection_Body_thirdDiv_list_bottom">
+                            <div class="mainSection_Body_thirdDiv_list_bottom_title">
+                                <h5 class="mainSection_Body_thirdDiv_list_bottom_title_h5">
+                                    <a href="#">[카테고리] 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요</a>
+                                </h5>    
+                            </div>
+                            <div class="mainSection_Body_thirdDiv_list_bottom_contents">
+                                <p class="mainSection_Body_thirdDiv_list_bottom_contents_p">아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요. 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.</p>
+                            </div>
+                            <div class="mainSection_Body_thirdDiv_list_bottom_user">
+                                <p class="mainSection_Body_thirdDiv_list_bottom_user_name">작성자</p>
+                            </div>
+                            <div class="row mainSection_Body_thirdDiv_list_bottom_etc">
+                                <div class="col-8 mainSection_Body_thirdDiv_list_bottom_etc_days">
+                                    <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
+                                </div>
+                                <div class="col-4 mainSection_Body_thirdDiv_list_bottom_etc_info">
+                                    <div class="mainSection_Body_thirdDiv_list_bottom_etc_info_recommand">
+                                        <i class="far fa-thumbs-up"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_info_recommand_count">5</span>
+                                    </div>
+                                    <div class="mainSection_Body_thirdDiv_list_bottom_etc_info_comment">
+                                        <i class="far fa-comments"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_info_comment_count">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="mainSection_Body_thirdDiv_list">
+                        <div class="mainSection_Body_thirdDiv_list_top">
+                            <a href="#">
+                                <img src="./img/city_header.jpg"/>
+                            </a>
+                        </div>
+                        <div class="mainSection_Body_thirdDiv_list_bottom">
+                            <div class="mainSection_Body_thirdDiv_list_bottom_title">
+                                <h5 class="mainSection_Body_thirdDiv_list_bottom_title_h5">
+                                    <a href="#">[카테고리] 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요</a>
+                                </h5>    
+                            </div>
+                            <div class="mainSection_Body_thirdDiv_list_bottom_contents">
+                                <p class="mainSection_Body_thirdDiv_list_bottom_contents_p">아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요. 아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.아직은 테스트 진행중입니다. 테스트를 진행하면서 좋은 아이디어가 있으면 말씀해주세요.</p>
+                            </div>
+                            <div class="mainSection_Body_thirdDiv_list_bottom_user">
+                                <p class="mainSection_Body_thirdDiv_list_bottom_user_name">작성자</p>
+                            </div>
+                            <div class="row mainSection_Body_thirdDiv_list_bottom_etc">
+                                <div class="col-8 mainSection_Body_thirdDiv_list_bottom_etc_days">
+                                    <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
+                                </div>
+                                <div class="col-4 mainSection_Body_thirdDiv_list_bottom_etc_info">
+                                    <div class="mainSection_Body_thirdDiv_list_bottom_etc_info_recommand">
+                                        <i class="far fa-thumbs-up"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_info_recommand_count">5</span>
+                                    </div>
+                                    <div class="mainSection_Body_thirdDiv_list_bottom_etc_info_comment">
+                                        <i class="far fa-comments"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_info_comment_count">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <!-- 댓글 수 끝-->
+
+
+
         </div>
-        <!-- 최신글 끝 -->
 
         <!-- mainSection Body 구역 끝-->
     </section>
