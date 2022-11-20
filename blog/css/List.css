@@ -388,7 +388,68 @@
 }
 
 
-@media screen and (max-width:450px) { 
+@media screen and (min-width:299px) and (max-width:450px) { 
+
+    #mainSection{
+        top: 0px;
+    }
+    #mainSection_Header_Center{
+        width: 100%;
+    }
+
+    #mainSection_userInfoDiv{
+        flex-direction: column;
+    }
+
+    #userInfoContentsDiv{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .userInfoContentsDiv_M{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #userInfoETCDiv{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #userInfoETC_write_btn{
+        width: 100%;
+    }
+
+    .boardListDiv{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .boardList_img{
+        width: 100%;
+    }
+    .boardList_contents{
+        width: 100%;
+    }
+
+    /* .boardList_contents_etc_dayDiv{
+        margin-bottom: 10px;
+    } */
+
+}
+
+@media screen and (max-width:298px) { 
 
     #mainSection{
         top: 0px;

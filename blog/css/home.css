@@ -610,6 +610,23 @@
         /* margin: 0 1rem; */
     }
 
+    .mainSection_Body_firstDiv_list_bottom_etc{
+        flex-direction: column;
+    }
+    .mainSection_Body_firstDiv_list_bottom_etc_days{
+        width: 100%;
+    }
+    .mainSection_Body_firstDiv_list_bottom_etc_info{
+        width: 100%;
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+    .mainSection_Body_firstDiv_list_bottom_etc_info_recommand{
+        margin-right: 1rem;
+    }
+
+
+
     /* 추천 수 별 리스트 넓이 */
     .mainSection_Body_secondDiv_list{
         width: 100%;
@@ -617,11 +634,44 @@
         /* margin: 0 1rem; */
     }
 
+    .mainSection_Body_secondDiv_list_bottom_etc{
+        flex-direction: column;
+    }
+    .mainSection_Body_secondDiv_list_bottom_etc_days{
+        width: 100%;
+    }
+    .mainSection_Body_secondDiv_list_bottom_etc_info{
+        width: 100%;
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+    .mainSection_Body_secondDiv_list_bottom_etc_info_recommand{
+        margin-right: 1rem;
+    }
+
+
+
     /* 댓글 수 별 리스트 넓이 */
     .mainSection_Body_thirdDiv_list{
         width: 100%;
         /* height: 300px; */
         /* margin: 0 1rem; */
+    }
+
+    .mainSection_Body_thirdDiv_list_bottom_etc{
+        flex-direction: column;
+    }
+
+    .mainSection_Body_thirdDiv_list_bottom_etc_days{
+        width: 100%;
+    }
+    .mainSection_Body_thirdDiv_list_bottom_etc_info{
+        width: 100%;
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+    .mainSection_Body_thirdDiv_list_bottom_etc_info_recommand{
+        margin-right: 1rem;
     }
 
 }
