@@ -23,8 +23,8 @@
 
 
     <!-- blog css,js 경로 -->
-    <link href="./css/List.css" rel="stylesheet"/>
-    <script src="./js/List.js"></script>
+    <link href="./css/list.css" rel="stylesheet"/>
+    <script src="./js/list.js"></script>
     <!-- blog css,js 경로 끝-->
 
     <title>EVUELA::BLOG</title>
