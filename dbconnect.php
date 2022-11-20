@@ -37,6 +37,21 @@ function DBQuery($query,$queryType){
         }
 
     }
+    // select문 여러개
+    else if($queryType == "selectRows"){
+        $result = mysqli_query($conn, $query);
+
+        $rows = [];
+
+        while($row = mysqli_fetch_array($result)){
+            // return var_dump($row);
+            array_push($rows,$row);
+        }
+
+        return $rows;
+
+
+    }
     // insert문
     else if($queryType == "insert"){
         $result = mysqli_query($conn, $query);

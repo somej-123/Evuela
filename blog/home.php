@@ -1,4 +1,6 @@
-<?php session_start()?>
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -67,16 +69,23 @@
             
             <!-- 카테고리 -->
             <div id="mainSection_categoryDiv">
-                <h5 id="mainSection_categoryTitle">전체<i id="categoryTitleIcon" class="fas fa-chevron-down"></i></h5>
+                <h5 id="mainSection_categoryTitle">카테고리 <i id="mainSection_categoryTitle_arrowIcon" class="fas fa-angle-double-right"></i> <span id="mainSection_categoryContents">전체</span><i id="categoryTitleIcon" class="fas fa-caret-down"></i></h5>
                 <div id="mainSection_categorySubDiv" class="row">
                     <div id="mainSection_categorySubDiv-main" class="col-6">
-                        <p><a href="#">전체</a></p>
-                        <p><a href="#">프로그래밍</a></p>
+                        <!-- <p class="category_mainTag_P category_mainSelect"><a href="#">전체</a></p>
+                        <p class="category_mainTag_P"><a href="#">메인#1</a></p>
+                        <p class="category_mainTag_P"><a href="#">메인#2</a></p>
+                        <p class="category_mainTag_P"><a href="#">메인#3</a></p>
+                        <p class="category_mainTag_P"><a href="#">메인#4</a></p>
+                        <p class="category_mainTag_P"><a href="#">메인#5</a></p> -->
                     </div>
                     <div id="mainSection_categorySubDiv-sub" class="col-6">
-                        <p><a href="#">html</a></p>
-                        <p><a href="#">css</a></p>
-                        <p><a href="#">js</a></p>
+                        <!-- <p class="category_subTag_P category_subSelect"><a href="#">서브#1</a></p>
+                        <p class="category_subTag_P"><a href="#">서브#2</a></p>
+                        <p class="category_subTag_P"><a href="#">서브#3</a></p>
+                        <p class="category_subTag_P"><a href="#">서브#4</a></p>
+                        <p class="category_subTag_P"><a href="#">서브#5</a></p>
+                        <p class="category_subTag_P"><a href="#">서브#6</a></p> -->
                     </div>
                 </div>
             </div>
@@ -109,7 +118,7 @@
                             <div class="mainSection_Body_firstDiv_list_bottom_user">
                                 <p class="mainSection_Body_firstDiv_list_bottom_user_name">작성자</p>
                             </div>
-                            <div class="row mainSection_Body_firstDiv_list_bottom_etc">
+                            <div class="mainSection_Body_firstDiv_list_bottom_etc">
                                 <div class="col-8 mainSection_Body_firstDiv_list_bottom_etc_days">
                                     <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_firstDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
                                 </div>
@@ -144,7 +153,7 @@
                             <div class="mainSection_Body_firstDiv_list_bottom_user">
                                 <p class="mainSection_Body_firstDiv_list_bottom_user_name">작성자</p>
                             </div>
-                            <div class="row mainSection_Body_firstDiv_list_bottom_etc">
+                            <div class="mainSection_Body_firstDiv_list_bottom_etc">
                                 <div class="col-8 mainSection_Body_firstDiv_list_bottom_etc_days">
                                     <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_firstDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
                                 </div>
@@ -184,7 +193,7 @@
                             <div class="mainSection_Body_firstDiv_list_bottom_user">
                                 <p class="mainSection_Body_firstDiv_list_bottom_user_name">작성자</p>
                             </div>
-                            <div class="row mainSection_Body_firstDiv_list_bottom_etc">
+                            <div class="mainSection_Body_firstDiv_list_bottom_etc">
                                 <div class="col-8 mainSection_Body_firstDiv_list_bottom_etc_days">
                                     <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_firstDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
                                 </div>
@@ -237,7 +246,7 @@
                             <div class="mainSection_Body_secondDiv_list_bottom_user">
                                 <p class="mainSection_Body_secondDiv_list_bottom_user_name">작성자</p>
                             </div>
-                            <div class="row mainSection_Body_secondDiv_list_bottom_etc">
+                            <div class="mainSection_Body_secondDiv_list_bottom_etc">
                                 <div class="col-8 mainSection_Body_secondDiv_list_bottom_etc_days">
                                     <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
                                 </div>
@@ -274,7 +283,7 @@
                             <div class="mainSection_Body_secondDiv_list_bottom_user">
                                 <p class="mainSection_Body_secondDiv_list_bottom_user_name">작성자</p>
                             </div>
-                            <div class="row mainSection_Body_secondDiv_list_bottom_etc">
+                            <div class="mainSection_Body_secondDiv_list_bottom_etc">
                                 <div class="col-8 mainSection_Body_secondDiv_list_bottom_etc_days">
                                     <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
                                 </div>
@@ -311,7 +320,7 @@
                             <div class="mainSection_Body_secondDiv_list_bottom_user">
                                 <p class="mainSection_Body_secondDiv_list_bottom_user_name">작성자</p>
                             </div>
-                            <div class="row mainSection_Body_secondDiv_list_bottom_etc">
+                            <div class="mainSection_Body_secondDiv_list_bottom_etc">
                                 <div class="col-8 mainSection_Body_secondDiv_list_bottom_etc_days">
                                     <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_secondDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
                                 </div>
@@ -357,7 +366,7 @@
                             <div class="mainSection_Body_thirdDiv_list_bottom_user">
                                 <p class="mainSection_Body_thirdDiv_list_bottom_user_name">작성자</p>
                             </div>
-                            <div class="row mainSection_Body_thirdDiv_list_bottom_etc">
+                            <div class="mainSection_Body_thirdDiv_list_bottom_etc">
                                 <div class="col-8 mainSection_Body_thirdDiv_list_bottom_etc_days">
                                     <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
                                 </div>
@@ -395,7 +404,7 @@
                             <div class="mainSection_Body_thirdDiv_list_bottom_user">
                                 <p class="mainSection_Body_thirdDiv_list_bottom_user_name">작성자</p>
                             </div>
-                            <div class="row mainSection_Body_thirdDiv_list_bottom_etc">
+                            <div class="mainSection_Body_thirdDiv_list_bottom_etc">
                                 <div class="col-8 mainSection_Body_thirdDiv_list_bottom_etc_days">
                                     <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
                                 </div>
@@ -432,7 +441,7 @@
                             <div class="mainSection_Body_thirdDiv_list_bottom_user">
                                 <p class="mainSection_Body_thirdDiv_list_bottom_user_name">작성자</p>
                             </div>
-                            <div class="row mainSection_Body_thirdDiv_list_bottom_etc">
+                            <div class="mainSection_Body_thirdDiv_list_bottom_etc">
                                 <div class="col-8 mainSection_Body_thirdDiv_list_bottom_etc_days">
                                     <i class="far fa-calendar-alt"></i> <span class="mainSection_Body_thirdDiv_list_bottom_etc_days_value">2222-22-22 22:22:22</span>
                                 </div>

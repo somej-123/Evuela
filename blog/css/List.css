@@ -1,0 +1,453 @@
+/* 메인 섹션 시작 */
+
+#mainSection{
+    width: 100%;
+    /* height: 1500px; */
+    background-color: #fff;
+    position: relative;
+    top: 60px;
+}
+
+
+/* mainSection Header 시작 */
+#mainSection_Header{
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+#mainSection_Header_background_div{
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#mainSection_Header_background{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/rain_load.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(60%);
+}
+
+#mainSection_Header_Top{
+    position: relative;
+    padding-top: 8rem;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+}
+
+#mainSection_Header_Top_title{
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+#mainSection_Header_Top_text{
+    margin-bottom: 2rem;
+}
+
+#mainSection_Header_Center{
+    width: 70%;
+    margin: 0 auto;
+}
+
+#mainSection_Header_Center_searchSelect{
+    flex: 0.1 0 0;
+}
+
+#mainSection_Header_Center_searchBtn:hover{
+    padding: 0px 1rem;
+    transition: 0.5s ease-in-out all;
+    font-size: 1.1rem;
+}
+
+/* mainSection Header 끝*/
+
+/* mainSection Body 시작 */
+
+#mainSection_Body{
+    background-color: #fff;
+    padding: 20px 20px;
+}
+
+
+/* 사용자 정보 영역 */
+
+#mainSection_userInfoDiv{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* height: 80px; */
+    border-bottom: 1px solid black;
+    margin: 0px 0px 20px;
+}
+
+#userInfoContentsDiv{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.userInfoContentsDiv_M{
+    display: flex;
+    align-items: center;
+}
+
+.userInfoContents{
+    font-weight: 600;
+    margin: 0 0.5rem;
+}
+
+.userInfoContents a{
+    text-decoration: none;
+}
+
+#userInfoETCDiv{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    justify-content: flex-end;
+}
+
+
+/* 사용자 정보 영역 끝*/
+
+
+
+/* 카테고리 영역 */
+
+#mainSection_categoryDiv{
+    margin: 10px 0px 30px;
+}
+
+#mainSection_categoryTitle{
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    cursor: pointer;
+}
+
+#mainSection_categoryTitle_arrowIcon{
+    margin: 0px 10px;
+}
+
+#categoryTitleIcon{
+    margin-left: 10px;
+}
+
+
+/* 카테고리 서브 영역 */
+
+#mainSection_categorySubDiv{
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    margin: 10px 0px;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    display: none;
+}
+
+#mainSection_categorySubDiv-main{
+    padding: 10px 10px 0px 10px;
+    /* padding-left: 10px;
+    padding-right: 0px; */
+}
+
+.category_mainTag_P{
+    margin-bottom: 1rem;
+}
+
+
+.category_mainTag_P a{
+    text-decoration: none;
+    color: #000;
+    opacity: 0.7;
+}
+
+.category_mainTag_P a:hover{
+    color: #000;
+    opacity: 1;
+}
+
+
+
+#mainSection_categorySubDiv-sub{
+    border-left: 1px solid #cccccc;
+    padding: 10px 10px 0px 10px;
+}
+
+.category_subTag_P{
+    margin-bottom: 1rem;
+}
+
+.category_subTag_P a{
+    text-decoration: none;
+    color: #000;
+    opacity: 0.7;
+}
+
+.category_mainSelect a{
+    opacity: 1 !important;
+}
+
+/* 카테고리 서브 영역 끝*/
+
+/* 카테고리 영역 끝 */
+
+
+
+
+/* 리스트 영역 시작 */
+
+#mainSection_boardListDiv{
+    width: 100%;
+    /* height: 2000px; */
+    padding: 20px 0px;
+    /* border: 1px solid #cccccc; */
+}
+
+
+/* 리스트 컨텐츠 영역 */
+
+.boardListDiv{
+    width: 100%;
+    /* height: 300px; */
+    margin: 0 auto 3rem;
+    box-shadow: 0px 0px 5px 2px #cccccc;
+    /* border: 1px solid #cccccc; */
+}
+
+.boardList_img{
+    padding: 0;
+    /* height: 100%; */
+}
+.boardList_img img{
+    width: 100%;
+    height: 282px;
+}
+
+.boardList_contents{
+    padding: 1rem;
+    height: 100%;
+}
+
+/* 제목 영역 */
+.boardList_contents_titleDiv{
+    margin-bottom: 10px;
+    width: 100%;
+
+}
+.boardList_contents_titleDiv h5{
+    margin: 0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.boardList_contents_titleDiv h5 a{
+    font-size: 1rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+/* 글 영역 */
+.boardList_contents_contentsDiv{
+    width: 100%;
+    height: 105px;
+    font-size: 14px;
+    color: gray;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    /* line-height: 1.8; */
+    overflow: hidden;
+    margin-bottom: 10px;
+
+}
+.boardList_contents_contentsDiv p{
+    margin: 0;
+}
+
+
+/* 태그 영역 */
+.boardList_conetnts_tagDiv{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.boardList_conetnts_tag{
+    /* color: dodgerblue; */
+    font-size: 12px;
+    padding: 0.15rem 0.2rem;
+    margin-right: 5px;
+    /* margin: 0 10px; */
+    /* margin-bottom: 10px; */
+}
+
+/* 유저 영역 */
+.boardList_contents_userDiv{
+    /* margin-top: 20px; */
+    margin: 15px 0px 15px;
+}
+
+.boardList_contents_userDiv p{
+    margin-bottom: 0;
+    color: #000;
+    font-weight: 600;
+}
+
+/* 기타 영역 */
+.boardList_contents_etcDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boardList_contents_etc_dayDiv{
+    color: gray;
+    font-size: 0.9rem;
+}
+
+.boardList_contents_etc_etcDiv{
+    display: flex;
+    font-size: 0.9rem;
+}
+.boardList_contents_etc_commandDiv{
+    margin-right: 8px;
+}
+
+
+/* 리스트 컨텐츠 영역 끝*/
+
+/* 리스트 영역 끝 */
+
+
+
+/* mainSection Body 끝 */
+
+
+
+
+@media screen and (min-width:768px) and (max-width:1200px) { 
+    #mainSection{
+        top: 0px;
+    }
+    #mainSection_Header_Center{
+        width: 90%;
+    }
+
+    /* .boardListDiv{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .boardList_img{
+        width: 100%;
+    }
+    .boardList_contents{
+        width: 100%;
+    } */
+
+
+}
+
+@media screen and (min-width:451px) and (max-width:767px) { 
+    #mainSection{
+        top: 0px;
+    }
+    #mainSection_Header_Center{
+        width: 100%;
+    }
+
+    .boardListDiv{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .boardList_img{
+        width: 100%;
+    }
+    .boardList_contents{
+        width: 100%;
+    }
+
+
+}
+
+
+@media screen and (max-width:450px) { 
+
+    #mainSection{
+        top: 0px;
+    }
+    #mainSection_Header_Center{
+        width: 100%;
+    }
+
+    #mainSection_userInfoDiv{
+        flex-direction: column;
+    }
+
+    #userInfoContentsDiv{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .userInfoContentsDiv_M{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #userInfoETCDiv{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #userInfoETC_write_btn{
+        width: 100%;
+    }
+
+    .boardListDiv{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .boardList_img{
+        width: 100%;
+    }
+    .boardList_contents{
+        width: 100%;
+    }
+
+    .boardList_contents_etc_dayDiv{
+        margin-bottom: 10px;
+    }
+
+}
+
+
+/* 메인 섹션 끝 */
