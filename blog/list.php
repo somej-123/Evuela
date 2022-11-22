@@ -70,20 +70,28 @@
 
             <!-- 개인 정보 -->
             <div id="mainSection_userInfoDiv">
-                <div id="userInfoContentsDiv" class="col-9">
-                    <div class="userInfoContentsDiv_M">
-                        <p class="userInfoContents">somej</p>
-                        <p class="userInfoContents">회원</p>
+
+                <?php if(!isset($_SESSION["signin"])){?>
+                    <div id="userInfoLoginDiv" class="col-12">
+                        <p class="userInfoContents">로그인 하여 다양한 기능을 사용해보세요!</p>
                     </div>
-                    <div class="userInfoContentsDiv_M">
-                        <p class="userInfoContents"><a href="#">나의 글 <span id="myContentsCount">15</span></a></p>
-                        <p class="userInfoContents"><a href="#">나의 댓글 <span id="myCommentCount">15</span></a></p>
+                <?php }
+                else{ ?>
+                    <div id="userInfoContentsDiv" class="col-9">
+                        <div class="userInfoContentsDiv_M">
+                            <p class="userInfoContents">somej</p>
+                            <p class="userInfoContents">회원</p>
+                        </div>
+                        <div class="userInfoContentsDiv_M">
+                            <p class="userInfoContents"><a href="#">나의 글 <span id="myContentsCount">15</span></a></p>
+                            <p class="userInfoContents"><a href="#">나의 댓글 <span id="myCommentCount">15</span></a></p>
+                        </div>
                     </div>
-                    
-                </div>
-                <div id="userInfoETCDiv" class="col-3">
-                    <button id="userInfoETC_write_btn" class="btn btn-primary">글쓰기 <i class="fas fa-edit"></i></button>
-                </div>
+                    <div id="userInfoETCDiv" class="col-3">
+                        <button id="userInfoETC_write_btn" class="btn btn-primary">글쓰기 <i class="fas fa-edit"></i></button>
+                    </div>
+                <?php } ?>
+                
             </div>
             
             <!-- 카테고리 -->
@@ -235,6 +243,12 @@
 
         <!-- mainSection Body 구역 끝-->
     </section>
+
+    <!-- Blog footer 시작 -->
+    <?php 
+        include_once("./footer.php");
+    ?>
+    <!-- Blog footer 끝 -->
     
 </body>
 </html>

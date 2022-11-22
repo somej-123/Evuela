@@ -76,6 +76,55 @@
     padding: 20px 20px;
 }
 
+/* 사용자 정보 영역 */
+
+#mainSection_userInfoDiv{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* height: 80px; */
+    border-bottom: 1px solid black;
+    margin: 0px 0px 20px;
+}
+
+#userInfoLoginDiv{
+    padding-bottom: 10px;
+}
+#userInfoLoginDiv p{
+    margin: 0 !important;
+}
+
+#userInfoContentsDiv{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+
+.userInfoContentsDiv_M{
+    display: flex;
+    align-items: center;
+}
+
+.userInfoContents{
+    font-weight: 600;
+    margin: 0 0.5rem;
+}
+
+.userInfoContents a{
+    text-decoration: none;
+}
+
+#userInfoETCDiv{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    justify-content: flex-end;
+}
+
+
+/* 사용자 정보 영역 끝*/
+
 
 
 /* 카테고리 영역 */
@@ -676,7 +725,7 @@
 
 }
 
-@media screen and (max-width:450px) {
+@media screen and (min-width:299px) and (max-width:450px) { 
     #mainSection{
         top: 0px;
     }
@@ -755,6 +804,169 @@
     .mainSection_Body_thirdDiv_list_bottom_etc_info_recommand{
         margin-right: 1rem;
     }
+    /* 모바일 카테고리 영역 1 */
+
+    #mainSection_userInfoDiv{
+        flex-direction: column;
+    }
+
+    #userInfoLoginDiv p{
+        font-size: 0.8rem;
+    }
+
+    #userInfoContentsDiv{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .userInfoContentsDiv_M{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #userInfoETCDiv{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #userInfoETC_write_btn{
+        width: 100%;
+    }
+    /* 모바일 카테고리 영역 1 끝 */
+}
+
+
+
+@media screen and (max-width:298px) { 
+
+    #mainSection{
+        top: 0px;
+    }
+    #mainSection_Header_Center{
+        width: 100%;
+    }
+
+
+    /* 최신글 리스트 넓이 */
+    .mainSection_Body_firstDiv_list{
+        width: 100%;
+        /* height: 300px; */
+        /* margin: 0 1rem; */
+    }
+
+    .mainSection_Body_firstDiv_list_bottom_etc{
+        flex-direction: column;
+    }
+    .mainSection_Body_firstDiv_list_bottom_etc_days{
+        width: 100%;
+    }
+    .mainSection_Body_firstDiv_list_bottom_etc_info{
+        width: 100%;
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+    .mainSection_Body_firstDiv_list_bottom_etc_info_recommand{
+        margin-right: 1rem;
+    }
+
+
+
+    /* 추천 수 별 리스트 넓이 */
+    .mainSection_Body_secondDiv_list{
+        width: 100%;
+        /* height: 300px; */
+        /* margin: 0 1rem; */
+    }
+
+    .mainSection_Body_secondDiv_list_bottom_etc{
+        flex-direction: column;
+    }
+    .mainSection_Body_secondDiv_list_bottom_etc_days{
+        width: 100%;
+    }
+    .mainSection_Body_secondDiv_list_bottom_etc_info{
+        width: 100%;
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+    .mainSection_Body_secondDiv_list_bottom_etc_info_recommand{
+        margin-right: 1rem;
+    }
+
+
+
+    /* 댓글 수 별 리스트 넓이 */
+    .mainSection_Body_thirdDiv_list{
+        width: 100%;
+        /* height: 300px; */
+        /* margin: 0 1rem; */
+    }
+
+    .mainSection_Body_thirdDiv_list_bottom_etc{
+        flex-direction: column;
+    }
+
+    .mainSection_Body_thirdDiv_list_bottom_etc_days{
+        width: 100%;
+    }
+    .mainSection_Body_thirdDiv_list_bottom_etc_info{
+        width: 100%;
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+    .mainSection_Body_thirdDiv_list_bottom_etc_info_recommand{
+        margin-right: 1rem;
+    }
+
+    /* 모바일 카테고리 영역 2 */
+
+    #mainSection_userInfoDiv{
+        flex-direction: column;
+    }
+
+    #userInfoLoginDiv p{
+        font-size: 0.8rem;
+    }
+
+    #userInfoContentsDiv{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .userInfoContentsDiv_M{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #userInfoETCDiv{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #userInfoETC_write_btn{
+        width: 100%;
+    }
+
+    /* 모바일 카테고리 영역 2 끝*/
+
 }
 
 

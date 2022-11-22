@@ -88,11 +88,19 @@
     margin: 0px 0px 20px;
 }
 
+#userInfoLoginDiv{
+    padding-bottom: 10px;
+}
+#userInfoLoginDiv p{
+    margin: 0 !important;
+}
+
 #userInfoContentsDiv{
     display: flex;
     align-items: center;
     padding-bottom: 10px;
 }
+
 
 .userInfoContentsDiv_M{
     display: flex;
@@ -401,6 +409,11 @@
         flex-direction: column;
     }
 
+    /* 모바일 카테고리 영역 1 */
+    #userInfoLoginDiv p{
+        font-size: 0.8rem;
+    }
+
     #userInfoContentsDiv{
         width: 100%;
         display: flex;
@@ -428,6 +441,7 @@
     #userInfoETC_write_btn{
         width: 100%;
     }
+    /* 모바일 카테고리 영역 1 끝 */
 
     .boardListDiv{
         display: flex;
@@ -462,6 +476,12 @@
         flex-direction: column;
     }
 
+    #userInfoLoginDiv p{
+        font-size: 0.8rem;
+    }
+
+    /* 모바일 카테고리 영역 2 */
+
     #userInfoContentsDiv{
         width: 100%;
         display: flex;
@@ -489,6 +509,8 @@
     #userInfoETC_write_btn{
         width: 100%;
     }
+
+    /* 모바일 카테고리 영역 2 끝*/
 
     .boardListDiv{
         display: flex;

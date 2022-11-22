@@ -1,0 +1,82 @@
+footer{
+    border-top: 1px solid black;
+    width: 100%;
+    height: 300px;
+    position: relative;
+    top: 60px;
+}
+
+#footerMainDiv{
+    text-align: center;
+    padding: 1rem;
+}
+
+#firstFooterDiv p{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+#firstFooterDiv{
+    margin: 1rem 0px;
+}
+
+
+#secondFooterDiv{
+    /* margin: 10px 0px; */
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#secondFooterDiv div img{
+    cursor: pointer;
+}
+
+#thirdFooterDiv{
+    /* margin: 10px 0px; */
+    margin-bottom: 1rem;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; */
+}
+
+.thirdFooterFirstP{
+    margin-bottom: 0.5rem;
+}
+
+.footerText{
+    letter-spacing: 1px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+
+@media screen and (min-width:299px) and (max-width:450px) { 
+
+    #secondFooterDiv div img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .footerText{
+        font-size: 0.8rem;
+    }
+
+}
+
+@media screen and (max-width:298px) { 
+
+    #secondFooterDiv div img{
+        width: 50px;
+        height: 50px;
+    }
+    .footerText{
+        font-size: 0.6rem;
+    }
+
+}
