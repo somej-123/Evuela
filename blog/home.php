@@ -59,7 +59,9 @@
                         <button class="btn btn-secondary" id="mainSection_Header_Center_searchBtn" type="button"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
-                
+                <div id="mainSection_Header_Footer">
+                    <p id="mainSection_Header_Footer_Title" onclick="location.href='./list'">전체 목록 보기</p>
+                </div>
             </div>
         </div>
         <!-- mainSection Header 구역 끝-->
