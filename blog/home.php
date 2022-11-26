@@ -76,22 +76,33 @@
                         <div id="userInfoLoginDiv" class="col-12">
                             <p class="userInfoContents">로그인 하여 다양한 기능을 사용해보세요!</p>
                         </div>
-                    <?php }
-                    else{ ?>
-                        <div id="userInfoContentsDiv" class="col-9">
-                            <div class="userInfoContentsDiv_M">
-                                <p class="userInfoContents">somej</p>
-                                <p class="userInfoContents">회원</p>
+                        <?php }
+                        else{ 
+                            
+                            if($_SESSION["user_level"] == 1){
+                                $UserLevel = "운영자";
+                            }else if($_SESSION["user_level"] == 2){
+                                $UserLevel = "회원";
+                            }else if($_SESSION["user_level"] == 3){
+                                $UserLevel = "비회원";
+                            }else{
+                                $UserLevel = "관리자";
+                            }
+                            ?>
+                            <div id="userInfoContentsDiv" class="col-9">
+                                <div class="userInfoContentsDiv_M">
+                                    <p class="userInfoContents"><?= $_SESSION["user_id"]?></p>
+                                    <p class="userInfoContents"><?= $UserLevel?></p>
+                                </div>
+                                <div class="userInfoContentsDiv_M">
+                                    <p class="userInfoContents"><a href="#">나의 글 <span id="myContentsCount">15</span></a></p>
+                                    <p class="userInfoContents"><a href="#">나의 댓글 <span id="myCommentCount">15</span></a></p>
+                                </div>
                             </div>
-                            <div class="userInfoContentsDiv_M">
-                                <p class="userInfoContents"><a href="#">나의 글 <span id="myContentsCount">15</span></a></p>
-                                <p class="userInfoContents"><a href="#">나의 댓글 <span id="myCommentCount">15</span></a></p>
+                            <div id="userInfoETCDiv" class="col-3">
+                                <button id="userInfoETC_write_btn" class="btn btn-primary" onclick="location.href='./write'">글쓰기 <i class="fas fa-edit"></i></button>
                             </div>
-                        </div>
-                        <div id="userInfoETCDiv" class="col-3">
-                            <button id="userInfoETC_write_btn" class="btn btn-primary">글쓰기 <i class="fas fa-edit"></i></button>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
 
                     </div>
             
