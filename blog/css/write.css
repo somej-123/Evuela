@@ -87,6 +87,10 @@
     padding: 20px 20px;
 }
 
+#mainSection_Body_writeHeader{
+    display: flex;
+}
+
 
 /* mainSection Body 끝 */
 

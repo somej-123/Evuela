@@ -68,7 +68,29 @@
         <!-- mainSection Body 구역 -->
 
         <div id="mainSection_Body" class="container">
+            <div id="mainSection_Body_writeDiv">
+            
+                <div id="mainSection_Body_writeHeader">
+                    <div id="writeHeader_titleDiv">
+                        <input type="text" class="form-control" id="writeHeader_title" aria-describedby="제목을 입력하세요">
+                    </div>
+                    <div id="writeHeader_categoryDiv">
+                        <select id="writeHeader_category" class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="mainSection_Body_writeBody">
 
+                </div>
+                <div id="mainSection_Body_writeFooter">
+
+                </div>
+
+            </div>
         </div>
 
         <!-- mainSection Body 구역 끝-->
