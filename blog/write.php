@@ -20,6 +20,17 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- 공통부분 끝 -->
 
+    <!-- include summernote css/js -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js" integrity="sha512-lVkQNgKabKsM1DA/qbhJRFQU8TuwkLF2vSN3iU/c7+iayKs08Y8GXqfFxxTZr1IcpMovXnf2N/ZZoMgmZep1YQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote.min.css" integrity="sha512-m52YCZLrqQpQ+k+84rmWjrrkXAUrpl3HK0IO4/naRwp58pyr7rf5PO1DbI2/aFYwyeIH/8teS9HbLxVyGqDv/A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/lang/summernote-ko-KR.min.js"></script>
+
+    <!-- include summernote css/js end-->
+
 
 
     <!-- blog css,js 경로 -->
@@ -68,8 +79,8 @@
         <!-- mainSection Body 구역 -->
 
         <div id="mainSection_Body" class="container">
+            <h5 id="mainSection_Body_title">글쓰기</h5>
             <div id="mainSection_Body_writeDiv">
-            
                 <div id="mainSection_Body_writeHeader">
                     <div id="writeHeader_titleDiv">
                         <input type="text" class="form-control" id="writeHeader_title" aria-describedby="제목을 입력하세요">
@@ -84,7 +95,9 @@
                     </div>
                 </div>
                 <div id="mainSection_Body_writeBody">
+                    <div id="mainSection_Body_write_summernote">
 
+                    </div>
                 </div>
                 <div id="mainSection_Body_writeFooter">
 
