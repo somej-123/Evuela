@@ -83,24 +83,24 @@
             <div id="mainSection_Body_writeDiv">
                 <div id="mainSection_Body_writeHeader">
                     <div id="writeHeader_titleDiv">
-                        <input type="text" class="form-control" id="writeHeader_title" aria-describedby="제목을 입력하세요">
+                        <input type="text" class="form-control" id="writeHeader_title" aria-describedby="제목을 입력하세요" placeholder="제목을 입력하세요">
                     </div>
                     <div id="writeHeader_categoryDiv">
                         <select id="writeHeader_category" class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
+                            <!-- <option selected value="0">카테고리 선택</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="3">Three</option> -->
                         </select>
                     </div>
                 </div>
                 <div id="mainSection_Body_writeBody">
-                    <div id="mainSection_Body_write_summernote">
-
-                    </div>
+                    <div id="mainSection_Body_write_summernote"></div>
                 </div>
                 <div id="mainSection_Body_writeFooter">
-
+                    <button type="button" class="btn btn-primary">등록</button>
+                    <button type="button" class="btn btn-primary">목록</button>
+                    <button type="button" class="btn btn-danger">나가기</button>
                 </div>
 
             </div>

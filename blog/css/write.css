@@ -1,3 +1,4 @@
+
 /* 메인 섹션 시작 */
 
 .dropdown-toggle::after{
@@ -126,13 +127,29 @@
 #writeHeader_titleDiv{
     width: 70%;
 }
+
 #writeHeader_title{
+    /* background-color: #cccccc; */
     border: none;
     border-bottom: 1px solid black;
     border-radius: 0;
+    box-shadow: none;
 }
 #writeHeader_categoryDiv{
     width: 25%;
+}
+.write_category_option{
+    font-weight: 600;
+    
+}
+
+#writeHeader_category{
+    font-weight: 600;
+}
+
+#writeHeader_category option{
+    padding: 5px 0px;
+    font-size: 13px;
 }
 
 /* 글쓰기 헤더 끝 */
@@ -146,7 +163,40 @@
     /* height: 500px; */
 }
 
+
+.note-modal-footer{
+    height: auto !important;
+    padding: 0;
+    text-align: right;
+    padding: 20px 30px;
+    border-top: 1px solid #cccccc;
+}
+.note-btn{
+    float: none !important;
+}
+.note-color .note-dropdown-menu{
+    min-width: auto !important;
+}
+/* .note-para .note-dropdown-menu{
+    display: flex;
+} */
+.note-para .note-dropdown-menu .note-align{
+    margin: 0 !important;
+}
+.note-para .note-dropdown-menu .note-list{
+    margin: 0 !important;
+}
 /* 글쓰기 본문 summernote 시작 끝*/
+
+
+/* 글쓰기 footer 시작 */
+
+#mainSection_Body_writeFooter{
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* 글쓰기 footer 끝 */
 
 
 /* mainSection Body 끝 */
