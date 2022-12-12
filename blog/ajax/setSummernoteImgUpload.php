@@ -1,0 +1,84 @@
+<?php
+
+require_once '../../dbconnect.php';
+
+header("Content-Type: application/json; charset=utf-8");
+
+
+if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
+    exit("<script>
+        alert('잘못된 접근 경로 입니다.')
+        location.href='../'
+        </script>");
+}else{
+
+    $timestamp = time();
+
+    // 임시로 저장된 정보(tmp_name)
+    $tempFile = $_FILES['files']['tmp_name'];
+
+    $resFile = $_SERVER["DOCUMENT_ROOT"]."/blog/blogImg/".$timestamp.$_FILES['files']['name'];
+
+    $imageUpload = move_uploaded_file($tempFile, $resFile);
+    $fileSizeConfirm = false;
+
+    $fileSize = filesize($resFile);
+
+    if($fileSize > 2097152){
+        $fileSizeConfirm = false;
+    }else{
+        $fileSizeConfirm = true;
+    }
+
+    $result = new stdClass();
+
+    
+
+    if($imageUpload == true && $fileSizeConfirm == true){
+
+        $result->error = true;
+        $result->errorText = "";
+        $result->url = "../blog/blogImg/".$timestamp.$_FILES['files']['name'];
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
+    }else{
+        $result->error = false;
+        if($fileSizeConfirm == false){
+            $result->errorText = "최대 파일 사이즈는 2MB입니다.";
+            unlink($resFile);
+        }else{
+            $result->errorText = "???";
+        }
+        
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
+    }
+    // error_log(var_export($_FILES['files']));
+    // // error_log($_FILES['file']);
+    // //업로드 허용 확장자
+    // $allowed_ext = array('jpg','jpeg','png','gif');
+
+    // //결과를 담을 변수
+    // $result = array();
+    // foreach($_FILES['files']['name'] as $f=>$name) {
+    //     $name = $_FILES['files']['name'][$f];
+        
+    //     //확장자 추출
+    //     $exploded_file = strtolower(substr(strrchr($name, '.'), 1));
+        
+    //     //변경할 파일명(중복되지 않게 처리하기 위해 파일명을 변경해 줍니다.)
+    //     $thisName = date("YmdHis",time())."_".md5($name).".".$exploded_file;
+        
+    //     //업로드 파일(업로드 경로/변경할 이미지 파일명)
+    //     $uploadFile = $_SERVER['DOCUMENT_ROOT']."/blog/img/".$thisName;
+    //     if(in_array($exploded_file, $allowed_ext)) {
+    //         if(move_uploaded_file($_FILES['files']['tmp_name'][$f], $uploadFile)){
+    //             //파일을 업로드 폴더로 옮겨준후 $result 에 해당 경로를 넣어줍니다.
+    //             array_push($result, "/".$uploadFile);
+    //         }
+    //     }
+    // }
+
+    // echo json_encode($result, JSON_UNESCAPED_UNICODE);
+}
+
+
+?>

@@ -14,11 +14,11 @@ $(document).ready(()=>{
         if(data.confirm == 1){
 
             var data = data.data;
-            console.log(data);
+            // console.log(data);
             $("#writeHeader_category").empty();
             $("#writeHeader_category").append("<option value=''>카테고리 선택</option>");
 
-            console.log(data.length)
+            // console.log(data.length)
             if(data.length != null && data.length != undefined && data.length != []){
                 for(let i=0; i < data.length; i++){
                     if(data[i].board_category_parents_idx == null){
@@ -29,24 +29,8 @@ $(document).ready(()=>{
                     
                 }
             }else{
-                console.log("??")
+                // console.log("??")
             }
-
-            // var rowData = data.data;
-
-            // $("#mainSection_categorySubDiv-main").empty();
-
-            // // 카테고리 전체 목록
-            // $("#mainSection_categorySubDiv-main").append(
-            //     '<p class="category_mainTag_P category_mainSelect"><a href="javascript:selectCategory(\'main\',\'all\')">전체</a></p>'
-            // );
-
-            // // 카테고리 목록
-            // for(var c=0;c<rowData.length;c++){
-            //     $("#mainSection_categorySubDiv-main").append(
-            //         '<p class="category_mainTag_P"><a href="javascript:selectCategory(\'main\',\''+rowData[c].board_category_name+'\')">'+rowData[c].board_category_name+'</a></p>'
-            //     );
-            // }
 
         }else{
             // alert("회원수정에 실패 하였습니다\n다시 시도해주세요");
@@ -65,6 +49,11 @@ $(document).ready(()=>{
     // var modal = new bootstrap.Modal('#myModal')
     // var dropdown = new bootstrap.Dropdown('[data-bs-toggle="dropdown"]')
     // console.log("aa");
+
+
+    // summernote::start
+
+    // summernote setting::start
 
     $("#mainSection_Body_write_summernote").summernote({
         // height: 500,                 // set editor height
@@ -111,11 +100,160 @@ $(document).ready(()=>{
                 ['insert', ['link', 'picture']]
             ]
         },
+
+        // 콜백
+        callbacks: {
+            // 이미지 업로드시
+            onImageUpload: function(files) {
+
+                setImgFile(files, $(this));
+
+            }
+          }
           
           
       });
+
+      // summernote reset
+    //   $("#mainSection_Body_write_summernote").summernote('reset');
+
+      // summernote setting::end
+
+
+
+      // summernote submit::start
+
+
+      $("#summernote_submit_btn").on("click",()=>{
+        let user_id = $("#user_id").val();
+        let user_level = $("#user_level").val();
+        let board_title = $("#writeHeader_title").val();
+        let board_category = $("#writeHeader_category").val();
+        let board_contents = $('#mainSection_Body_write_summernote').summernote('code');
+
+        // console.log(user_id);
+        // console.log(user_level);
+        // console.log(board_title);
+        // console.log(board_category);
+        // console.log(board_contents);
+
+        if(user_id == null || user_id == "" || user_id == undefined){
+            showAlert("다시 로그인하여 시도해주세요","error");
+            return;
+        }else if(user_level == null || user_level == "" || user_level == undefined){
+            showAlert("다시 로그인하여 시도해주세요","error");
+            return;
+        }else if(board_title == null || board_title == ""){
+            showAlert("제목을 입력해주세요","error");
+            return;
+        }else if(board_category == null || board_category == "" || board_category == undefined){
+            showAlert("게시글의 카테고리를 지정해주세요","error");
+            return;
+        }else if($('#mainSection_Body_write_summernote').summernote('isEmpty')){
+            showAlert("내용을 입력해주세요","error");
+            return;
+        }
+
+        
+        
+      })
+
+      // summernote submit::end
+
+      // summernote::end
       
 });
+
+
+// summernote 이미지 저장
+
+function setImgFile(files, editor){
+
+    var imgFilecheck = false;
+    var reg = /(.*?)\.(gif|jpg|png|jepg)$/; //허용할 확장자
+
+    // 확장자 검사
+
+    for(var i=0; i<files.length; i++){
+        if(!files[i].name.match(reg)){
+            // console.log("불허");
+            showAlert("이미지는 gif, jpg, png, jepg 파일만 업로드가 가능합니다.","error");
+            imgFilecheck = false;
+            return;
+        }else{
+            imgFilecheck = true;
+        }
+    }
+
+    // console.log(imgFilecheck);
+
+    if(imgFilecheck == true){
+
+        for(var i=0; i<files.length; i++){
+            // console.log(files[i]);
+
+            var formData = new FormData();
+            formData.append("files",files[i]);
+
+            $.ajax({
+                url:'./ajax/setSummernoteImgUpload.php',
+                data:formData,
+                cache:false,
+                contentType:false,
+                processData:false,
+                type:'POST',
+                success:function(data){
+                    //alert(data);
+                    console.log(data);
+                    if(data.error){
+                        // var dataUrl = ".."+data.url.substr(19);
+                        // // console.log(dataUrl)
+                        // var image = $('<img>').attr('src', '' + dataUrl); // 에디터에 img 태그로 저장을 하기 위함
+                        var image = $('<img>').attr('src', '' + data.url); // 에디터에 img 태그로 저장을 하기 위함
+                        $('#mainSection_Body_write_summernote').summernote("insertNode", image[0]); // summernote 에디터에 img 태그를 보여줌
+                        return;
+                    }else{
+                        showAlert(data.errorText, "error");
+                        return;
+                    }
+                },
+                error:function(data){
+                    showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.","error");
+                    return;
+                }
+            })
+        }
+
+    }
+    
+    // var formData = new FormData();
+    // var fileArr = Array.prototype.slice.call(files);
+    // var filename = "";
+    // var fileCnt = 0;
+    // fileArr.forEach(function(f){
+    //     // console.log(f);
+    //     filename = f.name;
+    //     if(filename.match(reg)) {
+    //         formData.append('file[]', f);
+    //         fileCnt++;
+    //     }
+    // });
+
+    // console.log(formData);
+
+    // if(fileCnt <= 0) {
+    //     alert("파일은 gif, png, jpg 파일만 등록해 주세요.");
+    //     return;
+    // } else {
+
+    // }
+}
+
+// summernote 이미지 저장 끝
+
+
+
+
 
 // sweetAlert 사용
 function showAlert(alertText,alertType,alertTitle,alertFooter){

@@ -98,8 +98,11 @@
                     <div id="mainSection_Body_write_summernote"></div>
                 </div>
                 <div id="mainSection_Body_writeFooter">
-                    <button type="button" class="btn btn-primary">등록</button>
-                    <button type="button" class="btn btn-primary">목록</button>
+                    <input type="hidden" value="<?php echo $_SESSION["user_id"]?>" id="user_id"/>
+                    <input type="hidden" value="<?php echo $_SESSION["user_level"]?>" id="user_level"/>
+                    <input type="hidden" value="<?php echo getMillisecond() ?>" id="board_id"/>
+                    <button type="button" id="summernote_submit_btn" class="btn btn-primary">등록</button>
+                    <button type="button" id="" class="btn btn-primary">목록</button>
                     <button type="button" class="btn btn-danger">나가기</button>
                 </div>
 
@@ -117,3 +120,16 @@
     
 </body>
 </html>
+
+
+<?php 
+
+function getMillisecond()
+{
+  list($microtime,$timestamp) = explode(' ',microtime());
+  $time = $timestamp.substr($microtime, 2, 3);
+ 
+  return $time;
+}
+
+?>
