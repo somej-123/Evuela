@@ -11,7 +11,7 @@ $(document).ready(()=>{
     })
     .done((data)=>{
         // console.log(data);
-        if(data.confirm == 1){
+        if(data.confirm == 1){//테스트
 
             var data = data.data;
             // console.log(data);
@@ -160,6 +160,19 @@ $(document).ready(()=>{
 
       // summernote submit::end
 
+        //summernote imgDelete::start
+
+        $(".note-remove>.note-btn").on("click",()=>{
+            console.log("이미지 삭제 버튼 클릭");
+        });
+
+        
+        // document.addEventListener('selectionchange', () => {
+        //     console.log(document.getSelection());
+        //   });
+
+
+        //summernote imgDelete::end
       // summernote::end
       
 });

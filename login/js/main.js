@@ -16,6 +16,12 @@ $(document).ready(function(){
 
 
 });
+function enterkey(){
+    if (window.event.keyCode == 13) {
+    	// 엔터키가 눌렸을 때
+        signIn();
+    }
+}
 
 function signIn(){
     var _userID = $("#user_id").val();

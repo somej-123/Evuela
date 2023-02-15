@@ -53,7 +53,7 @@ if(isset($_SESSION["signin"])){
                             <input type="text" name="user_id" id="user_id" required autocomplete="off" placeholder="ID"/>
                         </li>
                         <li>
-                            <input type="password" name="user_password" id="user_password" required autocomplete="off" placeholder="Password"/>
+                            <input type="password" name="user_password" id="user_password" onkeyup="enterkey()" required autocomplete="off" placeholder="Password"/>
                         </li>
                         <li>
                             <button type="button" id="login_btn" onclick="signIn()" class="btn btn-outline-secondary btn-lg">LOGIN</button>
