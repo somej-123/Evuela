@@ -11,7 +11,7 @@ $(document).ready(()=>{
     })
     .done((data)=>{
         // console.log(data);
-        if(data.confirm == 1){//테스트
+        if(data.confirm == 1){
 
             var data = data.data;
             // console.log(data);
@@ -189,7 +189,7 @@ function setImgFile(files, editor){
 
     for(var i=0; i<files.length; i++){
         if(!files[i].name.match(reg)){
-            // console.log("불허");
+            
             showAlert("이미지는 gif, jpg, png, jepg 파일만 업로드가 가능합니다.","error");
             imgFilecheck = false;
             return;
@@ -203,7 +203,6 @@ function setImgFile(files, editor){
     if(imgFilecheck == true){
 
         for(var i=0; i<files.length; i++){
-            // console.log(files[i]);
 
             var formData = new FormData();
             formData.append("files",files[i]);
@@ -217,7 +216,7 @@ function setImgFile(files, editor){
                 type:'POST',
                 success:function(data){
                     //alert(data);
-                    console.log(data);
+                    // console.log(data);
                     if(data.error){
                         // var dataUrl = ".."+data.url.substr(19);
                         // // console.log(dataUrl)

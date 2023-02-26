@@ -21,7 +21,7 @@
     <!-- 공통부분 끝 -->
 
 
-
+    
     <!-- blog css,js 경로 -->
     <link href="./css/list.css" rel="stylesheet"/>
     <script src="./js/list.js"></script>
