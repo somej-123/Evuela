@@ -102,8 +102,8 @@
                     <input type="hidden" value="<?php echo $_SESSION["user_level"]?>" id="user_level"/>
                     <input type="hidden" value="<?php echo getMillisecond() ?>" id="board_id"/>
                     <button type="button" id="summernote_submit_btn" class="btn btn-primary">등록</button>
-                    <button type="button" id="" class="btn btn-primary">목록</button>
-                    <button type="button" class="btn btn-danger">나가기</button>
+                    <button type="button" id="writeToListBtn" class="btn btn-primary">목록</button>
+                    <button type="button" id="writeToHomeBtn" class="btn btn-danger">나가기</button>
                 </div>
 
             </div>

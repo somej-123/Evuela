@@ -74,7 +74,7 @@
 
                     <?php if(!isset($_SESSION["signin"])){?>
                         <div id="userInfoLoginDiv" class="col-12">
-                            <p class="userInfoContents">로그인 하여 다양한 기능을 사용해보세요!</p>
+                            <p class="userInfoContents"><span id="userInfoContents_loginBtn">로그인</span> 하여 다양한 기능을 사용해보세요!</p>
                         </div>
                         <?php }
                         else{ 

@@ -65,6 +65,11 @@ $(document).ready(()=>{
         return;
     })
 
+    //로그인 버튼 클릭 시 로그인 페이지로 이동
+    $("#userInfoContents_loginBtn").on('click',()=>{
+        location.href='../login/home';
+    })
+
 });
 
 // sweetAlert 사용

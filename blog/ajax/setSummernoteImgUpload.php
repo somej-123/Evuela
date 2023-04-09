@@ -16,8 +16,13 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
 
     // 임시로 저장된 정보(tmp_name)
     $tempFile = $_FILES['files']['tmp_name'];
+    
+    $realFileName = $_FILES['files']['name'];
 
-    $resFile = $_SERVER["DOCUMENT_ROOT"]."/blog/blogImg/".$timestamp.$_FILES['files']['name'];
+    // $resFile = $_SERVER["DOCUMENT_ROOT"]."/blog/blogImg/".$timestamp.$_FILES['files']['name'];
+
+    $resFile = $_SERVER["DOCUMENT_ROOT"]."/blog/blogImg/".$timestamp.$realFileName;
+
 
     $imageUpload = move_uploaded_file($tempFile, $resFile);
     $fileSizeConfirm = false;
@@ -36,17 +41,44 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
 
     if($imageUpload == true && $fileSizeConfirm == true){
 
-        $result->error = true;
-        $result->errorText = "";
-        $result->url = "../blog/blogImg/".$timestamp.$_FILES['files']['name'];
-        echo json_encode($result, JSON_UNESCAPED_UNICODE);
+        //유저 LEVEL
+        $user_level = $_POST['user_level'];
+        //유저 ID
+        $user_id = $_POST['user_id'];
+        //게시글 ID
+        $board_id = $_POST['board_id'];
+
+        //이미지 url 경로
+
+        $url = "../blog/blogImg/".$timestamp.$_FILES['files']['name'];
+
+        // 게시글 DB저장
+
+        $sql = "INSERT INTO evuela_board_img (board_id, uesr_id, file_real_name, file_size, file_path, createdate)
+                VALUES ('$board_id', '$user_id', '$realFileName', $fileSize, '$url', now())";
+
+        $insertBoardImg = DBQuery($sql, 'insert');
+
+        if($insertBoardImg){
+            $result->error = true;
+            $result->errorText = "";
+            $result->url = $url;
+            // $result->level = $user_level;
+            // $result->id = $user_id;
+            // $result->board_id = $board_id;
+            echo json_encode($result, JSON_UNESCAPED_UNICODE);
+        }else{
+            $result->error = false;
+            $result->errorText = "서버에 문제가 발생하였습니다.\n담당자에게 문의해주세요";
+        }
+
     }else{
         $result->error = false;
         if($fileSizeConfirm == false){
             $result->errorText = "최대 파일 사이즈는 2MB입니다.";
             unlink($resFile);
         }else{
-            $result->errorText = "???";
+            $result->errorText = "서버에 문제가 발생하였습니다.\n담당자에게 문의해주세요";
         }
         
         echo json_encode($result, JSON_UNESCAPED_UNICODE);

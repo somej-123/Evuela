@@ -130,12 +130,7 @@ $(document).ready(()=>{
         let board_title = $("#writeHeader_title").val();
         let board_category = $("#writeHeader_category").val();
         let board_contents = $('#mainSection_Body_write_summernote').summernote('code');
-
-        // console.log(user_id);
-        // console.log(user_level);
-        // console.log(board_title);
-        // console.log(board_category);
-        // console.log(board_contents);
+        let board_id = $("#board_id").val();
 
         if(user_id == null || user_id == "" || user_id == undefined){
             showAlert("다시 로그인하여 시도해주세요","error");
@@ -152,6 +147,51 @@ $(document).ready(()=>{
         }else if($('#mainSection_Body_write_summernote').summernote('isEmpty')){
             showAlert("내용을 입력해주세요","error");
             return;
+        }else{
+            Swal.fire({
+                // title: '게시글을 등록 하시겠습니까?',
+                html:"<b>게시글을 등록 하시겠습니까?</b>",
+                // text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '등록',
+                cancelButtonText:'취소'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                // 게시글 등록
+                $.ajax({
+                    url:"./ajax/createBoard.php",
+                    data:{
+                        user_id : user_id,
+                        user_level : user_level,
+                        board_title : board_title,
+                        board_category : board_category,
+                        board_contents :board_contents,
+                        board_id : board_id
+                    },
+                    method:"POST",
+                    dataType:"json",
+                })
+                .done((data)=>{
+                    if(data.error){
+                        alert("게시글 등록을 완료하였습니다.")
+                        location.href="./list";
+                        return;
+                    }else{
+                        showAlert("게시글 등록에 실패하였습니다\n다시 시도해주세요","error");
+                        return;
+                    }
+                })
+                .fail((data)=>{
+                    showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.","error");
+                    return;
+                })
+                
+                //   게시글 등록 끝
+                }
+              })
         }
 
         
@@ -175,6 +215,14 @@ $(document).ready(()=>{
         //summernote imgDelete::end
       // summernote::end
       
+    //   목록 버튼 클릭(작성 페이지)
+    $("#writeToListBtn").on('click',()=>{
+        location.href="./list";
+    })
+    //   나가기 버튼 클릭(블로그 홈 페이지)
+    $("#writeToHomeBtn").on('click',()=>{
+        location.href="./home";
+    })
 });
 
 
@@ -182,7 +230,16 @@ $(document).ready(()=>{
 
 function setImgFile(files, editor){
 
+    // userID 값 저장
+    var userID = $("#user_id").val();
+    // userLevel 값 저장
+    var userLevel = $("#user_level").val();
+    // boardID 값 저장
+    var boardID = $("#board_id").val();
+
+    // 이미지 파일 체크
     var imgFilecheck = false;
+    // 확장자 정규식
     var reg = /(.*?)\.(gif|jpg|png|jepg)$/; //허용할 확장자
 
     // 확장자 검사
@@ -206,6 +263,9 @@ function setImgFile(files, editor){
 
             var formData = new FormData();
             formData.append("files",files[i]);
+            formData.append("user_id",userID);
+            formData.append("user_level",userLevel);
+            formData.append("board_id",boardID);
 
             $.ajax({
                 url:'./ajax/setSummernoteImgUpload.php',
@@ -216,7 +276,6 @@ function setImgFile(files, editor){
                 type:'POST',
                 success:function(data){
                     //alert(data);
-                    // console.log(data);
                     if(data.error){
                         // var dataUrl = ".."+data.url.substr(19);
                         // // console.log(dataUrl)
@@ -237,28 +296,7 @@ function setImgFile(files, editor){
         }
 
     }
-    
-    // var formData = new FormData();
-    // var fileArr = Array.prototype.slice.call(files);
-    // var filename = "";
-    // var fileCnt = 0;
-    // fileArr.forEach(function(f){
-    //     // console.log(f);
-    //     filename = f.name;
-    //     if(filename.match(reg)) {
-    //         formData.append('file[]', f);
-    //         fileCnt++;
-    //     }
-    // });
 
-    // console.log(formData);
-
-    // if(fileCnt <= 0) {
-    //     alert("파일은 gif, png, jpg 파일만 등록해 주세요.");
-    //     return;
-    // } else {
-
-    // }
 }
 
 // summernote 이미지 저장 끝

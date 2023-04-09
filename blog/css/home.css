@@ -104,6 +104,10 @@
 #userInfoLoginDiv p{
     margin: 0 !important;
 }
+#userInfoContents_loginBtn{
+    color: #0d6efd;
+    cursor: pointer;
+}
 
 #userInfoContentsDiv{
     display: flex;
