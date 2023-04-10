@@ -2,12 +2,12 @@
 
 session_start();
 
-if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
-    exit("<script>
-        alert('잘못된 접근 경로 입니다.')
-        location.href='../'
-        </script>");
-}else{
+// if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
+//     exit("<script>
+//         alert('잘못된 접근 경로 입니다.')
+//         location.href='../'
+//         </script>");
+// }else{
 
 class dbConf{
 
@@ -49,6 +49,16 @@ function DBQuery($query,$queryType){
         }
 
         return $rows;
+
+
+    }
+    // count 수
+    else if($queryType == "count"){
+        $result = mysqli_query($conn, $query);
+
+        $total_rows = mysqli_num_rows($result);
+
+        return $total_rows;
 
 
     }
@@ -97,6 +107,6 @@ function DBQuery($query,$queryType){
     // 단일 값 확인
     // error_log($변수명);
 
-}
+// }
 
 ?>
