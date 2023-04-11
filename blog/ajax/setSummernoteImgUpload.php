@@ -29,6 +29,7 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
 
     $fileSize = filesize($resFile);
 
+    //파일 사이즈 늘릴려면 php.ini에서 2M -> 10M으로 늘려줘야 한다
     if($fileSize > 10485760){
         $fileSizeConfirm = false;
     }else{
