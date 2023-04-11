@@ -29,7 +29,7 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
 
     $fileSize = filesize($resFile);
 
-    if($fileSize > 2097152){
+    if($fileSize > 10485760){
         $fileSizeConfirm = false;
     }else{
         $fileSizeConfirm = true;
@@ -75,7 +75,7 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
     }else{
         $result->error = false;
         if($fileSizeConfirm == false){
-            $result->errorText = "최대 파일 사이즈는 2MB입니다.";
+            $result->errorText = "최대 파일 사이즈는 10MB입니다.";
             unlink($resFile);
         }else{
             $result->errorText = "서버에 문제가 발생하였습니다.\n담당자에게 문의해주세요";
