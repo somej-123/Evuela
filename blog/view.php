@@ -145,10 +145,14 @@
             <div id="mainSection_Body_viewDiv">
                 <div id="mainSection_Body_viewHeader">
                     <div id="viewHeader_titleDiv">
-                        <h5 id="viewHeader_title"><b>[<?= $board_contents['board_category_name']?>]</b> <?= $board_contents['board_title']?></h5>
+                        <h3 id="viewHeader_title"><b>[<?= $board_contents['board_category_name']?>]</b> <?= $board_contents['board_title']?></h3>
                         <!-- <input type="text" class="form-control" id="viewHeader_title" aria-describedby="제목을 입력하세요" placeholder="제목을 입력하세요"> -->
                     </div>
-                    <div id="viewHeader_categoryDiv">
+                    <div id="viewHeader_boardInfoDiv">
+                        <div id="viewHeader_boardInfoDiv_sub_time" class="viewHeader_boardInfoDiv_sub"><?= $board_contents['user_id']?></div>
+                        <div id="viewHeader_boardInfoDiv_sub_eye" class="viewHeader_boardInfoDiv_sub"><i class="far fa-eye"></i> <?= $board_contents['board_view']?></div>
+                        <div id="viewHeader_boardInfoDiv_sub_heart" class="viewHeader_boardInfoDiv_sub"><i class="far fa-heart"></i> <?= $board_contents['board_recommend']?></div>
+                        <div id="viewHeader_boardInfoDiv_sub_time" class="viewHeader_boardInfoDiv_sub"><i class="far fa-clock"></i> <span id="viewHeader_boardInfo_time"></span></div>
                         <!-- <select id="viewHeader_category" class="form-select" aria-label="Default select example"> -->
                             <!-- <option selected value="0">카테고리 선택</option>
                             <option value="1">One</option>
@@ -161,11 +165,66 @@
                     <div id="mainSection_Body_view_summernote"><?= $board_contents['board_contents']?></div>
                 </div>
                 <div id="mainSection_Body_viewFooter">
-                    <input type="hidden" value="<?php echo $_SESSION["user_id"]?>" id="user_id"/>
-                    <input type="hidden" value="<?php echo $_SESSION["user_level"]?>" id="user_level"/>
-                    <input type="hidden" value="<?php echo getMillisecond() ?>" id="board_id"/>
-                    <button type="button" id="viewToListBtn" class="btn btn-primary">목록</button>
-                    <button type="button" id="" class="btn btn-danger">삭제</button>
+                    <!-- 댓글 영역 시작 -->
+                    <div id="mainSection_Body_viewFooter_comments">
+                        <div class="form-floating" id="footerTextareaDiv">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="footerTextareaDiv_textarea"></textarea>
+                            <label for="floatingTextarea2">댓글은 로그인 후에 입력할 수 있습니다</label>
+                        </div>
+                        <div id="footerTextareaBtnDiv">
+                            <button id="footerTextareaBtnDiv_button" class="btn btn-secondary">등록</button>
+                        </div>
+                    </div>
+                    <!-- 댓글 영역 시작 끝-->
+
+                    <!-- 사용자 댓글 영역 -->
+                    <div id="mainSection_Body_viewFooter_commentsList">
+                        <!-- 사용자 댓글(반복) -->
+                        <div class="mainSection_Body_viewFooter_commentsListContents">
+
+                            <div class="commentsListContents_header">
+                                <p class="commentsListContents_header_ID">somej</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>1분전</p>
+                            </div>
+
+                            <div class="commentsListContents_body">
+                            
+                            </div>
+
+                            <div class="commentsListContents_footer">
+                            
+                            </div>
+
+                        </div>
+                        <!-- 사용자 댓글(반복) -->
+                        <div class="mainSection_Body_viewFooter_commentsListContents">
+
+                            <div class="commentsListContents_header">
+
+                            </div>
+
+                            <div class="commentsListContents_body">
+                            
+                            </div>
+
+                            <div class="commentsListContents_footer">
+                            
+                            </div>
+
+                        </div>
+                        <!-- 사용자 댓글 -->
+                    </div>
+                    <!-- 사용자 댓글 영역 끝-->
+
+                    <!-- 버튼 외 여러 기타 -->
+                    <div id="mainSection_Body_viewFooter_BtnList">
+                        <input type="hidden" value="<?= $board_contents['user_id']?>" id="user_id"/>
+                        <input type="hidden" value="<?= $board_contents['user_level']?>" id="user_level"/>
+                        <input type="hidden" value="<?= $board_contents['board_id']?>" id="board_id"/>
+                        <button type="button" id="viewToEditBtn" class="btn btn-warning">수정</button>
+                        <button type="button" id="viewToListBtn" class="btn btn-secondary">목록</button>
+                        <button type="button" id="" class="btn btn-danger">삭제</button>
+                    </div>
+                    <!-- 버튼 외 여러 기타 끝-->
                 </div>
 
             </div>
@@ -182,6 +241,52 @@
     
 </body>
 </html>
+
+<script>
+    $(document).ready(()=>{
+
+        // 게시글 작성 시간 경과 입력
+        var boardWriteTime = new Date("<?= $board_contents['createdate']?>");
+
+        boardWriteTime = elapsedText(boardWriteTime);
+
+        $("#viewHeader_boardInfo_time").text(boardWriteTime);
+
+    })
+    
+
+    // 게시글 등록 시간 문자열로 표현(방금전, 1분전, 1시간전 등등...)
+    function elapsedText(date) {
+	// 초 (밀리초)
+	const seconds = 1;
+	// 분
+	const minute = seconds * 60;
+	// 시
+	const hour = minute * 60;
+	// 일
+	const day = hour * 24;
+	
+	var today = new Date();
+	var elapsedTime = Math.trunc((today.getTime() - date.getTime()) / 1000);
+	
+	var elapsedText = "";
+	if (elapsedTime < seconds) {
+		elapsedText = "방금 전";
+	} else if (elapsedTime < minute) {
+		elapsedText = elapsedTime + "초 전";
+	} else if (elapsedTime < hour) {
+		elapsedText = Math.trunc(elapsedTime / minute) + "분 전";
+	} else if (elapsedTime < day) {
+		elapsedText = Math.trunc(elapsedTime / hour) + "시간 전";
+	} else if (elapsedTime < (day * 15)) {
+		elapsedText = Math.trunc(elapsedTime / day) + "일 전";
+	} else {
+		elapsedText = SimpleDateTimeFormat(date, "yyyy.M.d");
+	}
+	
+	return elapsedText;
+}
+</script>
 
 
 <?php 

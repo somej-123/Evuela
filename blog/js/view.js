@@ -66,11 +66,11 @@ $(document).ready(()=>{
     //   목록 버튼 클릭(작성 페이지)
     $("#viewToListBtn").on('click',()=>{
         location.href="./list";
-    })
+    });
     //   나가기 버튼 클릭(블로그 홈 페이지)
     $("#viewToHomeBtn").on('click',()=>{
         location.href="./home";
-    })
+    });
 });
 
 
@@ -180,3 +180,4 @@ function showAlert(alertText,alertType,alertTitle,alertFooter){
     }
     
 }
+
