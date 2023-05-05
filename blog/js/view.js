@@ -69,7 +69,7 @@ $(document).ready(()=>{
     });
     //   나가기 버튼 클릭(블로그 홈 페이지)
     $("#viewToHomeBtn").on('click',()=>{
-        location.href="./home";
+        
     });
 });
 

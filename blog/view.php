@@ -164,11 +164,24 @@
                 <div id="mainSection_Body_viewBody">
                     <div id="mainSection_Body_view_summernote"><?= $board_contents['board_contents']?></div>
                 </div>
+
+                <!-- 버튼 외 여러 기타 -->
+                <div id="mainSection_Body_viewFooter_BtnList">
+                    <input type="hidden" value="<?= $board_contents['user_id']?>" id="user_id"/>
+                    <input type="hidden" value="<?= $board_contents['user_level']?>" id="user_level"/>
+                    <input type="hidden" value="<?= $board_contents['board_id']?>" id="board_id"/>
+                    <button type="button" id="viewToEditBtn" class="btn btn-warning">수정</button>
+                    <button type="button" id="viewToListBtn" class="btn btn-secondary">목록</button>
+                    <button type="button" id="" class="btn btn-danger">삭제</button>
+                </div>
+                <!-- 버튼 외 여러 기타 끝-->
+
                 <div id="mainSection_Body_viewFooter">
                     <!-- 댓글 영역 시작 -->
+                    <p id="mainSection_Body_viewFooter_commments_title">comment (1)</p>
                     <div id="mainSection_Body_viewFooter_comments">
                         <div class="form-floating" id="footerTextareaDiv">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="footerTextareaDiv_textarea"></textarea>
+                            <textarea class="form-control" placeholder="깨끗한 댓글 입력 부탁드립니다." id="footerTextareaDiv_textarea"></textarea>
                             <label for="floatingTextarea2">댓글은 로그인 후에 입력할 수 있습니다</label>
                         </div>
                         <div id="footerTextareaBtnDiv">
@@ -181,50 +194,123 @@
                     <div id="mainSection_Body_viewFooter_commentsList">
                         <!-- 사용자 댓글(반복) -->
                         <div class="mainSection_Body_viewFooter_commentsListContents">
-
+                            
+                            <!-- 댓글 헤더 -->
                             <div class="commentsListContents_header">
-                                <p class="commentsListContents_header_ID">somej</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>1분전</p>
+                                <div class="commentsListContents_header_leftMenu">
+                                    <p class="commentsListContents_header_ID">somej</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>1분전</p>
+                                </div>
+                                <div class="commentsListContents_header_rightMenu">
+                                    <p class="commentsListContents_header_edit">수정</p><p class="commentsListContents_header_delete">삭제</p>
+                                </div>
                             </div>
+                            <!-- 댓글 헤더 끝 -->
 
+                            <!-- 댓글 바디 -->
                             <div class="commentsListContents_body">
-                            
+                                <div class="commentsListContents_body_contents">
+                                    안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.
+                                </div>
                             </div>
+                            <!-- 댓글 바디 끝 -->
 
+                            <!-- 댓글 푸터 -->
                             <div class="commentsListContents_footer">
-                            
+                                <div class="commentsListContents_footer_reply_div">
+                                    <span class="commentsListContents_footer_reply">답글</span>
+                                </div>
+                                <div class="commentsListContents_footer_reply_textarea_div">
+                                    <div class="form-floating">
+                                        <textarea class="form-control commentsListContents_footer_reply_textarea" placeholder="깨끗한 댓글 입력 부탁드립니다."></textarea>
+                                        <label>답글은 로그인 후에 입력할 수 있습니다</label>
+                                    </div>
+                                    <div class="commentsListContents_footer_reply_btn_div">
+                                        <button type="button" class="btn btn-secondary">등록</button>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- 댓글 푸터 끝 -->
+
+                            <!-- 답글 헤더 -->
+                            <div class="replyListContents_header">
+                                <div class="replyListContents_header_leftMenu">
+                                    <p class="replyListContents_header_ID">somej</p><p class="replyListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>1분전</p>
+                                </div>
+                                <div class="replyListContents_header_rightMenu">
+                                    <p class="replyListContents_header_edit">수정</p><p class="replyListContents_header_delete">삭제</p>
+                                </div>
+                            </div>
+                            <!-- 답글 헤더 끝 -->
+
+                            <!-- 답글 바디 -->
+                            <div class="replyListContents_body">
+                                <div class="replyListContents_body_contents">
+                                    <div class="replyUserDiv"><i class="fab fa-replyd"></i><p class="replyUser_ID">somej</p></div>
+                                    안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.
+                                </div>
+                            </div>
+                            <!-- 답글 바디 끝 -->
+
+                            <!-- 답글 푸터 -->
+                            <div class="replyListContents_footer">
+                                <div class="replyListContents_footer_reply_div">
+                                    <span class="replyListContents_footer_reply">답글</span>
+                                </div>
+                                <div class="replyListContents_footer_reply_textarea_div">
+                                    <div class="form-floating">
+                                        <textarea class="form-control replyListContents_footer_reply_textarea" placeholder="깨끗한 댓글 입력 부탁드립니다."></textarea>
+                                        <label>답글은 로그인 후에 입력할 수 있습니다</label>
+                                    </div>
+                                    <div class="replyListContents_footer_reply_btn_div">
+                                        <button type="button" class="btn btn-secondary">등록</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 답글 푸터 끝 -->
+
 
                         </div>
+                        <!-- 사용자 댓글 끝-->
+
+
                         <!-- 사용자 댓글(반복) -->
                         <div class="mainSection_Body_viewFooter_commentsListContents">
 
                             <div class="commentsListContents_header">
-
+                                <div class="commentsListContents_header_leftMenu">
+                                    <p class="commentsListContents_header_ID">somej</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>1분전</p>
+                                </div>
+                                <div class="commentsListContents_header_rightMenu">
+                                    <p class="commentsListContents_header_edit">수정</p><p class="commentsListContents_header_delete">삭제</p>
+                                </div>
                             </div>
 
                             <div class="commentsListContents_body">
-                            
+                                <div class="commentsListContents_body_contents">
+                                    안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.안녕하세요 테스트 중입니다.
+                                </div>
                             </div>
 
                             <div class="commentsListContents_footer">
-                            
+                                <div class="commentsListContents_footer_reply_div">
+                                    <span class="commentsListContents_footer_reply">답글</span>
+                                </div>
+                                <div class="commentsListContents_footer_reply_textarea_div">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                        <label for="floatingTextarea2">답글은 로그인 후에 입력할 수 있습니다</label>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
                         <!-- 사용자 댓글 -->
+
+
                     </div>
                     <!-- 사용자 댓글 영역 끝-->
 
-                    <!-- 버튼 외 여러 기타 -->
-                    <div id="mainSection_Body_viewFooter_BtnList">
-                        <input type="hidden" value="<?= $board_contents['user_id']?>" id="user_id"/>
-                        <input type="hidden" value="<?= $board_contents['user_level']?>" id="user_level"/>
-                        <input type="hidden" value="<?= $board_contents['board_id']?>" id="board_id"/>
-                        <button type="button" id="viewToEditBtn" class="btn btn-warning">수정</button>
-                        <button type="button" id="viewToListBtn" class="btn btn-secondary">목록</button>
-                        <button type="button" id="" class="btn btn-danger">삭제</button>
-                    </div>
-                    <!-- 버튼 외 여러 기타 끝-->
+                    
                 </div>
 
             </div>
