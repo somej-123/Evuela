@@ -113,6 +113,15 @@ function DBQuery($query,$queryType){
     // 단일 값 확인
     // error_log($변수명);
 
+    //세션 정보
+    // $_SESSION["signin"] = true;
+    // $_SESSION["user_id"] = $IDCheckResult['user_id'];
+    // $_SESSION["user_name"] = $IDCheckResult['user_name'];
+    // $_SESSION["user_email"] = $IDCheckResult['user_email'];
+    // $_SESSION["user_level"] = $IDCheckResult['user_level'];
+    // $_SESSION["user_regdate"] = $IDCheckResult['user_regdate'];
+    // $_SESSION["user_update"] = $IDCheckResult['user_update'];
+
 // }
 
 ?>

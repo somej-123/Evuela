@@ -160,6 +160,37 @@ $(document).ready(()=>{
                 cancelButtonText:'취소'
               }).then((result) => {
                 if (result.isConfirmed) {
+                // 이미지 크기 수정
+                
+                var imgTags = $("#mainSection_Body_writeBody img");
+                var imgCntUpdates = 0;
+        
+                if(imgTags.length > 0){
+
+                for(imgCntUpdates = 0; imgCntUpdates < imgTags.length; imgCntUpdates++){
+                    let imgTagID = imgTags.eq(imgCntUpdates).attr("id");
+                    let imgTagWidth = imgTags.eq(imgCntUpdates).css("width").replace("px","");
+                    let imgTagHeight = imgTags.eq(imgCntUpdates).css("height").replace("px","");
+                    
+                    $.ajax({
+                        url:"./ajax/updateImgSize.php",
+                        data:{
+                            board_img_id : imgTagID,
+                            img_width : imgTagWidth,
+                            img_height : imgTagHeight,
+                        },
+                        method:"POST",
+                        dataType:"json",
+                    }).done((data)=>{
+
+                    })
+                    .fail((data)=>{
+                        
+                    }) 
+                }
+                        
+
+
                 // 게시글 등록
                 $.ajax({
                     url:"./ajax/createBoard.php",
@@ -188,8 +219,44 @@ $(document).ready(()=>{
                     showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.","error");
                     return;
                 })
-                
                 //   게시글 등록 끝
+
+                    
+
+                    
+                }else{
+                    // 게시글 등록
+                    $.ajax({
+                        url:"./ajax/createBoard.php",
+                        data:{
+                            user_id : user_id,
+                            user_level : user_level,
+                            board_title : board_title,
+                            board_category : board_category,
+                            board_contents :board_contents,
+                            board_id : board_id
+                        },
+                        method:"POST",
+                        dataType:"json",
+                    })
+                    .done((data)=>{
+                        if(data.error){
+                            alert("게시글 등록을 완료하였습니다.")
+                            location.href="./list";
+                            return;
+                        }else{
+                            showAlert("게시글 등록에 실패하였습니다\n다시 시도해주세요","error");
+                            return;
+                        }
+                    })
+                    .fail((data)=>{
+                        showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.","error");
+                        return;
+                    })
+                    //   게시글 등록 끝
+                }
+
+                
                 }
               })
         }
@@ -280,7 +347,8 @@ function setImgFile(files, editor){
                         // var dataUrl = ".."+data.url.substr(19);
                         // // console.log(dataUrl)
                         // var image = $('<img>').attr('src', '' + dataUrl); // 에디터에 img 태그로 저장을 하기 위함
-                        var image = $('<img>').attr('src', '' + data.url); // 에디터에 img 태그로 저장을 하기 위함
+                        var image = $('<img>').attr({'src' : data.url, 'id' : data.imgID}); // 에디터에 img 태그로 저장을 하기 위함
+                        // 에디터에 img 태그로 저장을 하기 위함
                         $('#mainSection_Body_write_summernote').summernote("insertNode", image[0]); // summernote 에디터에 img 태그를 보여줌
                         return;
                     }else{

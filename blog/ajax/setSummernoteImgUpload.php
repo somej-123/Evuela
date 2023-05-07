@@ -14,6 +14,8 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
 
     $timestamp = time();
 
+    $boardImgID = $timestamp;
+
     // 임시로 저장된 정보(tmp_name)
     $tempFile = $_FILES['files']['tmp_name'];
     
@@ -53,10 +55,14 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
 
         $url = "../blog/blogImg/".$timestamp.$_FILES['files']['name'];
 
+        $imgSize = getimagesize($resFile);
+        $imgWidth = $imgSize[0];
+        $imgHeight = $imgSize[1];
+
         // 게시글 DB저장
 
-        $sql = "INSERT INTO evuela_board_img (board_id, uesr_id, file_real_name, file_size, file_path, createdate)
-                VALUES ('$board_id', '$user_id', '$realFileName', $fileSize, '$url', now())";
+        $sql = "INSERT INTO evuela_board_img (board_id, board_img_id, uesr_id, file_real_name, img_width, img_height, file_size, file_path, createdate)
+                VALUES ('$board_id', '$boardImgID', '$user_id', '$realFileName', '$imgWidth', '$imgHeight', $fileSize, '$url', now())";
 
         $insertBoardImg = DBQuery($sql, 'insert');
 
@@ -64,6 +70,7 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
             $result->error = true;
             $result->errorText = "";
             $result->url = $url;
+            $result->imgID = $boardImgID;
             // $result->level = $user_level;
             // $result->id = $user_id;
             // $result->board_id = $board_id;
