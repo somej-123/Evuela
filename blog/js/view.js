@@ -92,12 +92,48 @@ $(document).ready(()=>{
             dataType:"json",
         }).done((data)=>{
             
+            if(data.error == 1){
+                showAlert("등록하였습니다.","timerSuccess");
+                $("#footerTextareaDiv_textarea").val("");
+            }else{
+                showAlert(data.errorText,"error");
+                return;    
+            }
+
         })
         .fail((data)=>{
-            
+            showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.","error");
+            return;
         })
-        console.log(commentsText);
+    });
+
+    // 로그인 정보가 없을 때 댓글 등록
+    $("#footerTextareaBtnDiv_button_beforeLogin").on("click",()=>{
+
+        Swal.fire({
+            // title: '게시글을 등록 하시겠습니까?',
+            html:"<b>로그인이 필요한 기능입니다\n로그인 하시겠습니까?</b>",
+            // text: "",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '로그인',
+            cancelButtonText:'취소'
+          }).then((result) => {
+            if(result.isConfirmed){
+                location.href = '../login/home';
+            }
+          });
+        return;
     })
+
+    window.onresize = function(event){
+        var innerWidth = window.innerWidth;
+        
+        var test = $("#mainSection_Body_view_summernote p img").children("p").children("img");
+        console.log(test);
+    }
 });
 
 // 댓글창에 답글 버튼 클릭 시
@@ -118,8 +154,6 @@ function showCommentsReplyTextArea(commentsReplyTextArea){
 
 // 답글창에 답글 버튼 클릭 시
 function showReplyReplyTextArea(ReplyReplyTextArea){
-
-    console.log("du")
     let parent = $(ReplyReplyTextArea).parents(".replyListContents_footer");
 
     let child = parent.children(".replyListContents_footer_reply_textarea_div");
@@ -159,7 +193,30 @@ function showAlert(alertText,alertType,alertTitle,alertFooter){
             footer: alertFooter
           })
           return;
+    }else if(alertType == "timerSuccess"){
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: alertTitle,
+            text: alertText,
+            footer: alertFooter,
+            showConfirmButton: false,
+            timer: 1500
+          })
+          return;
+    }else if(alertType == "timerSuccess"){
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: alertTitle,
+            text: alertText,
+            footer: alertFooter,
+            showConfirmButton: false,
+            timer: 1500
+          })
+          return;
     }
+
     
 }
 
