@@ -178,7 +178,7 @@
 
                 <div id="mainSection_Body_viewFooter">
                     <!-- 댓글 영역 시작 -->
-                    <p id="mainSection_Body_viewFooter_commments_title">comment (1)</p>
+                    <p id="mainSection_Body_viewFooter_commments_title">comment (2)</p>
                     <div id="mainSection_Body_viewFooter_comments">
                         <div class="form-floating" id="footerTextareaDiv">
                             <textarea class="form-control" placeholder="깨끗한 댓글 입력 부탁드립니다." id="footerTextareaDiv_textarea"></textarea>
