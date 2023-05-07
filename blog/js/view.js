@@ -68,6 +68,36 @@ $(document).ready(()=>{
         location.href="./list";
     });
 
+    // 댓글 등록
+    $("#footerTextareaBtnDiv_button").on("click",()=>{
+        var commentsText = $("#footerTextareaDiv_textarea").val();
+
+        if(commentsText == "" || commentsText == null){
+            showAlert("댓글을 입력해주세요","error");
+            return;
+        }
+
+        $.ajax({
+            url:"./ajax/createComment.php",
+            data:{
+                user_id : $("#user_id").val(),
+                user_level : $("#user_level").val(),
+                board_id : $("#board_id").val(),
+                board_category_idx : $("#board_category_idx").val(),
+                board_categorytype_idx : $("#board_categorytype_idx").val(),
+                board_level : $("#board_level").val(),
+                comment_contents : commentsText
+            },
+            method:"POST",
+            dataType:"json",
+        }).done((data)=>{
+            
+        })
+        .fail((data)=>{
+            
+        })
+        console.log(commentsText);
+    })
 });
 
 // 댓글창에 답글 버튼 클릭 시

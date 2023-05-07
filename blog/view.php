@@ -170,6 +170,9 @@
                     <input type="hidden" value="<?= $board_contents['user_id']?>" id="user_id"/>
                     <input type="hidden" value="<?= $board_contents['user_level']?>" id="user_level"/>
                     <input type="hidden" value="<?= $board_contents['board_id']?>" id="board_id"/>
+                    <input type="hidden" value="<?= $board_contents['board_category_idx']?>" id="board_category_idx"/>
+                    <input type="hidden" value="<?= $board_contents['board_categorytype_idx']?>" id="board_categorytype_idx"/>
+                    <input type="hidden" value="<?= $board_contents['board_level']?>" id="board_level"/>
                     <button type="button" id="viewToEditBtn" class="btn btn-warning">수정</button>
                     <button type="button" id="viewToListBtn" class="btn btn-secondary">목록</button>
                     <button type="button" id="" class="btn btn-danger">삭제</button>
@@ -335,10 +338,31 @@
 	} else if (elapsedTime < (day * 15)) {
 		elapsedText = Math.trunc(elapsedTime / day) + "일 전";
 	} else {
-		elapsedText = SimpleDateTimeFormat(date, "yyyy.M.d");
+        dY = date.getFullYear();
+        dM = addZero(date.getMonth()+1);
+        dD = addZero(date.getDate());
+        dH = addZero(date.getHours());
+        dm = addZero(date.getMinutes());
+        ds = addZero(date.getSeconds());
+        
+		elapsedText = dY + "-" + dM + "-" + dD + " " + dH + ":" + dm + ":" + ds;
 	}
 	
 	return elapsedText;
+}
+
+
+function addZero(value){
+    var IntValue = parseInt(value);
+    
+    if(IntValue < 10){
+        IntValue = "0" + IntValue;
+    }else{
+        IntValue = String(IntValue);
+    }
+
+    return IntValue;
+
 }
 </script>
 
