@@ -67,89 +67,41 @@ $(document).ready(()=>{
     $("#viewToListBtn").on('click',()=>{
         location.href="./list";
     });
-    //   나가기 버튼 클릭(블로그 홈 페이지)
-    $("#viewToHomeBtn").on('click',()=>{
-        
-    });
+
 });
 
+// 댓글창에 답글 버튼 클릭 시
+function showCommentsReplyTextArea(commentsReplyTextArea){
 
-// summernote 이미지 저장
+    let parent = $(commentsReplyTextArea).parents(".commentsListContents_footer");
 
-function setImgFile(files, editor){
+    let child = parent.children(".commentsListContents_footer_reply_textarea_div");
 
-    // userID 값 저장
-    var userID = $("#user_id").val();
-    // userLevel 값 저장
-    var userLevel = $("#user_level").val();
-    // boardID 값 저장
-    var boardID = $("#board_id").val();
+    let childStats = child.attr("class");
 
-    // 이미지 파일 체크
-    var imgFilecheck = false;
-    // 확장자 정규식
-    var reg = /(.*?)\.(gif|jpg|png|jepg)$/; //허용할 확장자
-
-    // 확장자 검사
-
-    for(var i=0; i<files.length; i++){
-        if(!files[i].name.match(reg)){
-            
-            showAlert("이미지는 gif, jpg, png, jepg 파일만 업로드가 가능합니다.","error");
-            imgFilecheck = false;
-            return;
-        }else{
-            imgFilecheck = true;
-        }
+    if(childStats.includes("commentsListContents_footer_reply_textarea_div_hide")){
+        child.attr("class","commentsListContents_footer_reply_textarea_div commentsListContents_footer_reply_textarea_div_show");
+    }else{
+        child.attr("class","commentsListContents_footer_reply_textarea_div commentsListContents_footer_reply_textarea_div_hide");       
     }
-
-    // console.log(imgFilecheck);
-
-    if(imgFilecheck == true){
-
-        for(var i=0; i<files.length; i++){
-
-            var formData = new FormData();
-            formData.append("files",files[i]);
-            formData.append("user_id",userID);
-            formData.append("user_level",userLevel);
-            formData.append("board_id",boardID);
-
-            $.ajax({
-                url:'./ajax/setSummernoteImgUpload.php',
-                data:formData,
-                cache:false,
-                contentType:false,
-                processData:false,
-                type:'POST',
-                success:function(data){
-                    //alert(data);
-                    if(data.error){
-                        // var dataUrl = ".."+data.url.substr(19);
-                        // // console.log(dataUrl)
-                        // var image = $('<img>').attr('src', '' + dataUrl); // 에디터에 img 태그로 저장을 하기 위함
-                        var image = $('<img>').attr('src', '' + data.url); // 에디터에 img 태그로 저장을 하기 위함
-                        $('#mainSection_Body_view_summernote').summernote("insertNode", image[0]); // summernote 에디터에 img 태그를 보여줌
-                        return;
-                    }else{
-                        showAlert(data.errorText, "error");
-                        return;
-                    }
-                },
-                error:function(data){
-                    showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.","error");
-                    return;
-                }
-            })
-        }
-
-    }
-
 }
 
-// summernote 이미지 저장 끝
+// 답글창에 답글 버튼 클릭 시
+function showReplyReplyTextArea(ReplyReplyTextArea){
 
+    console.log("du")
+    let parent = $(ReplyReplyTextArea).parents(".replyListContents_footer");
 
+    let child = parent.children(".replyListContents_footer_reply_textarea_div");
+
+    let childStats = child.attr("class");
+
+    if(childStats.includes("replyListContents_footer_reply_textarea_hide")){
+        child.attr("class","replyListContents_footer_reply_textarea_div replyListContents_footer_reply_textarea_show");
+    }else{
+        child.attr("class","replyListContents_footer_reply_textarea_div replyListContents_footer_reply_textarea_hide");       
+    }
+}
 
 
 
