@@ -95,6 +95,11 @@ $(document).ready(()=>{
             if(data.error == 1){
                 showAlert("등록하였습니다.","timerSuccess");
                 $("#footerTextareaDiv_textarea").val("");
+                $("#mainSection_Body_viewFooter_commentsList").empty();
+
+                // 수정 작업 필요
+                location.reload();
+                
             }else{
                 showAlert(data.errorText,"error");
                 return;    
@@ -131,7 +136,7 @@ $(document).ready(()=>{
     window.onresize = function(event){
         var innerWidth = window.innerWidth;
         
-        var test = $("#mainSection_Body_view_summernote p img").children("p").children("img");
+        var test = $("#mainSection_Body_view_summernote p img");
         console.log(test);
     }
 });

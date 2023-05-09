@@ -55,14 +55,18 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
 
         $url = "../blog/blogImg/".$timestamp.$_FILES['files']['name'];
 
+        // 저장된 파일 이름
+        $saveFileName = $timestamp.$realFileName;
+
+        // 이미지 사이즈 저장
         $imgSize = getimagesize($resFile);
         $imgWidth = $imgSize[0];
         $imgHeight = $imgSize[1];
 
         // 게시글 DB저장
 
-        $sql = "INSERT INTO evuela_board_img (board_id, board_img_id, uesr_id, file_real_name, img_width, img_height, file_size, file_path, createdate)
-                VALUES ('$board_id', '$boardImgID', '$user_id', '$realFileName', '$imgWidth', '$imgHeight', $fileSize, '$url', now())";
+        $sql = "INSERT INTO evuela_board_img (board_id, board_img_id, uesr_id, file_real_name, file_name, img_width, img_height, file_size, file_path, createdate)
+                VALUES ('$board_id', '$boardImgID', '$user_id', '$realFileName', '$saveFileName', '$imgWidth', '$imgHeight', $fileSize, '$url', now())";
 
         $insertBoardImg = DBQuery($sql, 'insert');
 

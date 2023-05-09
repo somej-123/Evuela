@@ -12,9 +12,6 @@ ORDER BY createdate desc;";
 $comment_result = DBQuery($comment_sql, "selectRows");
 $comment_count_result = DBQuery($comment_sql, "count");
 
-error_log(var_export($comment_result, true));
-error_log($comment_count_result);
-
 ?>
 
 

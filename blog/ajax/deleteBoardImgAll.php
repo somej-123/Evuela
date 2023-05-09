@@ -12,18 +12,23 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
         </script>");
 }else{
 
-    $board_img_id = $_POST['board_img_id'];
-    $img_width = $_POST['img_width'];
-    $img_height = $_POST['img_height'];
+    $board_id = $_POST['board_id'];
 
-    $imgUpdatequery = "UPDATE evuela_board_img SET img_width='$img_width', img_height='$img_height' WHERE board_img_id='$board_img_id'";
+    $searchImgIDQuery = "SELECT * FROM evuela_board_img WHERE board_id = '$board_id';";
+    $searchImgIDResult = DBQuery($searchImgIDQuery,"selectRows");
 
-    $imgUpdatequeryResult = DBQuery($imgUpdatequery,"update");
+    foreach($searchImgIDResult as $value){
+        unlink($_SERVER["DOCUMENT_ROOT"]."/blog/blogImg/".$value['file_name']);
+    }
+
+    $imgDeleteAllQuery = "DELETE FROM evuela_board_img WHERE board_id = '$board_id';";
+
+    $imgDeleteAllResult = DBQuery($imgDeleteAllQuery,"delete");
 
     // 이미지 크기 변환
     $result = new stdClass();
 
-    if($imgUpdatequeryResult){
+    if($imgDeleteAllResult){
         $result->error = true; //정상적일 경우 true, 실패할 경우 false
         $result->errorText = ""; // 에러 텍스트 띄우기
         echo json_encode($result, JSON_UNESCAPED_UNICODE);//json 데이터 보내기
