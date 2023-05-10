@@ -15,7 +15,7 @@ class dbConf{
 
     public function dbConnect(){
 
-        
+
         $connect = mysqli_connect($host, $user, $pw, $dbName);
 
         // if use port
