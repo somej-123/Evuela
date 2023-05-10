@@ -46,6 +46,19 @@ function signIn(){
         .done((data)=>{
 
             if(data){
+                // js 세션 등록 - 암호화
+            
+                // console.log("< Base64 인코딩 및 디코딩 >");
+                var key = CryptoJS.enc.Utf8.parse(_userID);
+                var base64 = CryptoJS.enc.Base64.stringify(key);
+                // console.log("인코딩된 값 : " + base64);
+                // var decrypt = CryptoJS.enc.Base64.parse(base64);
+                // var hashData = decrypt.toString(CryptoJS.enc.Utf8);
+                // 아이디
+                sessionStorage.setItem("USE1", base64);
+
+
+                //메인페이지로 이동
                 location.href="../";
                 return;
             }else{

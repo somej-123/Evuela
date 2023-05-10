@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
     <!-- 공통부분 끝 -->
 
     <!-- include summernote css/js -->
@@ -216,58 +217,7 @@
     })
     
 
-    // 게시글 등록 시간 문자열로 표현(방금전, 1분전, 1시간전 등등...)
-    function elapsedText(date) {
-	// 초 (밀리초)
-	const seconds = 1;
-	// 분
-	const minute = seconds * 60;
-	// 시
-	const hour = minute * 60;
-	// 일
-	const day = hour * 24;
-	
-	var today = new Date();
-	var elapsedTime = Math.trunc((today.getTime() - date.getTime()) / 1000);
-	
-	var elapsedText = "";
-	if (elapsedTime < seconds) {
-		elapsedText = "방금 전";
-	} else if (elapsedTime < minute) {
-		elapsedText = elapsedTime + "초 전";
-	} else if (elapsedTime < hour) {
-		elapsedText = Math.trunc(elapsedTime / minute) + "분 전";
-	} else if (elapsedTime < day) {
-		elapsedText = Math.trunc(elapsedTime / hour) + "시간 전";
-	} else if (elapsedTime < (day * 15)) {
-		elapsedText = Math.trunc(elapsedTime / day) + "일 전";
-	} else {
-        dY = date.getFullYear();
-        dM = addZero(date.getMonth()+1);
-        dD = addZero(date.getDate());
-        dH = addZero(date.getHours());
-        dm = addZero(date.getMinutes());
-        ds = addZero(date.getSeconds());
-        
-		elapsedText = dY + "-" + dM + "-" + dD + " " + dH + ":" + dm + ":" + ds;
-	}
-	
-	return elapsedText;
-}
-
-
-function addZero(value){
-    var IntValue = parseInt(value);
     
-    if(IntValue < 10){
-        IntValue = "0" + IntValue;
-    }else{
-        IntValue = String(IntValue);
-    }
-
-    return IntValue;
-
-}
 </script>
 
 

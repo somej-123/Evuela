@@ -2,7 +2,7 @@
 
 $commentByBoardID = $board_contents['board_id'];
 // 게시글 정보 불러오기
-$boardIDQuery = "AND baord_id = $commentByBoardID";
+$boardIDQuery = "AND board_id = $commentByBoardID";
 
 $comment_sql = "SELECT * FROM evuela_board_comment a
 WHERE 1=1

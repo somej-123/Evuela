@@ -98,7 +98,73 @@ $(document).ready(()=>{
                 $("#mainSection_Body_viewFooter_commentsList").empty();
 
                 // 수정 작업 필요
-                location.reload();
+                console.log(data);
+                //js 세션 복호화 ( 사용자ID : USE1)
+                var commentSessionID = sessionStorage.getItem('USE1');
+                var decrypt = CryptoJS.enc.Base64.parse(commentSessionID);
+                var hashData = decrypt.toString(CryptoJS.enc.Utf8);
+
+
+                console.log(hashData);
+
+                // 댓글 목록들
+                let commentList = data.data;
+
+                if(commentList.length > 0){
+                    for(let i = 0; i<commentList.length; i++){
+                        let commentListHtml = "";
+
+                        // console.log(commentList[i].createdate.getTime());
+
+                        // 사용자 댓글 반복
+                        commentListHtml += '<div class="mainSection_Body_viewFooter_commentsListContents">';  
+                        // 댓글 헤더
+                        commentListHtml += '<div class="commentsListContents_header">';
+                        commentListHtml += '<div class="commentsListContents_header_leftMenu">';
+                        commentListHtml += '<p class="commentsListContents_header_ID">'+commentList[i].user_id+'</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>'+elapsedText(commentList[i].createdate)+'</p>'
+                        commentListHtml += '</div>';
+                        commentListHtml += '<div class="commentsListContents_header_rightMenu">';
+                        if(hashData == commentList[i].user_id){
+                            commentListHtml += '<p class="commentsListContents_header_edit">수정</p><p class="commentsListContents_header_delete">삭제</p>';
+                        }else{
+
+                        }
+                        commentListHtml += '</div>';
+                        commentListHtml += '</div>';
+                        // 댓글 헤더 끝
+
+                        // 댓글 바디 시작
+                        commentListHtml += '<div class="commentsListContents_body">';
+                        commentListHtml += '<div class="commentsListContents_body_contents">';
+                        commentListHtml += ''+commentList[i].comment_contents+'';
+                        commentListHtml += '</div>';
+                        commentListHtml += '</div>';
+                        // 댓글 바디 끝
+
+                        // 댓글 푸터
+                        commentListHtml += '<div class="commentsListContents_footer">';
+                        commentListHtml += '<div class="commentsListContents_footer_reply_div">';
+                        commentListHtml += '<span class="commentsListContents_footer_reply" onclick="showCommentsReplyTextArea(this)">답글</span>';
+                        commentListHtml += '</div>';
+                        commentListHtml += '<div class="commentsListContents_footer_reply_textarea_div commentsListContents_footer_reply_textarea_div_hide">';
+                        commentListHtml += '<div class="form-floating">';
+                        commentListHtml += '<textarea class="form-control commentsListContents_footer_reply_textarea" placeholder="깨끗한 댓글 입력 부탁드립니다."></textarea>';
+                        commentListHtml += '<label>답글은 로그인 후에 입력할 수 있습니다</label>';
+                        commentListHtml += '</div>';
+                        commentListHtml += '<div class="commentsListContents_footer_reply_btn_div">';
+                        commentListHtml += '<button type="button" class="btn btn-secondary">등록</button>';
+                        commentListHtml += '</div>';
+                        commentListHtml += '</div>';
+                        commentListHtml += '</div>';
+                        //댓글 푸터 끝
+                        commentListHtml += '</div>';
+                        // 사용자 댓글 끝
+                        $("#mainSection_Body_viewFooter_commentsList").append(commentListHtml);
+                    }
+
+                }else{
+                    //댓글이 하나도 없는 경우
+                }
                 
             }else{
                 showAlert(data.errorText,"error");
@@ -224,4 +290,59 @@ function showAlert(alertText,alertType,alertTitle,alertFooter){
 
     
 }
+
+// 게시글 등록 시간 문자열로 표현(방금전, 1분전, 1시간전 등등...)
+function elapsedText(date) {
+	// 초 (밀리초)
+	const seconds = 1;
+	// 분
+	const minute = seconds * 60;
+	// 시
+	const hour = minute * 60;
+	// 일
+	const day = hour * 24;
+	
+	var today = new Date();
+    var inputDate = new Date(date)
+	var elapsedTime = Math.trunc((today.getTime() - inputDate.getTime()) / 1000);
+	
+	var elapsedText = "";
+	if (elapsedTime < seconds) {
+		elapsedText = "방금 전";
+	} else if (elapsedTime < minute) {
+		elapsedText = elapsedTime + "초 전";
+	} else if (elapsedTime < hour) {
+		elapsedText = Math.trunc(elapsedTime / minute) + "분 전";
+	} else if (elapsedTime < day) {
+		elapsedText = Math.trunc(elapsedTime / hour) + "시간 전";
+	} else if (elapsedTime < (day * 15)) {
+		elapsedText = Math.trunc(elapsedTime / day) + "일 전";
+	} else {
+        dY = date.getFullYear();
+        dM = addZero(date.getMonth()+1);
+        dD = addZero(date.getDate());
+        dH = addZero(date.getHours());
+        dm = addZero(date.getMinutes());
+        ds = addZero(date.getSeconds());
+        
+		elapsedText = dY + "-" + dM + "-" + dD + " " + dH + ":" + dm + ":" + ds;
+	}
+	
+	return elapsedText;
+}
+
+
+function addZero(value){
+    var IntValue = parseInt(value);
+    
+    if(IntValue < 10){
+        IntValue = "0" + IntValue;
+    }else{
+        IntValue = String(IntValue);
+    }
+
+    return IntValue;
+
+}
+
 

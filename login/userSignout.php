@@ -15,6 +15,7 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
         location.href='../'
         </script>");
 }else{
+    echo "<script>sessionStorage.clear();</script>";
     session_destroy();
     exit("<script>location.href='../'</script>");
 }

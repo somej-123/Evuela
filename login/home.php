@@ -22,6 +22,7 @@ if(isset($_SESSION["signin"])){
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
     <link href="./css/main.css" rel="stylesheet"/>
     <script src="./js/main.js"></script>
     <title>EVUELA::LOGIN</title>
