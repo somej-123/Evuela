@@ -2,6 +2,35 @@
 
 $(document).ready(()=>{
 
+    // // 페이지 로드 시 이미지 크기 조절
+    // var viewContentsImg = $("#mainSection_Body_view_summernote p img");
+    // var mainSectionBodyWidth = parseInt($("#mainSection_Body_viewDiv").css("width").replace("px", ""));
+    // // console.log("이미지 body 값 " + mainSection_Body_viewDiv);
+
+    // if(viewContentsImg.length > 0){
+    //     for(var imgDivCnt = 0; imgDivCnt < viewContentsImg.length; imgDivCnt++){
+
+    //         // 이미지 ID값
+    //         // console.log("이미지 ID 값" + ImgFiles.eq(imgDivCnt).attr("id"));
+    //         var selectImgDiv = viewContentsImg.eq(imgDivCnt).attr("id");
+    //         // 이미지 넓이 값
+    //         // console.log("이미지 넓이 값 " +ImgFiles.eq(imgDivCnt).css("width"));
+    //         var ImgWidthValue = parseInt(viewContentsImg.eq(imgDivCnt).css("width").replace("px", ""));
+
+    //         // console.log(ImgWidthValue);
+    //         // console.log(mainSection_Body_viewDiv);
+
+    //         if(ImgWidthValue > mainSectionBodyWidth){
+    //             viewContentsImg.eq(imgDivCnt).attr("class","imgWidthAuto");
+    //         }else{
+    //             viewContentsImg.eq(imgDivCnt).attr("class","");
+
+    //         }
+    //         // console.log(ImgFiles.eq(imgDivCnt).attr("class"));
+    //     }
+    // }
+
+
 
     // 카테고리 메인 TITLE 가져오기
 
@@ -67,6 +96,27 @@ $(document).ready(()=>{
     $("#viewToListBtn").on('click',()=>{
         location.href="./list";
     });
+    // 게시글 삭제
+    $("#viewToDeleteBtn").on("click",()=>{
+        Swal.fire({
+            title: '삭제하시겠습니까?',
+            text: "",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '삭제',
+            cancelButtonText: '취소'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            }
+          })
+    })
 
     // 댓글 등록
     $("#footerTextareaBtnDiv_button").on("click",()=>{
@@ -97,15 +147,15 @@ $(document).ready(()=>{
                 $("#footerTextareaDiv_textarea").val("");
                 $("#mainSection_Body_viewFooter_commentsList").empty();
 
-                // 수정 작업 필요
-                console.log(data);
                 //js 세션 복호화 ( 사용자ID : USE1)
                 var commentSessionID = sessionStorage.getItem('USE1');
-                var decrypt = CryptoJS.enc.Base64.parse(commentSessionID);
-                var hashData = decrypt.toString(CryptoJS.enc.Utf8);
-
-
-                console.log(hashData);
+                if(commentSessionID != null || commentSessionID != ""){
+                    var decrypt = CryptoJS.enc.Base64.parse(commentSessionID);
+                    var hashData = decrypt.toString(CryptoJS.enc.Utf8);
+                }else{
+                    var hashData = "";
+                }
+                
 
                 // 댓글 목록들
                 let commentList = data.data;
@@ -199,12 +249,37 @@ $(document).ready(()=>{
         return;
     })
 
-    window.onresize = function(event){
-        var innerWidth = window.innerWidth;
-        
-        var test = $("#mainSection_Body_view_summernote p img");
-        console.log(test);
-    }
+
+    // 브라우저 크기에 따라 이미지 크기 변경
+    // window.onresize = function(event){
+    //     var ImgFiles = $("#mainSection_Body_view_summernote p img");
+    //     var mainSection_Body_viewDiv = parseInt($("#mainSection_Body_viewDiv").css("width").replace("px", ""));
+    //     // console.log("이미지 body 값 " + mainSection_Body_viewDiv);
+
+    //     if(ImgFiles.length > 0){
+    //         for(var imgDivCnt = 0; imgDivCnt < ImgFiles.length; imgDivCnt++){
+
+    //             // 이미지 ID값
+    //             // console.log("이미지 ID 값" + ImgFiles.eq(imgDivCnt).attr("id"));
+    //             var selectImgDiv = ImgFiles.eq(imgDivCnt).attr("id");
+    //             // 이미지 넓이 값
+    //             // console.log("이미지 넓이 값 " +ImgFiles.eq(imgDivCnt).css("width"));
+    //             var ImgWidthValue = parseInt(ImgFiles.eq(imgDivCnt).css("width").replace("px", ""));
+
+    //             // console.log(ImgWidthValue);
+    //             // console.log(mainSection_Body_viewDiv);
+
+    //             if(ImgWidthValue >= mainSection_Body_viewDiv){
+    //                 ImgFiles.eq(imgDivCnt).attr("class","imgWidthAuto");
+                    
+    //             }else{
+    //                 ImgFiles.eq(imgDivCnt).attr("class","");
+                    
+    //             }
+    //             // console.log(ImgFiles.eq(imgDivCnt).attr("class"));
+    //         }
+    //     }
+    // }
 });
 
 // 댓글창에 답글 버튼 클릭 시

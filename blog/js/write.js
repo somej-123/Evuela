@@ -245,7 +245,6 @@ $(document).ready(() => {
             }
 
             //현재 없는 이미지만 비교 후 삭제
-            console.log(imgTagIDArray);
             $.ajax({
               url: "./ajax/deleteBoardImg.php",
               async: false,
@@ -353,13 +352,13 @@ $(document).ready(() => {
 
   //summernote imgDelete::start
 
-  $("<img>").on("click", () => {
-    console.log(this.attr("id"));
-  });
+  // $("<img>").on("click", () => {
+  //   console.log(this.attr("id"));
+  // });
 
-  $(".note-remove>.note-btn").on("click", () => {
-    console.log(this);
-  });
+  // $(".note-remove>.note-btn").on("click", () => {
+  //   console.log(this);
+  // });
 
   // document.addEventListener('selectionchange', () => {
   //     console.log(document.getSelection());
@@ -432,7 +431,7 @@ function setImgFile(files, editor) {
             var image = $("<img>").attr({
               src: data.url,
               id: data.imgID,
-              width: "100%",
+              width: "50%",
             }); // 에디터에 img 태그로 저장을 하기 위함
             // 에디터에 img 태그로 저장을 하기 위함
             $("#mainSection_Body_write_summernote").summernote(

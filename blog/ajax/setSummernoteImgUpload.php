@@ -27,6 +27,7 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
 
 
     $imageUpload = move_uploaded_file($tempFile, $resFile);
+    chmod($resFile, 0777);
     $fileSizeConfirm = false;
 
     $fileSize = filesize($resFile);

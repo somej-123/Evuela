@@ -176,7 +176,7 @@
                     <input type="hidden" value="<?= $board_contents['board_level']?>" id="board_level"/>
                     <button type="button" id="viewToEditBtn" class="btn btn-warning">수정</button>
                     <button type="button" id="viewToListBtn" class="btn btn-secondary">목록</button>
-                    <button type="button" id="" class="btn btn-danger">삭제</button>
+                    <button type="button" id="viewToDeleteBtn" class="btn btn-danger">삭제</button>
                 </div>
                 <!-- 버튼 외 여러 기타 끝-->
 
@@ -186,6 +186,7 @@
                     include_once("./viewComments.php");
                 ?>
                 <!-- 댓글 영역 끝 -->
+                <div>
                     
                 </div>
 
