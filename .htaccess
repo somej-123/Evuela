@@ -9,3 +9,10 @@ RewriteCond $1 !^(index\.php)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ error.php/$1 [L]
+
+RewriteEngine On
+ 
+php_value upload_max_filesize 20M
+php_value post_max_size 20M
+php_flag register_globals off
+php_flag magic_quotes_gpc on
