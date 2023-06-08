@@ -76,6 +76,12 @@ $listContents = DBQuery($countSql,"selectRows");
 
     // 컨텐츠 내용에서 img 태그 변경
     $listContents = preg_replace("/<img[^>]+\>/i", "(image) ", $list['board_contents']);
+
+    // 댓글 수
+    $listCommentCountBoardID = $list['board_id'];
+    $listCommentCountSql = "SELECT COUNT(*) as CNT FROM evuela_board_comment WHERE board_id = '$listCommentCountBoardID';";
+    $listCommentCountResult = DBQuery($listCommentCountSql, "select");
+    // error_log("test : ".$listCommentCountResult);
 ?>
 <!-- boardList -->
 <div class="row boardListDiv">
@@ -121,7 +127,7 @@ $listContents = DBQuery($countSql,"selectRows");
                     <i class="far fa-thumbs-up"></i> <span class="boardList_contents_etc_command"><?=$list['board_recommend']?></span>
                 </div>
                 <div class="boardList_contents_etc_commentDiv">
-                    <i class="far fa-comments"></i> <span class="boardList_contents_etc_comment">0</span>
+                    <i class="far fa-comments"></i> <span class="boardList_contents_etc_comment"><?= $listCommentCountResult['CNT']?></span>
                 </div>
             </div>
         </div>

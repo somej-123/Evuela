@@ -99,7 +99,7 @@ $(document).ready(()=>{
     // 게시글 삭제
     $("#viewToDeleteBtn").on("click",()=>{
         Swal.fire({
-            title: '삭제하시겠습니까?',
+            title: '게시글을 삭제하시겠습니까?',
             text: "",
             icon: 'warning',
             showCancelButton: true,
@@ -107,16 +107,42 @@ $(document).ready(()=>{
             cancelButtonColor: '#d33',
             confirmButtonText: '삭제',
             cancelButtonText: '취소'
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-              Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
+
+                const board_id = $("#board_id").val();
+
+                $.ajax({
+                    url: "./ajax/deleteBoard.php",
+                    data:{
+                        board_id : board_id
+                    },
+                    method: "POST",
+                    dataType: "json",
+                })
+                .done((data) => {
+                    if(data.error){
+                        alert("게시글이 삭제됐습니다.");
+                        location.href="./list";
+                    }else{
+                        showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.", "error");
+                        return;    
+                    }
+                })
+                .fail((data) => {
+                    // alert("서버에 문제가 발생했습니다.\n다시 시도해주세요.");
+                    showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.", "error");
+                    return;
+                });
             }
-          })
-    })
+        });
+    });
+
+    // 게시글 수정
+    $("#viewToEditBtn").on("click",()=>{
+        const board_idx = $("#board_idx").val();
+        location.href="./update?board="+board_idx+"";
+    });
 
     // 댓글 등록
     $("#footerTextareaBtnDiv_button").on("click",()=>{

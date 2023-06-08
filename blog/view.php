@@ -171,6 +171,7 @@
                     <input type="hidden" value="<?= $board_contents['user_id']?>" id="user_id"/>
                     <input type="hidden" value="<?= $board_contents['user_level']?>" id="user_level"/>
                     <input type="hidden" value="<?= $board_contents['board_id']?>" id="board_id"/>
+                    <input type="hidden" value="<?= $board_contents['board_idx']?>" id="board_idx"/>
                     <input type="hidden" value="<?= $board_contents['board_category_idx']?>" id="board_category_idx"/>
                     <input type="hidden" value="<?= $board_contents['board_categorytype_idx']?>" id="board_categorytype_idx"/>
                     <input type="hidden" value="<?= $board_contents['board_level']?>" id="board_level"/>
