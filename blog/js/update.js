@@ -41,30 +41,7 @@ $(document).ready(() => {
     });
   // 카테고리 목록 불러오기 끝
 
-  /**------------------------------------------------------------------------------------------------------- */
 
-  //게시글 내용 불러오기
-  $.ajax({
-    url: "./ajax/getUpdateContnets.php",
-    method: "GET",
-    dataType: "json",
-    data:{
-      board : $("#board_idx").val()
-    }
-  }).done((data) => {
-    if(data.confirm == 1){
-      var data = data.data;
-      console.log(data);
-    }else{
-      console.log(data);
-    }
-  }).fail((data) => {
-      // alert("서버에 문제가 발생했습니다.\n다시 시도해주세요.");
-      showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.", "error");
-      return;
-  });
-
-  /**------------------------------------------------------------------------------------------------------- */
 
   // var modal = new bootstrap.Modal('#myModal')
   // var dropdown = new bootstrap.Dropdown('[data-bs-toggle="dropdown"]')
@@ -135,11 +112,44 @@ $(document).ready(() => {
 
   /**------------------------------------------------------------------------------------------------------- */
 
+  //게시글 내용 불러오기
+  $.ajax({
+    url: "./ajax/getUpdateContnets.php",
+    method: "GET",
+    dataType: "json",
+    data:{
+      board : $("#board_idx").val()
+    }
+  }).done((data) => {
+    if(data.confirm == 1){
+      var data = data.data;
+      console.log(data);
+      //게시글 제목
+      $("#updateHeader_title").val(data.board_title);
+      //게시글 카테고리
+      $("#updateHeader_category").val(data.board_category_idx);
+      //게시글 본문 내용
+      $('#mainSection_Body_update_summernote').summernote('pasteHTML', data.board_contents);
+      //게시글 ID
+      $("#board_id").val(data.board_id);
+    }else{
+      console.log(data);
+    }
+  }).fail((data) => {
+      // alert("서버에 문제가 발생했습니다.\n다시 시도해주세요.");
+      showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.", "error");
+      return;
+  });
+
+  /**------------------------------------------------------------------------------------------------------- */
+
+  /**------------------------------------------------------------------------------------------------------- */
+
   /**------------------------------------------------------------------------------------------------------- */
 
   // summernote submit::start
 
-  $("#summernote_submit_btn").on("click", () => {
+  $("#summernote_update_btn").on("click", () => {
     let user_id = $("#user_id").val();
     let user_level = $("#user_level").val();
     let board_title = $("#updateHeader_title").val();
@@ -165,13 +175,13 @@ $(document).ready(() => {
     } else {
       Swal.fire({
         // title: '게시글을 등록 하시겠습니까?',
-        html: "<b>게시글을 등록 하시겠습니까?</b>",
+        html: "<b>게시글을 수정 하시겠습니까?</b>",
         // text: "",
         icon: "question",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "등록",
+        confirmButtonText: "수정",
         cancelButtonText: "취소",
       }).then((result) => {
         if (result.isConfirmed) {
@@ -261,7 +271,7 @@ $(document).ready(() => {
             // 게시글 등록
 
             $.ajax({
-              url: "./ajax/createBoard.php",
+              url: "./ajax/setUpdateBoard.php",
               async: false,
               data: {
                 user_id: user_id,
@@ -300,7 +310,7 @@ $(document).ready(() => {
             // 게시글 등록
 
             $.ajax({
-              url: "./ajax/createBoard.php",
+              url: "./ajax/setUpdateBoard.php",
               data: {
                 user_id: user_id,
                 user_level: user_level,
