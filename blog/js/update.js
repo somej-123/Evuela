@@ -1,6 +1,7 @@
 "use strict";
 
 $(document).ready(() => {
+  /**------------------------------------------------------------------------------------------------------- */
   // 카테고리 목록 불러오기
   $.ajax({
     url: "./ajax/getCategoryListToUpdate.php",
@@ -13,35 +14,15 @@ $(document).ready(() => {
         var data = data.data;
         // console.log(data);
         $("#updateHeader_category").empty();
-        $("#updateHeader_category").append(
-          "<option value=''>카테고리 선택</option>"
-        );
+        $("#updateHeader_category").append("<option value=''>카테고리 선택</option>");
 
         // console.log(data.length)
-        if (
-          data.length != null &&
-          data.length != undefined &&
-          data.length != []
-        ) {
+        if (data.length != null && data.length != undefined && data.length != []) {
           for (let i = 0; i < data.length; i++) {
             if (data[i].board_category_parents_idx == null) {
-              $("#updateHeader_category").append(
-                '<option class="update_category_option" value=' +
-                  data[i].board_category_idx +
-                  ">- " +
-                  data[i].board_category_name +
-                  "</option>"
-              );
+              $("#updateHeader_category").append('<option class="update_category_option" value=' + data[i].board_category_idx + ">- " + data[i].board_category_name + "</option>");
             } else {
-              $("#updateHeader_category").append(
-                "<option value=" +
-                  data[i].board_category_idx +
-                  ">[ " +
-                  data[i].board_category_type_name +
-                  " ] " +
-                  data[i].board_category_name +
-                  "</option>"
-              );
+              $("#updateHeader_category").append("<option value=" + data[i].board_category_idx + ">[ " + data[i].board_category_type_name + " ] " + data[i].board_category_name + "</option>");
             }
           }
         } else {
@@ -49,10 +30,7 @@ $(document).ready(() => {
         }
       } else {
         // alert("회원수정에 실패 하였습니다\n다시 시도해주세요");
-        showAlert(
-          "카테고리 목록이 존재 하지 않거나\n서버에 문제가 발생했습니다.",
-          "error"
-        );
+        showAlert("카테고리 목록이 존재 하지 않거나\n서버에 문제가 발생했습니다.", "error");
         // location.reload(true);
       }
     })
@@ -63,10 +41,36 @@ $(document).ready(() => {
     });
   // 카테고리 목록 불러오기 끝
 
+  /**------------------------------------------------------------------------------------------------------- */
+
+  //게시글 내용 불러오기
+  $.ajax({
+    url: "./ajax/getUpdateContnets.php",
+    method: "GET",
+    dataType: "json",
+    data:{
+      board : $("#board_idx").val()
+    }
+  }).done((data) => {
+    if(data.confirm == 1){
+      var data = data.data;
+      console.log(data);
+    }else{
+      console.log(data);
+    }
+  }).fail((data) => {
+      // alert("서버에 문제가 발생했습니다.\n다시 시도해주세요.");
+      showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.", "error");
+      return;
+  });
+
+  /**------------------------------------------------------------------------------------------------------- */
+
   // var modal = new bootstrap.Modal('#myModal')
   // var dropdown = new bootstrap.Dropdown('[data-bs-toggle="dropdown"]')
   // console.log("aa");
 
+  /**------------------------------------------------------------------------------------------------------- */
   // summernote::start
 
   // summernote setting::start
@@ -128,6 +132,10 @@ $(document).ready(() => {
   //   $("#mainSection_Body_update_summernote").summernote('reset');
 
   // summernote setting::end
+
+  /**------------------------------------------------------------------------------------------------------- */
+
+  /**------------------------------------------------------------------------------------------------------- */
 
   // summernote submit::start
 
@@ -334,6 +342,11 @@ $(document).ready(() => {
 
   // summernote submit::end
 
+  /**------------------------------------------------------------------------------------------------------- */
+
+  
+  /**------------------------------------------------------------------------------------------------------- */
+
   //summernote imgDelete::start
 
   // $("<img>").on("click", () => {
@@ -349,6 +362,7 @@ $(document).ready(() => {
   //   });
 
   //summernote imgDelete::end
+  /**------------------------------------------------------------------------------------------------------- */
   // summernote::end
 
   //   목록 버튼 클릭(작성 페이지)
@@ -359,6 +373,12 @@ $(document).ready(() => {
   $("#updateToHomeBtn").on("click", () => {
     location.href = "./home";
   });
+
+  //페이지 로드 후 게시글 내용 불러오기
+
+  
+
+
 });
 
 // summernote 이미지 저장

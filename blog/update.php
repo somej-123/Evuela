@@ -44,7 +44,6 @@
     <!-- Blog Header 시작 -->
     <?php 
         include_once("./header.php");
-        include_once("./updateContents.php");
     ?>
     <!-- Blog Header 끝 -->
 
@@ -101,7 +100,8 @@
                 <div id="mainSection_Body_updateFooter">
                     <input type="hidden" value="<?php echo $_SESSION["user_id"]?>" id="user_id"/>
                     <input type="hidden" value="<?php echo $_SESSION["user_level"]?>" id="user_level"/>
-                    <input type="hidden" value="<?php echo getMillisecond() ?>" id="board_id"/>
+                    <input type="hidden" value="" id="board_id"/>
+                    <input type="hidden" value="<?= $_GET['board']?>" id="board_idx"/>
                     <button type="button" id="summernote_submit_btn" class="btn btn-primary">등록</button>
                     <button type="button" id="updateToListBtn" class="btn btn-primary">목록</button>
                     <button type="button" id="updateToHomeBtn" class="btn btn-danger">나가기</button>
