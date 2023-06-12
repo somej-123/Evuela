@@ -59,7 +59,7 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
 
     $sql = "UPDATE evuela_board
     SET board_category_idx = $board_category, board_categorytype_idx = $board_categoryType, board_title='$board_title', board_contents='$board_contents', img_idx='$serializeImg', board_level='$board_level', updatedate=NOW()
-    WHERE board_id='$board_id', user_id='$user_id'";
+    WHERE board_id='$board_id' AND user_id='$user_id'";
 
     $updateBoard = DBQuery($sql, 'update');
 

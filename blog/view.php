@@ -175,9 +175,14 @@
                     <input type="hidden" value="<?= $board_contents['board_category_idx']?>" id="board_category_idx"/>
                     <input type="hidden" value="<?= $board_contents['board_categorytype_idx']?>" id="board_categorytype_idx"/>
                     <input type="hidden" value="<?= $board_contents['board_level']?>" id="board_level"/>
-                    <button type="button" id="viewToEditBtn" class="btn btn-warning">수정</button>
+                    <?php if($_SESSION['user_id'] == $board_contents['user_id']){?>
+                        <button type="button" id="viewToEditBtn" class="btn btn-warning">수정</button>
+                    <?php }?>
                     <button type="button" id="viewToListBtn" class="btn btn-secondary">목록</button>
-                    <button type="button" id="viewToDeleteBtn" class="btn btn-danger">삭제</button>
+                    <?php if($_SESSION['user_id'] == $board_contents['user_id']){?>
+                        <button type="button" id="viewToDeleteBtn" class="btn btn-danger">삭제</button>
+                    <?php }?>
+
                 </div>
                 <!-- 버튼 외 여러 기타 끝-->
 

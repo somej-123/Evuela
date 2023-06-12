@@ -56,7 +56,7 @@ $comment_count_result = DBQuery($comment_sql, "count");
                     </div>
                     <div class="commentsListContents_header_rightMenu">
                         <?php if($_SESSION["user_id"] == $comment_result[$i]['user_id']){?>
-                            <p class="commentsListContents_header_edit">수정</p><p class="commentsListContents_header_delete">삭제</p>
+                            <p class="commentsListContents_header_edit">수정</p><p class="commentsListContents_header_delete"  onclick="commentDelete(<?= $comment_result[$i]['comment_id']?>)">삭제</p>
                         <?php }else{?>
                             
                         <?php }?>

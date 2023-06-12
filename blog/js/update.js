@@ -132,8 +132,13 @@ $(document).ready(() => {
       $('#mainSection_Body_update_summernote').summernote('pasteHTML', data.board_contents);
       //게시글 ID
       $("#board_id").val(data.board_id);
+
+      var deleteTagBr = $(".note-editable p");
+      deleteTagBr.eq(0).remove();
+      
     }else{
-      console.log(data);
+      showAlert("게시글 정보를 불러올 수 없습니다.", "error");
+      location.href = "./list";
     }
   }).fail((data) => {
       // alert("서버에 문제가 발생했습니다.\n다시 시도해주세요.");
@@ -143,7 +148,7 @@ $(document).ready(() => {
 
   /**------------------------------------------------------------------------------------------------------- */
 
-  /**------------------------------------------------------------------------------------------------------- */
+
 
   /**------------------------------------------------------------------------------------------------------- */
 
@@ -156,6 +161,13 @@ $(document).ready(() => {
     let board_category = $("#updateHeader_category").val();
     let board_contents = $("#mainSection_Body_update_summernote").summernote("code");
     let board_id = $("#board_id").val();
+
+    console.log(user_id);
+    console.log(user_level);
+    console.log(board_title);
+    console.log(board_category);
+    console.log(board_contents);
+    console.log(board_id);
 
     if (user_id == null || user_id == "" || user_id == undefined) {
       showAlert("다시 로그인하여 시도해주세요", "error");
@@ -210,6 +222,7 @@ $(document).ready(() => {
           }
           //이미지 태그가 없는 경우 등록된 이미지 전부 삭제 끝
 
+          console.log("이미지 삭제 완료");
           //이미지 태그 숫자
           var imgCntUpdates = 0;
 
@@ -245,7 +258,7 @@ $(document).ready(() => {
                 });
               // 이미지 크기 수정
             }
-
+            console.log("이미지 크기 변경 완료");
             //현재 없는 이미지만 비교 후 삭제
             $.ajax({
               url: "./ajax/deleteBoardImg.php",
@@ -286,8 +299,9 @@ $(document).ready(() => {
             })
               .done((data) => {
                 if (data.error) {
-                  alert("게시글 등록을 완료하였습니다.");
-                  location.href = "./list";
+                  alert("게시글 수정을 완료하였습니다.");
+                  const board_idx = $("#board_idx").val();
+                  location.href = "./view?board="+board_idx;
                   return;
                 } else {
                   showAlert(
@@ -324,8 +338,9 @@ $(document).ready(() => {
             })
               .done((data) => {
                 if (data.error) {
-                  alert("게시글 등록을 완료하였습니다.");
-                  location.href = "./list";
+                  alert("게시글 수정을 완료하였습니다.");
+                  const board_idx = $("#board_idx").val();
+                  location.href = "./view?board="+board_idx;
                   return;
                 } else {
                   showAlert(

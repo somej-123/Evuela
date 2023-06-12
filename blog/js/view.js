@@ -308,6 +308,11 @@ $(document).ready(()=>{
     // }
 });
 
+// 댓글 삭제 이벤트
+function commentDelete(commentID){
+    console.log(commentID);
+}
+
 // 댓글창에 답글 버튼 클릭 시
 function showCommentsReplyTextArea(commentsReplyTextArea){
 
