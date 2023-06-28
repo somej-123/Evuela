@@ -201,7 +201,7 @@ $(document).ready(()=>{
                         commentListHtml += '</div>';
                         commentListHtml += '<div class="commentsListContents_header_rightMenu">';
                         if(hashData == commentList[i].user_id){
-                            commentListHtml += '<p class="commentsListContents_header_edit">수정</p><p class="commentsListContents_header_delete" onclick="deleteComment('+commentList[i].comment_id+')">삭제</p>';
+                            commentListHtml += '<p class="commentsListContents_header_edit" onclick="updateComment(this)">수정</p><p class="commentsListContents_header_delete" onclick="deleteComment('+commentList[i].comment_id+')">삭제</p>';
                         }else{
 
                         }
@@ -212,7 +212,7 @@ $(document).ready(()=>{
                         // 댓글 바디 시작
                         commentListHtml += '<div class="commentsListContents_body">';
                         commentListHtml += '<div class="commentsListContents_body_contents">';
-                        commentListHtml += ''+commentList[i].comment_contents+'';
+                        commentListHtml += '<pre>'+commentList[i].comment_contents+'</pre>';
                         commentListHtml += '</div>';
                         commentListHtml += '</div>';
                         // 댓글 바디 끝
@@ -369,7 +369,7 @@ function deleteComment(commentID){
                         commentListHtml += '</div>';
                         commentListHtml += '<div class="commentsListContents_header_rightMenu">';
                         if(hashData == commentList[i].user_id){
-                            commentListHtml += '<p class="commentsListContents_header_edit">수정</p><p class="commentsListContents_header_delete" onclick="deleteComment('+commentList[i].comment_id+')">삭제</p>';
+                            commentListHtml += '<p class="commentsListContents_header_edit" onclick="updateComment(this)">수정</p><p class="commentsListContents_header_delete" onclick="deleteComment('+commentList[i].comment_id+')">삭제</p>';
                         }else{
 
                         }
@@ -380,7 +380,7 @@ function deleteComment(commentID){
                         // 댓글 바디 시작
                         commentListHtml += '<div class="commentsListContents_body">';
                         commentListHtml += '<div class="commentsListContents_body_contents">';
-                        commentListHtml += ''+commentList[i].comment_contents+'';
+                        commentListHtml += '<pre>'+commentList[i].comment_contents+'</pre>';
                         commentListHtml += '</div>';
                         commentListHtml += '</div>';
                         // 댓글 바디 끝
@@ -421,19 +421,46 @@ function deleteComment(commentID){
 
 //댓글창 수정 버튼 클릭
 function updateComment(el){
-    console.log(el);
+    
     let parent = $(el).parents(".mainSection_Body_viewFooter_commentsListContents");
     let childS = parent.children(".commentsListContents_body");
     let childE = childS.children(".commentsListContents_body_contents");
-
+    
     let childCommentContents = $(childE).text();
-    console.log(childCommentContents);
 
-    $(childE).replaceWith($("<textarea>"+childCommentContents+"</textarea>"));
+    if($(childS).children(".commentsListContents_body_contentsEdit").length > 0){
+        $(childS).children(".commentsListContents_body_contentsEdit").remove();
+    }
 
-    console.log(childE);
+    $(childE).after("<div class='commentsListContents_body_contentsEdit'>"
+    +"<textarea class='form-control' style='height:130px; resize:none'>"+childCommentContents+"</textarea>"
+    +"<button onclick='cancleEditComment(this)' style='float:right'>취소</button>"
+    +"<button onclick='updateEditComment(this)' style='float:right'>등록</button>"
+    +"</div>")
+
+    $(childE).hide();
+
+    // $(childE).replaceWith($("<textarea class='form-control'>"+childCommentContents+"</textarea>"));
+    
     // let grandParent = $(parent).parents(".commentsListContents_header");
 }
+
+//수정 취소
+function cancleEditComment(el){
+    let parent = $(el).parents(".commentsListContents_body_contentsEdit");
+
+    let TopParent = $(el).parents(".commentsListContents_body");
+    let childE = TopParent.children(".commentsListContents_body_contents");
+
+    parent.remove();
+    $(childE).css("display","block");
+}
+
+//수정
+function updateEditComment(el){
+    console.log(el)
+}
+
 
 // 댓글창에 답글 버튼 클릭 시
 function showCommentsReplyTextArea(commentsReplyTextArea){

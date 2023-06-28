@@ -5,6 +5,12 @@
     font-family: 'NanumGothic';
 }
 
+/* 댓글 글꼴 때문에 설정 */
+pre{
+    font-family: 'Oswald', sans-serif;
+    font-family: 'NanumGothic';
+}
+
 /* Header css 시작 */
 header{
     z-index: 999;

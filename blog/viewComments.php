@@ -66,9 +66,7 @@ $comment_count_result = DBQuery($comment_sql, "count");
 
                 <!-- 댓글 바디 -->
                 <div class="commentsListContents_body">
-                    <div class="commentsListContents_body_contents">
-                    <?= $comment_result[$i]['comment_contents']?>
-                    </div>
+                    <div class="commentsListContents_body_contents"><?php echo $comment_result[$i]['comment_contents'] ?></div>
                 </div>
                 <!-- 댓글 바디 끝 -->
 
