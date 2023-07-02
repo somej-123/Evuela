@@ -258,7 +258,6 @@ $(document).ready(() => {
                 });
               // 이미지 크기 수정
             }
-            console.log("이미지 크기 변경 완료");
             //현재 없는 이미지만 비교 후 삭제
             $.ajax({
               url: "./ajax/deleteBoardImg.php",
