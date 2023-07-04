@@ -228,7 +228,7 @@ $(document).ready(()=>{
                         commentListHtml += '<label>답글은 로그인 후에 입력할 수 있습니다</label>';
                         commentListHtml += '</div>';
                         commentListHtml += '<div class="commentsListContents_footer_reply_btn_div">';
-                        commentListHtml += '<button type="button" class="btn btn-secondary">등록</button>';
+                        commentListHtml += '<button type="button" class="btn btn-secondary reply_add_btn" parentCommentID="'+commentList[i].comment_contents+'">등록</button>';
                         commentListHtml += '</div>';
                         commentListHtml += '</div>';
                         commentListHtml += '</div>';
@@ -396,7 +396,7 @@ function deleteComment(commentID){
                         commentListHtml += '<label>답글은 로그인 후에 입력할 수 있습니다</label>';
                         commentListHtml += '</div>';
                         commentListHtml += '<div class="commentsListContents_footer_reply_btn_div">';
-                        commentListHtml += '<button type="button" class="btn btn-secondary">등록</button>';
+                        commentListHtml += '<button type="button" class="btn btn-secondary reply_add_btn" parentCommentID="'+commentList[i].comment_contents+'">등록</button>';
                         commentListHtml += '</div>';
                         commentListHtml += '</div>';
                         commentListHtml += '</div>';
@@ -539,7 +539,7 @@ function updateEditComment(el, commentID){
                         commentListHtml += '<label>답글은 로그인 후에 입력할 수 있습니다</label>';
                         commentListHtml += '</div>';
                         commentListHtml += '<div class="commentsListContents_footer_reply_btn_div">';
-                        commentListHtml += '<button type="button" class="btn btn-secondary">등록</button>';
+                        commentListHtml += '<button type="button" class="btn btn-secondary reply_add_btn" parentCommentID="'+commentList[i].comment_contents+'">등록</button>';
                         commentListHtml += '</div>';
                         commentListHtml += '</div>';
                         commentListHtml += '</div>';

@@ -123,7 +123,6 @@ $(document).ready(() => {
   }).done((data) => {
     if(data.confirm == 1){
       var data = data.data;
-      console.log(data);
       //게시글 제목
       $("#updateHeader_title").val(data.board_title);
       //게시글 카테고리

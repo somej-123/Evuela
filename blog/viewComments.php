@@ -81,7 +81,7 @@ $comment_count_result = DBQuery($comment_sql, "count");
                             <label>답글은 로그인 후에 입력할 수 있습니다</label>
                         </div>
                         <div class="commentsListContents_footer_reply_btn_div">
-                            <button type="button" class="btn btn-secondary">등록</button>
+                            <button type="button" class="btn btn-secondary reply_add_btn" parentCommentID="<?=$comment_result[$i]['comment_id'] ?>">등록</button>
                         </div>
                     </div>
                 </div>
