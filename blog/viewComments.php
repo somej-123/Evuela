@@ -47,7 +47,7 @@ $comment_count_result = DBQuery($comment_sql, "count");
 
             
             <!-- 사용자 댓글(반복) -->
-            <div class="mainSection_Body_viewFooter_commentsListContents">
+            <div class="mainSection_Body_viewFooter_commentsListContents" commentDivID="<?= $comment_result[$i]['comment_id']?>">
                 
                 <!-- 댓글 헤더 -->
                 <div class="commentsListContents_header">
