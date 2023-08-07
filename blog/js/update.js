@@ -161,13 +161,6 @@ $(document).ready(() => {
     let board_contents = $("#mainSection_Body_update_summernote").summernote("code");
     let board_id = $("#board_id").val();
 
-    console.log(user_id);
-    console.log(user_level);
-    console.log(board_title);
-    console.log(board_category);
-    console.log(board_contents);
-    console.log(board_id);
-
     if (user_id == null || user_id == "" || user_id == undefined) {
       showAlert("다시 로그인하여 시도해주세요", "error");
       return;
