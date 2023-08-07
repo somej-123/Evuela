@@ -99,6 +99,10 @@ $comment_count_result = DBQuery($comment_sql, "count");
 
 // 날짜 계산 함수
 function passing_time($datetime) {
+
+    // 현재 timezone이 설정되어 있지 않은 경우에만 추가
+    date_default_timezone_set('Asia/Seoul');
+    
     // 한국시간 날짜 기준
 	$time_lag = time() - strtotime($datetime);
 	
