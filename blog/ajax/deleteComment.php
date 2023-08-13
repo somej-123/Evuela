@@ -23,12 +23,12 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
     $board_id = $_POST['board_id'];
 
     // 댓글 삭제
-    $sql = "DELETE FROM evuela_board_comment WHERE comment_id='$comment_id' AND user_id='$user_id';";
+    $sql = "DELETE FROM evuela_board_comment WHERE (comment_id='$comment_id' OR comment_parents_id = '$comment_id') AND user_id='$user_id';";
 
     $deleteComment = DBQuery($sql, 'delete');
 
     if($deleteComment){
-        $commentSelectSql = "SELECT * FROM evuela_board_comment WHERE board_id = '$board_id' ORDER BY createdate DESC;";
+        $commentSelectSql = "SELECT * FROM evuela_board_comment WHERE board_id = '$board_id' AND comment_parents_id IS NULL ORDER BY createdate DESC;";
 
         $commentSelectResult = DBQuery($commentSelectSql, 'selectRows');
 

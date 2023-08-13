@@ -35,22 +35,12 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
     AND @pv := concat(@pv, ',', comment_id)
     ORDER BY createdate DESC;";
 
-    error_log($sql);
-
     $selectReplyResult = DBQuery($sql, 'selectRows');
 
-    error_log(var_export($selectReplyResult, true));
-
-    if(count($selectReplyResult) > 0){
-        $result->error = true; //정상적일 경우 true, 실패할 경우 false
-        $result->errorText = ""; // 에러 텍스트 띄우기
-        $result->data = $selectReplyResult;
-        echo json_encode($result, JSON_UNESCAPED_UNICODE);//json 데이터 보내기
-    }else{
-        $result->error = false;
-        $result->errorText = "서버에 문제가 발생하였습니다.\n담당자에게 문의해주세요";
-        echo json_encode($result, JSON_UNESCAPED_UNICODE);//json 데이터 보내기    
-    }
+    $result->error = true; //정상적일 경우 true, 실패할 경우 false
+    $result->errorText = ""; // 에러 텍스트 띄우기
+    $result->data = $selectReplyResult;
+    echo json_encode($result, JSON_UNESCAPED_UNICODE);//json 데이터 보내기
 
     // 게시판 생성 끝
 

@@ -37,28 +37,20 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
     $sql = "INSERT INTO evuela_board_comment (comment_id, comment_parents_id, comment_child_check, board_id, board_category_idx, board_categorytype_idx, comment_contents, board_level, user_id, user_level, createdate)
     VALUES ('$reply_id', '$board_commentID', 1, '$board_id', $board_category_idx, $board_categorytype_idx, '$reply_contents', '$board_level', '$user_id', $user_level, now())";
 
-    error_log($sql);
+    // error_log($sql);
 
     $createComment = DBQuery($sql, 'insert');
 
     if($createComment){
 
-        $commentSelectSql = "SELECT * FROM evuela_board_comment WHERE board_id = '$board_id' ORDER BY createdate DESC;";
-
-        error_log($commentSelectSql);
+        $commentSelectSql = "SELECT * FROM evuela_board_comment WHERE board_id = '$board_id' AND comment_parents_id IS NULL ORDER BY createdate DESC;";
 
         $commentSelectResult = DBQuery($commentSelectSql, 'selectRows');
 
-        if($commentSelectResult){
-            $result->error = true; //정상적일 경우 true, 실패할 경우 false
-            $result->errorText = ""; // 에러 텍스트 띄우기
-            $result->data = $commentSelectResult;
-            echo json_encode($result, JSON_UNESCAPED_UNICODE);//json 데이터 보내기
-        }else{
-            $result->error = false;
-            $result->errorText = "서버에 문제가 발생하였습니다.\n담당자에게 문의해주세요";
-            echo json_encode($result, JSON_UNESCAPED_UNICODE);//json 데이터 보내기    
-        }
+        $result->error = true; //정상적일 경우 true, 실패할 경우 false
+        $result->errorText = ""; // 에러 텍스트 띄우기
+        $result->data = $commentSelectResult;
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);//json 데이터 보내기
         
     }else{
         $result->error = false;

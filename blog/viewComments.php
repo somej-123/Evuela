@@ -7,6 +7,7 @@ $boardIDQuery = "AND board_id = $commentByBoardID";
 $comment_sql = "SELECT * FROM evuela_board_comment a
 WHERE 1=1
 $boardIDQuery
+AND comment_parents_id IS NULL
 ORDER BY createdate desc;";
 
 $comment_result = DBQuery($comment_sql, "selectRows");

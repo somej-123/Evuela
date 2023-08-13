@@ -30,7 +30,7 @@ if($_SERVER['HTTP_REFERER'] == '' || $_SERVER['HTTP_REFERER'] == null){
     $updateComment = DBQuery($sql, 'update');
 
     if($updateComment){
-        $commentSelectSql = "SELECT * FROM evuela_board_comment WHERE board_id = '$board_id' ORDER BY createdate DESC;";
+        $commentSelectSql = "SELECT * FROM evuela_board_comment WHERE board_id = '$board_id' AND comment_parents_id IS NULL ORDER BY createdate DESC;";
 
         $commentSelectResult = DBQuery($commentSelectSql, 'selectRows');
 

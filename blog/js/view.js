@@ -173,74 +173,9 @@ $(document).ready(()=>{
                 $("#footerTextareaDiv_textarea").val("");
                 $("#mainSection_Body_viewFooter_commentsList").empty();
 
-                //js 세션 복호화 ( 사용자ID : USE1)
-                var commentSessionID = sessionStorage.getItem('USE1');
-                if(commentSessionID != null || commentSessionID != ""){
-                    var decrypt = CryptoJS.enc.Base64.parse(commentSessionID);
-                    var hashData = decrypt.toString(CryptoJS.enc.Utf8);
-                }else{
-                    var hashData = "";
-                }
-                
-
                 // 댓글 목록들
                 let commentList = data.data;
-
-                if(commentList.length > 0){
-                    for(let i = 0; i<commentList.length; i++){
-                        let commentListHtml = "";
-
-                        // console.log(commentList[i].createdate.getTime());
-
-                        // 사용자 댓글 반복
-                        commentListHtml += '<div class="mainSection_Body_viewFooter_commentsListContents" commentDivID="'+commentList[i].comment_id+'">';  
-                        // 댓글 헤더
-                        commentListHtml += '<div class="commentsListContents_header">';
-                        commentListHtml += '<div class="commentsListContents_header_leftMenu">';
-                        commentListHtml += '<p class="commentsListContents_header_ID">'+commentList[i].user_id+'</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>'+elapsedText(commentList[i].createdate)+'</p>'
-                        commentListHtml += '</div>';
-                        commentListHtml += '<div class="commentsListContents_header_rightMenu">';
-                        if(hashData == commentList[i].user_id){
-                            commentListHtml += '<p class="commentsListContents_header_edit" onclick="updateComment(this,'+commentList[i].comment_id+')">수정</p><p class="commentsListContents_header_delete" onclick="deleteComment('+commentList[i].comment_id+')">삭제</p>';
-                        }else{
-
-                        }
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        // 댓글 헤더 끝
-
-                        // 댓글 바디 시작
-                        commentListHtml += '<div class="commentsListContents_body">';
-                        commentListHtml += '<div class="commentsListContents_body_contents">';
-                        commentListHtml += '<pre>'+commentList[i].comment_contents+'</pre>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        // 댓글 바디 끝
-
-                        // 댓글 푸터
-                        commentListHtml += '<div class="commentsListContents_footer">';
-                        commentListHtml += '<div class="commentsListContents_footer_reply_div">';
-                        commentListHtml += '<span class="commentsListContents_footer_reply" onclick="showCommentsReplyTextArea(this)">답글</span>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '<div class="commentsListContents_footer_reply_textarea_div commentsListContents_footer_reply_textarea_div_hide">';
-                        commentListHtml += '<div class="form-floating">';
-                        commentListHtml += '<textarea class="form-control commentsListContents_footer_reply_textarea" placeholder="깨끗한 댓글 입력 부탁드립니다."></textarea>';
-                        commentListHtml += '<label>답글은 로그인 후에 입력할 수 있습니다</label>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '<div class="commentsListContents_footer_reply_btn_div">';
-                        commentListHtml += '<button type="button" class="btn btn-secondary" onclick="reply_add(this,'+commentList[i].comment_id+')">등록</button>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        //댓글 푸터 끝
-                        commentListHtml += '</div>';
-                        // 사용자 댓글 끝
-                        $("#mainSection_Body_viewFooter_commentsList").append(commentListHtml);
-                    }
-
-                }else{
-                    //댓글이 하나도 없는 경우
-                }
+                getCommentReply(commentList);
                 
             }else{
                 showAlert(data.errorText,"error");
@@ -341,74 +276,9 @@ function deleteComment(commentID){
 
             $("#mainSection_Body_viewFooter_commentsList").empty();
 
-                //js 세션 복호화 ( 사용자ID : USE1)
-                var commentSessionID = sessionStorage.getItem('USE1');
-                if(commentSessionID != null || commentSessionID != ""){
-                    var decrypt = CryptoJS.enc.Base64.parse(commentSessionID);
-                    var hashData = decrypt.toString(CryptoJS.enc.Utf8);
-                }else{
-                    var hashData = "";
-                }
-                
-
                 // 댓글 목록들
                 let commentList = data.data;
-
-                if(commentList.length > 0){
-                    for(let i = 0; i<commentList.length; i++){
-                        let commentListHtml = "";
-
-                        // console.log(commentList[i].createdate.getTime());
-
-                        // 사용자 댓글 반복
-                        commentListHtml += '<div class="mainSection_Body_viewFooter_commentsListContents" commentDivID="'+commentList[i].comment_id+'">';  
-                        // 댓글 헤더
-                        commentListHtml += '<div class="commentsListContents_header">';
-                        commentListHtml += '<div class="commentsListContents_header_leftMenu">';
-                        commentListHtml += '<p class="commentsListContents_header_ID">'+commentList[i].user_id+'</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>'+elapsedText(commentList[i].createdate)+'</p>'
-                        commentListHtml += '</div>';
-                        commentListHtml += '<div class="commentsListContents_header_rightMenu">';
-                        if(hashData == commentList[i].user_id){
-                            commentListHtml += '<p class="commentsListContents_header_edit" onclick="updateComment(this,'+commentList[i].comment_id+')">수정</p><p class="commentsListContents_header_delete" onclick="deleteComment('+commentList[i].comment_id+')">삭제</p>';
-                        }else{
-
-                        }
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        // 댓글 헤더 끝
-
-                        // 댓글 바디 시작
-                        commentListHtml += '<div class="commentsListContents_body">';
-                        commentListHtml += '<div class="commentsListContents_body_contents">';
-                        commentListHtml += '<pre>'+commentList[i].comment_contents+'</pre>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        // 댓글 바디 끝
-
-                        // 댓글 푸터
-                        commentListHtml += '<div class="commentsListContents_footer">';
-                        commentListHtml += '<div class="commentsListContents_footer_reply_div">';
-                        commentListHtml += '<span class="commentsListContents_footer_reply" onclick="showCommentsReplyTextArea(this)">답글</span>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '<div class="commentsListContents_footer_reply_textarea_div commentsListContents_footer_reply_textarea_div_hide">';
-                        commentListHtml += '<div class="form-floating">';
-                        commentListHtml += '<textarea class="form-control commentsListContents_footer_reply_textarea" placeholder="깨끗한 댓글 입력 부탁드립니다."></textarea>';
-                        commentListHtml += '<label>답글은 로그인 후에 입력할 수 있습니다</label>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '<div class="commentsListContents_footer_reply_btn_div">';
-                        commentListHtml += '<button type="button" class="btn btn-secondary" onclick="reply_add(this,'+commentList[i].comment_id+')">등록</button>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        //댓글 푸터 끝
-                        commentListHtml += '</div>';
-                        // 사용자 댓글 끝
-                        $("#mainSection_Body_viewFooter_commentsList").append(commentListHtml);
-                    }
-
-                }else{
-                    //댓글이 하나도 없는 경우
-                }
+                getCommentReply(commentList);
         }else{
             showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.", "error");
             return;
@@ -484,74 +354,9 @@ function updateEditComment(el, commentID){
 
             $("#mainSection_Body_viewFooter_commentsList").empty();
 
-                //js 세션 복호화 ( 사용자ID : USE1)
-                var commentSessionID = sessionStorage.getItem('USE1');
-                if(commentSessionID != null || commentSessionID != ""){
-                    var decrypt = CryptoJS.enc.Base64.parse(commentSessionID);
-                    var hashData = decrypt.toString(CryptoJS.enc.Utf8);
-                }else{
-                    var hashData = "";
-                }
-                
-
                 // 댓글 목록들
                 let commentList = data.data;
-
-                if(commentList.length > 0){
-                    for(let i = 0; i<commentList.length; i++){
-                        let commentListHtml = "";
-
-                        // console.log(commentList[i].createdate.getTime());
-
-                        // 사용자 댓글 반복
-                        commentListHtml += '<div class="mainSection_Body_viewFooter_commentsListContents" commentDivID="'+commentList[i].comment_id+'">';  
-                        // 댓글 헤더
-                        commentListHtml += '<div class="commentsListContents_header">';
-                        commentListHtml += '<div class="commentsListContents_header_leftMenu">';
-                        commentListHtml += '<p class="commentsListContents_header_ID">'+commentList[i].user_id+'</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>'+elapsedText(commentList[i].createdate)+'</p>'
-                        commentListHtml += '</div>';
-                        commentListHtml += '<div class="commentsListContents_header_rightMenu">';
-                        if(hashData == commentList[i].user_id){
-                            commentListHtml += '<p class="commentsListContents_header_edit" onclick="updateComment(this,'+commentList[i].comment_id+')">수정</p><p class="commentsListContents_header_delete" onclick="deleteComment('+commentList[i].comment_id+')">삭제</p>';
-                        }else{
-
-                        }
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        // 댓글 헤더 끝
-
-                        // 댓글 바디 시작
-                        commentListHtml += '<div class="commentsListContents_body">';
-                        commentListHtml += '<div class="commentsListContents_body_contents">';
-                        commentListHtml += '<pre>'+commentList[i].comment_contents+'</pre>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        // 댓글 바디 끝
-
-                        // 댓글 푸터
-                        commentListHtml += '<div class="commentsListContents_footer">';
-                        commentListHtml += '<div class="commentsListContents_footer_reply_div">';
-                        commentListHtml += '<span class="commentsListContents_footer_reply" onclick="showCommentsReplyTextArea(this)">답글</span>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '<div class="commentsListContents_footer_reply_textarea_div commentsListContents_footer_reply_textarea_div_hide">';
-                        commentListHtml += '<div class="form-floating">';
-                        commentListHtml += '<textarea class="form-control commentsListContents_footer_reply_textarea" placeholder="깨끗한 댓글 입력 부탁드립니다."></textarea>';
-                        commentListHtml += '<label>답글은 로그인 후에 입력할 수 있습니다</label>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '<div class="commentsListContents_footer_reply_btn_div">';
-                        commentListHtml += '<button type="button" class="btn btn-secondary" onclick="reply_add(this,'+commentList[i].comment_id+')">등록</button>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        commentListHtml += '</div>';
-                        //댓글 푸터 끝
-                        commentListHtml += '</div>';
-                        // 사용자 댓글 끝
-                        $("#mainSection_Body_viewFooter_commentsList").append(commentListHtml);
-                    }
-
-                }else{
-                    //댓글이 하나도 없는 경우
-                }
+                getCommentReply(commentList);
         }else{
             showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.", "error");
             return;
@@ -609,175 +414,11 @@ function reply_add(el, commentParentID){
             $("#footerTextareaDiv_textarea").val("");
             $("#mainSection_Body_viewFooter_commentsList").empty();
 
-            //js 세션 복호화 ( 사용자ID : USE1)
-            var commentSessionID = sessionStorage.getItem('USE1');
-            if(commentSessionID != null || commentSessionID != ""){
-                var decrypt = CryptoJS.enc.Base64.parse(commentSessionID);
-                var hashData = decrypt.toString(CryptoJS.enc.Utf8);
-            }else{
-                var hashData = "";
-            }
-            
-
             // 댓글 목록들
             let commentList = data.data;
-
-            if(commentList.length > 0){
-                for(let i = 0; i<commentList.length; i++){
-                    let commentListHtml = "";
-
-                    // console.log(commentList[i].createdate.getTime());
-
-                    // 사용자 댓글 반복
-                    commentListHtml += '<div class="mainSection_Body_viewFooter_commentsListContents" commentDivID="'+commentList[i].comment_id+'">';  
-                    // 댓글 헤더
-                    commentListHtml += '<div class="commentsListContents_header">';
-                    commentListHtml += '<div class="commentsListContents_header_leftMenu">';
-                    commentListHtml += '<p class="commentsListContents_header_ID">'+commentList[i].user_id+'</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>'+elapsedText(commentList[i].createdate)+'</p>'
-                    commentListHtml += '</div>';
-                    commentListHtml += '<div class="commentsListContents_header_rightMenu">';
-                    if(hashData == commentList[i].user_id){
-                        commentListHtml += '<p class="commentsListContents_header_edit" onclick="updateComment(this,'+commentList[i].comment_id+')">수정</p><p class="commentsListContents_header_delete" onclick="deleteComment('+commentList[i].comment_id+')">삭제</p>';
-                    }else{
-
-                    }
-                    commentListHtml += '</div>';
-                    commentListHtml += '</div>';
-                    // 댓글 헤더 끝
-
-                    // 댓글 바디 시작
-                    commentListHtml += '<div class="commentsListContents_body">';
-                    commentListHtml += '<div class="commentsListContents_body_contents">';
-                    commentListHtml += '<pre>'+commentList[i].comment_contents+'</pre>';
-                    commentListHtml += '</div>';
-                    commentListHtml += '</div>';
-                    // 댓글 바디 끝
-
-                    // 댓글 푸터
-                    commentListHtml += '<div class="commentsListContents_footer">';
-                    commentListHtml += '<div class="commentsListContents_footer_reply_div">';
-                    commentListHtml += '<span class="commentsListContents_footer_reply" onclick="showCommentsReplyTextArea(this)">답글</span>';
-                    commentListHtml += '</div>';
-                    commentListHtml += '<div class="commentsListContents_footer_reply_textarea_div commentsListContents_footer_reply_textarea_div_hide">';
-                    commentListHtml += '<div class="form-floating">';
-                    commentListHtml += '<textarea class="form-control commentsListContents_footer_reply_textarea" placeholder="깨끗한 댓글 입력 부탁드립니다."></textarea>';
-                    commentListHtml += '<label>답글은 로그인 후에 입력할 수 있습니다</label>';
-                    commentListHtml += '</div>';
-                    commentListHtml += '<div class="commentsListContents_footer_reply_btn_div">';
-                    commentListHtml += '<button type="button" class="btn btn-secondary" onclick="reply_add(this,'+commentList[i].comment_id+')">등록</button>';
-                    commentListHtml += '</div>';
-                    commentListHtml += '</div>';
-                    commentListHtml += '</div>';
-                    //댓글 푸터 끝
-                    commentListHtml += '</div>';
-                    // 사용자 댓글 끝
-                    $("#mainSection_Body_viewFooter_commentsList").append(commentListHtml);
-
-                    //답글 조회
-                    $.ajax({
-                        url:"./ajax/getReply.php",
-                        data:{
-                            board_id : $("#board_id").val(),
-                            comment_id : commentParentID
-                        },
-                        method:"POST",
-                        dataType:"json",
-                        async: false,
-                    }).done((data)=>{
-                        
-                        if(data.error == 1){
-                
-                            //js 세션 복호화 ( 사용자ID : USE1)
-                            var commentSessionID = sessionStorage.getItem('USE1');
-                            if(commentSessionID != null || commentSessionID != ""){
-                                var decrypt = CryptoJS.enc.Base64.parse(commentSessionID);
-                                var hashData = decrypt.toString(CryptoJS.enc.Utf8);
-                            }else{
-                                var hashData = "";
-                            }
-                            
-                
-                            // 댓글 목록들
-                            let commentList = data.data;
-                            console.log(commentList)
-                
-                            if(commentList.length > 0){
-                                for(let i = 0; i<commentList.length; i++){
-                                    let commentListHtml = "";
-                
-                                    // console.log(commentList[i].createdate.getTime());
-                
-                                    // 사용자 댓글 반복
-                                    commentListHtml += '<div class="mainSection_Body_viewFooter_commentsListContents" commentDivID="'+commentList[i].comment_id+'">';  
-                                    // 댓글 헤더
-                                    commentListHtml += '<div class="commentsListContents_header">';
-                                    commentListHtml += '<div class="commentsListContents_header_leftMenu">';
-                                    commentListHtml += '<p class="commentsListContents_header_ID">@@'+commentList[i].user_id+'</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>'+elapsedText(commentList[i].createdate)+'</p>'
-                                    commentListHtml += '</div>';
-                                    commentListHtml += '<div class="commentsListContents_header_rightMenu">';
-                                    if(hashData == commentList[i].user_id){
-                                        commentListHtml += '<p class="commentsListContents_header_edit" onclick="updateComment(this,'+commentList[i].comment_id+')">수정</p><p class="commentsListContents_header_delete" onclick="deleteComment('+commentList[i].comment_id+')">삭제</p>';
-                                    }else{
-                
-                                    }
-                                    commentListHtml += '</div>';
-                                    commentListHtml += '</div>';
-                                    // 댓글 헤더 끝
-                
-                                    // 댓글 바디 시작
-                                    commentListHtml += '<div class="commentsListContents_body">';
-                                    commentListHtml += '<div class="commentsListContents_body_contents">';
-                                    commentListHtml += '<pre>'+commentList[i].comment_contents+'</pre>';
-                                    commentListHtml += '</div>';
-                                    commentListHtml += '</div>';
-                                    // 댓글 바디 끝
-                
-                                    // 댓글 푸터
-                                    commentListHtml += '<div class="commentsListContents_footer">';
-                                    commentListHtml += '<div class="commentsListContents_footer_reply_div">';
-                                    commentListHtml += '<span class="commentsListContents_footer_reply" onclick="showCommentsReplyTextArea(this)">답글</span>';
-                                    commentListHtml += '</div>';
-                                    commentListHtml += '<div class="commentsListContents_footer_reply_textarea_div commentsListContents_footer_reply_textarea_div_hide">';
-                                    commentListHtml += '<div class="form-floating">';
-                                    commentListHtml += '<textarea class="form-control commentsListContents_footer_reply_textarea" placeholder="깨끗한 댓글 입력 부탁드립니다."></textarea>';
-                                    commentListHtml += '<label>답글은 로그인 후에 입력할 수 있습니다</label>';
-                                    commentListHtml += '</div>';
-                                    commentListHtml += '<div class="commentsListContents_footer_reply_btn_div">';
-                                    commentListHtml += '<button type="button" class="btn btn-secondary" onclick="reply_add(this,'+commentList[i].comment_id+')">등록</button>';
-                                    commentListHtml += '</div>';
-                                    commentListHtml += '</div>';
-                                    commentListHtml += '</div>';
-                                    //댓글 푸터 끝
-                                    commentListHtml += '</div>';
-                                    // 사용자 댓글 끝
-                                    $("#mainSection_Body_viewFooter_commentsList").append(commentListHtml);
-                
-                                    //답글 조회
-                
-                
-                                }
-                
-                            }else{
-                                //댓글이 하나도 없는 경우
-                            }
-                            
-                        }else{
-                            showAlert(data.errorText,"error");
-                            return;    
-                        }
-                
-                    })
-                    .fail((data)=>{
-                        showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.","error");
-                        return;
-                    })
+            getCommentReply(commentList);
 
 
-                }
-
-            }else{
-                //댓글이 하나도 없는 경우
-            }
             
         }else{
             showAlert(data.errorText,"error");
@@ -931,4 +572,173 @@ function addZero(value){
 
 }
 
+//댓글 및 답글 조회
+function getCommentReply(commentList){
 
+    //js 세션 복호화 ( 사용자ID : USE1)
+    var commentSessionID = sessionStorage.getItem('USE1');
+    if(commentSessionID != null || commentSessionID != ""){
+        var decrypt = CryptoJS.enc.Base64.parse(commentSessionID);
+        var hashData = decrypt.toString(CryptoJS.enc.Utf8);
+    }else{
+        var hashData = "";
+    }
+    
+    console.log(commentList);
+
+    if(commentList.length > 0){
+        for(let i = 0; i<commentList.length; i++){
+            let commentListHtml = "";
+
+            // console.log(commentList[i].createdate.getTime());
+
+            // 사용자 댓글 반복
+            commentListHtml += '<div class="mainSection_Body_viewFooter_commentsListContents" commentDivID="'+commentList[i].comment_id+'">';  
+            // 댓글 헤더
+            commentListHtml += '<div class="commentsListContents_header">';
+            commentListHtml += '<div class="commentsListContents_header_leftMenu">';
+            commentListHtml += '<p class="commentsListContents_header_ID">'+commentList[i].user_id+'</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>'+elapsedText(commentList[i].createdate)+'</p>'
+            commentListHtml += '</div>';
+            commentListHtml += '<div class="commentsListContents_header_rightMenu">';
+            if(hashData == commentList[i].user_id){
+                commentListHtml += '<p class="commentsListContents_header_edit" onclick="updateComment(this,'+commentList[i].comment_id+')">수정</p><p class="commentsListContents_header_delete" onclick="deleteComment('+commentList[i].comment_id+')">삭제</p>';
+            }else{
+
+            }
+            commentListHtml += '</div>';
+            commentListHtml += '</div>';
+            // 댓글 헤더 끝
+
+            // 댓글 바디 시작
+            commentListHtml += '<div class="commentsListContents_body">';
+            commentListHtml += '<div class="commentsListContents_body_contents">';
+            commentListHtml += '<pre>'+commentList[i].comment_contents+'</pre>';
+            commentListHtml += '</div>';
+            commentListHtml += '</div>';
+            // 댓글 바디 끝
+
+            // 댓글 푸터
+            commentListHtml += '<div class="commentsListContents_footer">';
+            commentListHtml += '<div class="commentsListContents_footer_reply_div">';
+            commentListHtml += '<span class="commentsListContents_footer_reply" onclick="showCommentsReplyTextArea(this)">답글</span>';
+            commentListHtml += '</div>';
+            commentListHtml += '<div class="commentsListContents_footer_reply_textarea_div commentsListContents_footer_reply_textarea_div_hide">';
+            commentListHtml += '<div class="form-floating">';
+            commentListHtml += '<textarea class="form-control commentsListContents_footer_reply_textarea" placeholder="깨끗한 댓글 입력 부탁드립니다."></textarea>';
+            commentListHtml += '<label>답글은 로그인 후에 입력할 수 있습니다</label>';
+            commentListHtml += '</div>';
+            commentListHtml += '<div class="commentsListContents_footer_reply_btn_div">';
+            commentListHtml += '<button type="button" class="btn btn-secondary" onclick="reply_add(this,'+commentList[i].comment_id+')">등록</button>';
+            commentListHtml += '</div>';
+            commentListHtml += '</div>';
+            commentListHtml += '</div>';
+            //댓글 푸터 끝
+            commentListHtml += '</div>';
+            // 사용자 댓글 끝
+            $("#mainSection_Body_viewFooter_commentsList").append(commentListHtml);
+
+            //답글 조회
+            $.ajax({
+                url:"./ajax/getReply.php",
+                data:{
+                    board_id : $("#board_id").val(),
+                    comment_id : commentList[i].comment_id
+                },
+                method:"POST",
+                dataType:"json",
+                async: false,
+            }).done((data)=>{
+                
+                if(data.error == 1){
+        
+                    //js 세션 복호화 ( 사용자ID : USE1)
+                    var commentSessionID = sessionStorage.getItem('USE1');
+                    if(commentSessionID != null || commentSessionID != ""){
+                        var decrypt = CryptoJS.enc.Base64.parse(commentSessionID);
+                        var hashData = decrypt.toString(CryptoJS.enc.Utf8);
+                    }else{
+                        var hashData = "";
+                    }
+                    
+        
+                    // 댓글 목록들
+                    let commentListReply = data.data;
+        
+                    if(commentListReply.length > 0){
+                        for(let i = 0; i<commentListReply.length; i++){
+                            let commentListHtmlReply = "";
+        
+                            // console.log(commentList[i].createdate.getTime());
+        
+                            // 사용자 댓글 반복
+                            commentListHtmlReply += '<div class="mainSection_Body_viewFooter_commentsListContents" commentDivID="'+commentListReply[i].comment_id+'">';  
+                            // 댓글 헤더
+                            commentListHtmlReply += '<div class="commentsListContents_header">';
+                            commentListHtmlReply += '<div class="commentsListContents_header_leftMenu">';
+                            commentListHtmlReply += '<p class="commentsListContents_header_ID">@@'+commentListReply[i].user_id+'</p><p class="commentsListContents_header_createTime"><i class="far fa-clock" style="position:relative;top:1px;margin-right:5px;"></i>'+elapsedText(commentListReply[i].createdate)+'</p>'
+                            commentListHtmlReply += '</div>';
+                            commentListHtmlReply += '<div class="commentsListContents_header_rightMenu">';
+                            if(hashData == commentListReply[i].user_id){
+                                commentListHtmlReply += '<p class="commentsListContents_header_edit" onclick="updateComment(this,'+commentListReply[i].comment_id+')">수정</p><p class="commentsListContents_header_delete" onclick="deleteComment('+commentListReply[i].comment_id+')">삭제</p>';
+                            }else{
+        
+                            }
+                            commentListHtmlReply += '</div>';
+                            commentListHtmlReply += '</div>';
+                            // 댓글 헤더 끝
+        
+                            // 댓글 바디 시작
+                            commentListHtmlReply += '<div class="commentsListContents_body">';
+                            commentListHtmlReply += '<div class="commentsListContents_body_contents">';
+                            commentListHtmlReply += '<pre>'+commentListReply[i].comment_contents+'</pre>';
+                            commentListHtmlReply += '</div>';
+                            commentListHtmlReply += '</div>';
+                            // 댓글 바디 끝
+        
+                            // 댓글 푸터
+                            commentListHtmlReply += '<div class="commentsListContents_footer">';
+                            commentListHtmlReply += '<div class="commentsListContents_footer_reply_div">';
+                            commentListHtmlReply += '<span class="commentsListContents_footer_reply" onclick="showCommentsReplyTextArea(this)">답글</span>';
+                            commentListHtmlReply += '</div>';
+                            commentListHtmlReply += '<div class="commentsListContents_footer_reply_textarea_div commentsListContents_footer_reply_textarea_div_hide">';
+                            commentListHtmlReply += '<div class="form-floating">';
+                            commentListHtmlReply += '<textarea class="form-control commentsListContents_footer_reply_textarea" placeholder="깨끗한 댓글 입력 부탁드립니다."></textarea>';
+                            commentListHtmlReply += '<label>답글은 로그인 후에 입력할 수 있습니다</label>';
+                            commentListHtmlReply += '</div>';
+                            commentListHtmlReply += '<div class="commentsListContents_footer_reply_btn_div">';
+                            commentListHtmlReply += '<button type="button" class="btn btn-secondary" onclick="reply_add(this,'+commentListReply[i].comment_id+')">등록</button>';
+                            commentListHtmlReply += '</div>';
+                            commentListHtmlReply += '</div>';
+                            commentListHtmlReply += '</div>';
+                            //댓글 푸터 끝
+                            commentListHtmlReply += '</div>';
+                            // 사용자 댓글 끝
+                            $("#mainSection_Body_viewFooter_commentsList").append(commentListHtmlReply);
+        
+                            //답글 조회
+        
+        
+                        }
+        
+                    }else{
+                        //댓글이 하나도 없는 경우
+                    }
+                    
+                }else{
+                    showAlert(data.errorText,"error");
+                    return;    
+                }
+        
+            })
+            .fail((data)=>{
+                showAlert("서버에 문제가 발생했습니다.\n다시 시도해주세요.","error");
+                return;
+            })
+
+
+        }
+
+    }else{
+        //댓글이 하나도 없는 경우
+    }
+}
